@@ -1,501 +1,501 @@
 timestamp,text,category
-2025-07-01 02:39:21,"vawc restraining order sa may Balatas, grabe.",social_services
-2025-07-01 08:06:35,"Ask ko lang sa likod ng Carmelite Monastery, piggery too close to houses?",sanitation
-2025-07-01 13:30:26,"Anuna, cell tower radiation fear near Hall of Justice",utilities
-2025-07-01 19:55:12,"sa likod ng Vista Mall, may drainage cover is missing.",infrastructure
-2025-07-02 06:40:54,"maternal health concern sa labas ng Bagumbayan, ano na?",health
-2025-07-02 17:39:03,"Anuna, high blood pressure monitoring requrst sa may San Francisco ang tagal na nito.",health
-2025-07-03 14:08:18,"sa may Plaza Medica, ganap sa earthquake assistance.",social_services
-2025-07-03 14:53:29,"puno na ang septic tank sa may Our Lady of Lourdes Infirmary, plss lang.",sanitation
-2025-07-03 20:06:29,"sa likod ng Triangulo, may internet slow speed.",utilities
-2025-07-03 22:26:37,"market stall dirty sa loob ng Isarog Family Care, ano na?",sanitation
-2025-07-04 00:00:32,"union busting activity sa likod ng Tinago, nakakainis.",employment
-2025-07-04 09:45:32,"sa loob ng Deca Homes area, may hiring ba ng security guard.",employment
-2025-07-04 23:50:52,"vomit on sidewalk sa may Ago Foundation, nakakainis.",sanitation
-2025-07-04 23:52:58,"May update ba behind Concepcion Pequeña, rabies vaccination pet?",social_services
-2025-07-05 08:31:43,rear end collision ditp.,traffic
-2025-07-05 13:01:54,Urgent: bukas kotse gang sa labas ng Metropolitan Cathedral delikado to.,public_safety
-2025-07-06 19:23:36,"Hello po behind Igualdad, medicine discount senior?",social_services
-2025-07-07 10:59:48,cholera suspicion dito.,health
-2025-07-08 12:30:39,foster care aplikasyon sa loob ng NBI Office,social_services
-2025-07-09 08:29:34,"Ask ko lang sa labas ng Balatas, wall leaning?",infrastructure
-2025-07-09 23:15:29,"madumi tubig supply from faucet behind Naga Parochial School, hays.",utilities
-2025-07-10 03:24:21,"uniform allowance student sa Bicol Medical Center (BMC), ano na?",social_services
-2025-07-10 12:51:52,"sa loob ng Tinago, merong fainting incident in public.",health
-2025-07-10 13:45:30,"dirty apron food vendor sa tapat ng Triangulo, hays.",sanitation
-2025-07-10 22:31:09,broken glass in sand sa may Mother Seton Hospital,sanitation
-2025-07-11 14:07:53,"sa tapat ng Tabuco, yung manhole walang takip.",infrastructure
-2025-07-11 20:20:53,"organ donor inquiry sa may Tinago, ano na?",health
-2025-07-12 02:34:18,"sa tapat ng Del Rosario, ganap sa riot ng mga kabataxn kagabi.",public_safety
-2025-07-12 11:17:03,"Psnsinin niyo to, generator smoke complaint sa tapat ng Gaisano Mall nakakaabala na.",utilities
-2025-07-12 15:04:35,leaning electric post sa loob ng San Jude Thaddeus Parish any update?,utilities
-2025-07-12 17:00:51,"Tanong lang sa kanto ng Pacol, packet loss internet?",utilities
-2025-07-12 18:33:14,MILK FEEDING PROGRAM SA LABAS NG LIBOTON!!!,social_services
-2025-07-13 16:54:52,ffequent power blink sa likod ng Police Station 1 any update?,utilities
-2025-07-13 22:54:47,"sa tapat ng Sabang, ganap sa diapers thrown in canal.",sanitation
-2025-07-14 16:24:19,Urgent: tumataas ang cases ng dengue sa likod ng Camarines Sur National High School (CamHigh) kailan ito maaayos?,health
-2025-07-14 18:22:21,animal bite center schedule sa lavas ng Comelec Office,health
-2025-07-15 09:17:05,"sa may San Francisco, please check historical marker missing.",infrastructure
-2025-07-15 14:03:11,"substandard road project sa may Dinaga, plss lang.",infrastructure
-2025-07-16 01:32:29,"red cross blood drive outside Del Rosario, hays.",social_services
-2025-07-16 02:11:27,pharmacy ran out of paracetamol dito.,health
-2025-07-16 18:49:08,"mosquito breeding ground sa Dayangdxng, hays.",sanitation
-2025-07-16 23:32:14,"sobrang hina ng signal sa tapat ng Tabuco, grabe.",utilities
-2025-07-17 03:58:32,"sa kanto ng Unitop, ganap sa wheelchair donation request.",social_services
-2025-07-17 05:36:42,resume writing tulong dito.,employment
-2025-07-18 06:03:52,"sa tapat ng Dayangdang, pls check mass wedding schedule.",social_services
-2025-07-18 06:54:32,"sa tapat ng Mabolo, may busted ang street lights, madilim.",infrastructure
-2025-07-18 15:01:11,NAGHAHANAP NG TRABAHO SA KANTO NG PANICUASON!!!,employment
-2025-07-18 17:44:32,"Tanong lang sa loob ng Dayangdang, senior citizen abuse?",social_services
-2025-07-19 01:05:30,FISH PORT SLIMY SA KANTO NG IPO NAGA!!!,sanitation
-2025-07-19 07:56:55,"Ask ko lang sa kanto ng Mariners Polytechnic, internet slow speed?",utilities
-2025-07-19 08:02:48,"sa loob ng Pacol, report ko waist deep flood.",infrastructure
-2025-07-19 10:42:24,"Hello admin, fuse cutout exploded at Lerma",utilities
-2025-07-19 13:42:17,"May update ba sa likod ng Dayangdang, cargo falling from truck?",traffic
-2025-07-20 08:28:32,"no hairnet food server sa kanto ng Iglesia ni Cristo, hays.",sanitation
-2025-07-21 03:49:11,low water pressure tuwing umaga sa loob ng Tinago,utilities
-2025-07-21 05:32:49,"Tanong lang sa likod ng Peñafrancia, grease trap overflow?",sanitation
-2025-07-21 14:24:56,grounding issue house sa labas ng Lerma,utilities
-2025-07-21 16:56:43,"Grabe, public faucet algae in front of Barangay Hall",sanitation
-2025-07-21 18:01:54,"late bus arrival sa kanto ng Concepcion Grande, nakakainis.",traffic
-2025-07-22 01:29:31,HOSPITAL ZONE NOISE OUTSIDE MOTHER SETON HOSPITAL!!!,traffic
-2025-07-22 10:04:31,"Ask ko lang sa Barangay Hall, post obstructing way?",infrastructure
-2025-07-22 13:57:06,traffic enforcer nangongotong sa kanto ng Mother Seton Hospital please action.,traffic
-2025-07-23 07:40:13,"may patay na daga sa daan sa labas ng Our Lady of Lourdes Infirmary, plss lang.",sanitation
-2025-07-23 13:53:54,"sa San Jude Thaddeus Parish, ganap sa vomit on sidewalk.",sanitation
-2025-07-23 23:40:12,Notice: street sign missing sa tapat ng IPO Naga,infrastructure
-2025-07-24 03:24:23,"solo parent id renewal sa likod ng Naga Imaging Center, ano na?",social_services
-2025-07-24 19:40:27,"missing channels cable sa may Capitol, hays.",utilities
-2025-07-24 19:56:31,"Admin, hair in food complaint sa may Sabang salamat.",sanitation
-2025-07-24 22:31:44,"fake recruiter report sa Metropolitan Cathedral, ano na?",employment
-2025-07-25 04:51:48,flood warning siren sa kanto ng Tabuco,public_safety
-2025-07-25 18:15:33,"sa loob ng Magsaysay Food Strip, merong philhealth coverage inquiry.",health
-2025-07-26 01:51:35,"Hoy, may putol na kable sa daan sa tapat ng San Francisco",utilities
-2025-07-26 09:43:51,Urgent: wasting tubig car wash sa loob ng Holy Cross Parish,utilities
-2025-07-26 18:42:58,"sa labas ng Liboton, yung senior citizen pension delay.",social_services
-2025-07-27 11:40:49,"crocodile sighting sa likod ng Triangulo, hays.",public_safety
-2025-07-27 14:47:34,Notice: drug rehabilitation referral sa likod ng Mabolo any update?,social_services
-2025-07-28 15:52:37,"Report ko lang, unsafe working condition sa loob ng Mother Seton Hospital kailan ito maaayos?",employment
-2025-07-28 17:52:35,VETERINARY MISSION SA TAPAT NG CITY HEALTH OFFICE!!!,social_services
-2025-07-28 23:48:52,"generator smoke complaint sa may City Hall, grabe.",utilities
-2025-07-29 01:54:14,"listahan inquiry sa labas ng Concepcion Pequeña, hays.",social_services
-2025-07-29 15:37:39,"Mayor, bird nest on transformer near Bagumbayan nakakatakot.",utilities
-2025-07-29 22:07:26,lifekine rate tanong sa Basilica Minore pls fix.,utilities
-2025-07-29 22:59:50,"sa likod ng Barangay Hall, ganap sa brownout nanaman dito.",utilities
-2025-07-30 05:08:23,RABIES VACCINATION PET SA LIKOD NG METROPOLITAN CATHEDRAL!!!,social_services
-2025-07-30 22:07:49,senior citizen discount utility dkto.,utilities
-2025-07-31 10:57:20,"Report ko lang, drug rehabilitation referral sa may WRI College hassle masyado.",social_services
-2025-07-31 13:56:30,"Paki-check naman, typhoon victim help sa may SM City Naga nakakaabala na.",social_services
-2025-07-31 18:46:52,"sa Mother Seton Hospital, ganap sa termite infested post.",utilities
-2025-08-01 03:47:23,drowning risk in river dito.,public_safety
-2025-08-01 08:12:21,SIGN LANGUAGE INTERPRETER SA LABAS NG BARANGAY HALL!!!,social_services
-2025-08-02 15:55:26,FORCED RESIGNATION SA TAPAT NG GAISANO MALL!!!,employment
-2025-08-03 10:50:11,"one way violation sa likod ng Primark Town Center, plss lang.",traffic
-2025-08-03 10:58:51,"sa labas ng Tabuco, report ko car breakdown traffic.",traffic
-2025-08-04 23:11:07,"drainage civer is missing sa labas ng Carmelite Monastery, ano na?",infrastructure
-2025-08-05 01:21:23,prime tubig reklamo inside Peñafrancja,utilities
-2025-08-05 04:24:46,"sa kanto ng Gaisano Mall, please check bill lost in transit.",utilities
-2025-08-07 03:29:45,low lying wires dito.,utilities
-2025-08-07 05:17:33,"sa San Francisco, ganap sa fish port slimy.",sanitation
-2025-08-07 08:10:38,"identity theft report sa Carolina, grabe.",public_safety
-2025-08-07 08:54:35,"sa tapat ng Mabolo, please check sharp metal debris.",sanitation
-2025-08-07 12:15:14,"illegal fishing dynamite sa labas ng Carolina, grabe.",public_safety
-2025-08-07 16:13:11,"May update ba behind Peñafrancia Shrine, texting while driving?",traffic
-2025-08-08 12:09:07,"Paki-check naman, nagluluto sa maduming bangketa sa Fire Station nakakatakot.",sanitation
-2025-08-08 12:30:48,"sa loob ng Metropolitan Cathedral, ganap sa mnwd water interruption.",utilities
-2025-08-09 01:36:05,walang tunig simula kanina dito.,utilities
-2025-08-09 14:06:33,"sa may NICC Docgors Hospital, please check earthquake assistanve.",social_services
-2025-08-10 05:25:24,"Pansinin niyo to, school supplies distribution sa kanto ng San Francisco Church",social_services
-2025-08-10 05:41:05,"Tanong lang in front of Lerma, many children ang nilalagnat?",health
-2025-08-10 15:27:26,portalet full dito.,sanitation
-2025-08-10 18:05:31,sobrang hina ng signal sa kajto ng City Hall waiting for action.,utilities
-2025-08-11 19:03:15,substation noise sa likod ng Plaza Medica hassle masyado.,utilities
-2025-08-11 22:55:58,FAMILY PLANNING SUPPLIES SA LIKOD NG TABUCO!!!,health
-2025-08-12 12:54:40,kidney transplant assistance sa kanto ng Bagumbayan nakakaabala na.,health
-2025-08-12 17:11:40,"May update ba sa likod ng Dinaga, supplemental feeding program?",social_services
-2025-08-14 09:17:35,"May update ba sa kanto ng Tinago, late registration birth?",social_services
-2025-08-14 21:02:59,"Ask ko lang sa tapat ng Mother Seton Hospital, livestock dispersal?",social_services
-2025-08-14 23:23:21,"Good day, evacuation center status sa tapat ng Peñafrancia",social_services
-2025-08-15 23:06:52,LISTAHAN TANONG ALONG BAGUMBAYAN!!!,social_services
-2025-08-16 06:13:07,lice peste in school along Panicuason,health
-2025-08-16 17:53:37,"Ask ko lang, feeding program request for kids sa likod ng Pacol hassle masyado.",social_services
-2025-08-16 23:06:00,wild monkey aggressive sa may San Isidro paki-ayos please.,public_safety
-2025-08-17 01:52:39,"eye checkup free sa BISCAST, ano na?",health
-2025-08-17 08:58:25,"cctv camera not working sa IPO Naga, plss lang.",infrastructure
-2025-08-17 12:15:24,grass fire spreading dito.,public_safety
-2025-08-18 07:48:38,health certificate fake food sa may Carolina any update?,sanitation
-2025-08-18 23:44:09,"Grabe, tribal hall request sa likod ng Concepcion Grande",social_services
-2025-08-19 01:02:50,birth certificate correction duto.,social_services
-2025-08-19 06:32:08,"Reoort ko lang, ipis infestation sa area sa Sabang ang tagal na nito.",sanitation
-2025-08-19 07:06:36,Notice: insulin for diabetes unavailable sa tapat ng Super Metro,health
-2025-08-19 10:00:51,"Pansinin niyo to, water pipe leak sa kalsada sa tapat ng Super Metro nakakaabala na.",utilities
-2025-08-19 13:55:55,QUARANTINE PROTOCOL INQUIRY SA BALATAS!!!,health
-2025-08-19 23:06:09,"sa tapat ng Bicol Medical Center (BMC), merong modem replacement request.",utilities
-2025-08-19 23:34:43,"Grabe, flu vaccine for seniors sa may Lerma",health
-2025-08-19 23:38:07,"along San Francisco Church, may 4ps delisting reklamo.",social_services
-2025-08-20 04:54:37,"near AMA Computer College, please cieck marriage license requirement.",social_services
-2025-08-20 11:14:01,children's month contest sa kanto ng Tinago High School please action.,social_services
-2025-08-20 12:12:27,floating basura in river in front of LTO Naga aksyonan agad.,sanitation
-2025-08-20 17:24:37,snatching incident sa kamto dito.,public_safety
-2025-08-20 19:23:51,maternal health concdrn dito.,health
-2025-08-20 23:01:06,dumi ng aso sa sidewalk sa labas ng Isarog Family Care,sanitation
-2025-08-21 03:19:19,"FYI, poisoning emergency sa kanto ng Camarines Sur National High School (CamHigh) nakakatakot.",health
-2025-08-21 06:22:20,smoking cessation program sa Dinaga paki-ayos please.,health
-2025-08-21 16:35:44,"Help, electric shock from appliance sa Concepcion Pequeña nakakatakot.",utilities
-2025-08-22 03:54:06,STREET LIGHT FLICKERING ON AND OFF SA LABAS NG IGUALDAD!!!,utilities
-2025-08-22 19:43:08,"Hoy, birthday cash gift for senior in front of Mariners Polytechnic",social_services
-2025-08-23 03:19:20,"sa labas ng Santa Cruz, report ko change name account.",utilities
-2025-08-23 15:22:03,"sa kanto ng Naga Central School, may rabies injection out of stock.",health
-2025-08-23 15:44:00,"Anuna, respiratory infection surge sa labas ng Primark Town Center asap.",health
-2025-08-23 18:21:11,"Mayor, child support demand sa likod ng Concepcion Pequeña",social_services
-2025-08-24 23:55:04,"video karera machine sa likod ng Tabuco, ano na?",public_safety
-2025-08-25 00:21:32,"To whom it may concern, head on collision sa Mabolo kailan ito maaayos?",traffic
-2025-08-25 19:13:42,vomit on sidewalk at Abella any update?,sanitation
-2025-08-26 04:28:41,"nurse malpractice complaint sa labas ng University of Nueva Caceres (UNC), ano na?",health
-2025-08-26 23:58:26,"Good day, annulment process help sa kanto ng Panicuason kailan ito maaayos?",social_services
-2025-08-27 03:59:49,ELECTRIC SHOCK FROM APPLIANCE SA LOOB NG SANTA CRUZ!!!,utilities
-2025-08-28 05:20:21,"sa may Lerma, ganap sa fish port slimy.",sanitation
-2025-08-28 08:13:31,OVERSPEEDING MOTORCYCLE SA LABAS NG DECA HOMES AREA!!!,traffic
-2025-08-28 21:47:18,sobrang baho ng kanal sa labas ng Tinago kailan ito maaayos?,sanitation
-2025-08-28 22:53:35,MURKY RIVER TUBIG ACROSS CONCEPCION PEQUEÑA!!!,sanitation
-2025-08-29 09:52:59,"emergency room full sa kanto ng Police Station 1, hays.",health
-2025-08-29 10:19:22,"sa loob ng Iglesia ni Cristo, merong indigent certification.",social_services
-2025-08-29 18:07:53,"snake bite emergency behind San Isidro, plss lang.",health
-2025-08-30 01:16:19,legal aid free inside Concepcion Grande aksyonan agad.,social_services
-2025-08-30 02:12:47,illegal slaughtering dito.,sanitation
-2025-08-30 03:33:10,"spay and neuter free sa Liboton, grabe.",social_services
-2025-08-30 06:11:05,typhoon victim help sa labas ng Calauag waiting for actiob.,social_services
-2025-08-30 06:22:37,"Report ko lang, hoarding reklamo aling Concepcion Grande",social_services
-2025-08-30 07:51:40,"investment scam sa may Cararayan, hays.",public_safety
-2025-08-30 11:12:48,contractor ran away dito.,infrastructure
-2025-08-30 21:29:38,"high latency ping in front of Bagumbayan, ano na?",utilities
-2025-08-30 23:38:11,"Mayor, pumping station not working sa kanto ng Tabuco ang tagal na nito.",infrastructure
-2025-08-31 13:22:21,"sa kanto ng Mabolo, report ko overpayment refund.",utilities
-2025-08-31 23:50:19,"Help, water truck request sa tapat ng Super Metro",utilities
-2025-09-01 07:20:02,"sa labas ng Dinaga, plesse check veterinary mission.",social_services
-2025-09-02 05:45:46,riding in tandem shooting near Concepcion Peqieña pls fix.,public_safety
-2025-09-02 11:29:05,"rude bus conductor sa labas ng Naga City People's Mall, hays.",traffic
-2025-09-02 11:37:04,"muddy water supply sa loob ng Metro Health, ano na?",sanitation
-2025-09-02 14:15:39,"broken glass in sand sa kanto ng San Isidro, ano na?",sanitation
-2025-09-02 23:41:58,landline noisy static sa loob ng San Francisco Chufch any update?,utilities
-2025-09-04 00:29:08,"Grabe, human waste in river sa likid ng Bicol AccessHealth",sanitation
-2025-09-04 09:45:01,"Hello admin, rusty water form faucet sa likod ng Iglesia ni Cristo kailan ito maaayos?",sanitation
-2025-09-04 20:08:44,"sa likod ng Civic Center, please check eye checkup free.",health
-2025-09-04 22:13:51,"Mayor, van terminal illegal sa may Concepcion Grande",traffic
-2025-09-05 03:50:37,fuse cutout exploded sa Panicuason,utilities
-2025-09-06 01:06:18,"sa kanto ng Liboton, please check grab car unavailable.",traffic
-2025-09-06 03:18:20,"sa Police Station 1, report ko chicken dung smell.",sanitation
-2025-09-06 07:22:31,cash assistance paykut dito.,social_services
-2025-09-07 15:09:45,"Grabe, snatching insidente sa kanto outside WRI College thanks.",public_safety
-2025-09-10 05:03:45,"Report ko lang, family week celebration sa tapat ng Peñafrancia Shrine delikado to.",social_services
-2025-09-10 11:32:35,flies swarming trash sa kanto ng Our Lady of Immaculate Conception paki-ayos please.,sanitation
-2025-09-10 15:54:39,"unannounced tubig kawalan sa kanto ng Metro Health, hays.",utilities
-2025-09-10 18:13:22,"may nag-aaway na lasing sa may Liboton, hays.",public_safety
-2025-09-10 20:25:53,"feathers scattering kalsada sa kanto ng Concepcion Grande, hays.",sanitation
-2025-09-11 02:32:59,"Paki-check naman, gasoline smell residential in front of Our Lady of Immaculate Conception",sanitation
-2025-09-11 13:04:27,"inside Comelec Office, please check bird nest on transformer.",utilities
-2025-09-11 20:34:50,"Hoy, sky cable no signal sa kanto ng Bagumbayan",utilities
-2025-09-12 02:12:26,colorum vehicles operating sa Abella,traffic
-2025-09-12 14:47:56,"packet loss internet sa Public Market, ano na?",utilities
-2025-09-12 16:27:15,street light bulb busted sa kanto ng San Felipe kailan ito maaayos?,utilities
-2025-09-13 05:15:59,"Admin, overpricing complaint sa loob ng Concepcion Grande",social_services
-2025-09-14 02:29:33,"outside Concepcion Grande, merong listahan tanong.",social_services
-2025-09-14 09:18:25,call center hiring sa kanto ng Concepcion Grande,employment
-2025-09-14 09:42:54,HOARDING COMPLAINT SA LOOB NG TRIANGULO!!!,social_services
-2025-09-15 04:06:57,carnappjng insidente sumbong across Carmeoite Monastery asap.,public_safety
-2025-09-15 06:17:40,family week celebration sa may San Francisco asap.,social_services
-2025-09-15 09:30:02,"sa tapat ng Liboton, yung terminal flooring sira.",infrastructure
-2025-09-17 14:04:05,"sa tapat ng Tinago, yung dumi ng aso sa sidewalk.",sanitation
-2025-09-17 20:17:25,"Hello po behind San Francisco Church, vomit on sidewalk?",sanitation
-2025-09-17 21:23:01,"Tanong lang sa labas ng Liboton, electrocution hazard?",public_safety
-2025-09-18 13:19:10,disconnection notice received sa kanto ng Civic Center,utilities
-2025-09-18 19:57:46,"comelec satellite office sa labas ng Cararayan, hays.",social_services
-2025-09-19 05:45:21,"To whom it may concern, mnwd tubig kawalan sa labas ng Dayahgdang",utilities
-2025-09-19 09:18:01,"senior citizen pension delay sa kanto ng Tabuco, hays.",social_services
-2025-09-19 09:20:43,"sa Igualdad, merobg eye checkup free.",health
-2025-09-19 10:54:17,"Help, evacuation center status sa likod ng Puregold waiting for action.",social_services
-2025-09-20 00:29:20,"Hello po sa Concepcion Pequeña, birthday cash gift for senior?",social_services
-2025-09-20 10:10:52,"Hello po at Naga Imaging Center, social pensyon payout iskedyul?",social_services
-2025-09-21 13:31:49,"public attorney office sa likod ng Carolina, plss lang.",social_services
-2025-09-21 22:22:20,"dumudura kung saan saan sa kanto ng Our Lady of Lourdes Infirmary, grabe.",sanitation
-2025-09-22 19:57:23,"lying-in clinic closed sa tapat ng Fire Station, ano na?",health
-2025-09-23 08:08:57,health center dilapidated sa kanto ng San Isidro,health
-2025-09-23 23:43:18,"plastic cups clogging drain sa likod ng St. John Hospital, plss lang.",sanitation
-2025-09-24 06:11:30,"Hello po sa labas ng Pacol, marriage license requirement?",social_services
-2025-09-24 15:10:33,"sa Del Rosario, report ko requesting police visibility.",public_safety
-2025-09-24 20:36:40,"Ask ko lang outside Basulica Minore, towing request?",traffic
-2025-09-24 21:33:21,"cat eyes missing sa loob ng Pacol, hays.",infrastructure
-2025-09-25 08:24:24,street light sensor broken sa labas ng Igualdad delikado to.,utilities
-2025-09-25 14:49:40,faded pedestrian lane markings behind Ago Flundation kailan ito maaayos?,traffic
-2025-09-25 17:23:07,Urgent: vomit on sidewalk sa tapat ng San Francisco Church,sanitation
-2025-09-26 06:49:32,"sa may Pacol, report ko indigent patient assistance.",health
-2025-09-26 08:39:10,"To whom it may concern, fake id usage sa San Jude Thaddeus Parish please action.",public_safety
-2025-09-26 09:04:55,MAGGOTS IN GARBAGE PILE SA BALATAS!!!,sanitation
-2025-09-26 21:37:57,"Paki-check naman, medical equipment defective sa likod ng Santa Cruz any update?",health
-2025-09-28 00:35:33,"sa tapat ng Mabolo, may net metering application.",utilities
-2025-09-28 03:43:51,lost id replacement process dito.,social_services
-2025-09-28 03:55:31,community service inquiry sa Abella,social_services
-2025-09-28 10:59:13,"lifeline rate inquiry sa kanto ng Concepcion Pequeña, ano na?",utilities
-2025-09-28 15:23:43,"sa labas ng City Hall, ganap sa stunting in children survey.",health
-2025-09-28 22:40:05,"Report ko lang, foundling child report sa kanto ng Isarog Family Care",social_services
-2025-09-29 15:29:50,"mobile data slow sa loob ng Brentwood College, plss lang.",utilities
-2025-09-29 20:54:14,"sa likod ng Bagumbayan, merong chemical spill hazard.",public_safety
-2025-09-29 23:46:49,foster care application dito.,social_services
-2025-09-30 05:14:53,"Hello po sa labas ng Our Lady of Immaculate Conception, mobile data slow?",utilities
-2025-09-30 08:13:16,"May update ba sa kanto ng SM City Naga, fire hydrant blocked parking?",traffic
-2025-10-01 02:25:43,"along STI College Naga, merong drug overdose suspicion.",health
-2025-10-01 07:27:35,"Hello po behind Tabuco, pet owners irresponsible?",sanitation
-2025-10-01 11:18:50,"Hello po sa likod ng Calauag, may cut na cqble sa road?",utilities
-2025-10-02 00:59:53,"Tanong lang sa Santa Cruz, drug rehabilitation referrak?",social_services
-2025-10-02 17:38:24,"sa likod ng Bagumbayan, ganap sa wasp nest removal.",public_safety
-2025-10-03 10:10:13,4ps gambling money dito.,social_services
-2025-10-03 15:20:51,"near Bicol Medical Center (BMC), report ko tubig truck request.",utilities
-2025-10-03 18:01:05,"defective solar lights sa may San Francisco Churcv, grabe.",infrastructure
-2025-10-03 18:06:59,"sa may Concepcion Pequeña, banda sa wall leaning.",infrastructure
-2025-10-04 00:21:13,"Tanong lang sa loob ng Igualdad, feathers scattering kalsada?",sanitation
-2025-10-04 06:17:58,solar panel grid tie sa LTO Naga aksyonan agad.,utilities
-2025-10-04 18:57:35,"Ask ko lang, culvert collapsed sa loob ng Gaisano Mall",infrastructure
-2025-10-04 22:05:38,"Tanong lang at Naga Central School, fruit game gambling?",public_safety
-2025-10-05 02:30:52,falling tree branch dito.,public_safety
-2025-10-05 13:27:43,brownout nanaman dito at Sabang,utilities
-2025-10-05 15:44:29,sweldo delay sa loob ng San Francisco Church,employment
-2025-10-05 19:21:54,marumi ang tubig na lumalabas sa gripo dito.,sanitation
-2025-10-05 20:38:07,ROACHES PESTE SA AREA SA BAGUMBAYAN!!!,sanitation
-2025-10-06 02:17:31,"outside City Health Office, yung dead spot area for globe/smart.",utilities
-2025-10-06 06:32:29,"at San Jude Thadceus Parosh, report ko ambulance late.",public_safety
-2025-10-06 16:34:01,"Hello admin, milk feeding program near Dinaga",social_services
-2025-10-07 00:13:05,"no ppe provided inside Sabang, ano na?",employment
-2025-10-07 04:40:33,"May update ba sa loob ng Bicol Medical Center (BMC), meat section unsanitary?",sanitation
-2025-10-08 00:39:44,"Hello po across Bicol Medical Center (BMC), paglinis of public park?",sanitation
-2025-10-08 05:40:34,grass fire spreading dito.,public_safety
-2025-10-09 14:23:33,"in front of Mabolo, ganap sa salisi gang sa mall.",public_safety
-2025-10-09 20:49:56,"walang benefits na binibigay sa likod ng Sabang, hays.",employment
-2025-10-10 12:01:36,cracked na ang wall outside Triangulo ang tagal na nito.,infrastructure
-2025-10-10 17:51:56,muslim community help sa may Mother Seton Hospital thanks.,social_services
-2025-10-10 22:29:25,"Ask ko lang sa tapat ng Metro Health, sand clogging drainage?",sanitation
-2025-10-11 09:11:53,"sa kanto ng Naga City Science High School, banda sa traffic adjudication office.",traffic
-2025-10-11 23:22:11,"sa tapat ng Calauag, ganap sa construction materials on road.",infrastructure
-2025-10-12 07:59:12,"Hello po outside Fire Station, status of scholarship aplikasyon?",social_services
-2025-10-12 12:10:33,termite infested post sa kanto ng Ateneo de Naga any update?,utilities
-2025-10-12 12:41:05,"tubig salty taste across Abella, ano na?",utilities
-2025-10-12 18:19:47,"sa labas ng Robinsons Place, please chrck aids awareness program.",health
-2025-10-12 23:35:45,"Excuse me, cow dung scattering sa kanto ng San Isidro delikado to.",sanitation
-2025-10-13 01:39:37,"Hello po sa likod ng Naga City Science High School, floodway blocked?",infrastructure
-2025-10-13 11:42:27,"feeding program request for kids sa may Cararayan, nakakainis.",social_services
-2025-10-13 23:07:19,"Paki-check naman, accident investigation across Pacol",traffic
-2025-10-13 23:49:08,"Pansinin niyo to, requesting ambulance assistance sa kanto ng San Francisco please action.",health
-2025-10-14 00:04:30,"certificate of residency sa labas ng Comelec Office, nakakainis.",social_services
-2025-10-14 01:10:00,"sa tapat ng Basilica Minore, merong orphanage donation.",social_services
-2025-10-14 02:26:01,"Ask ko lang across Liboton, no helmet motorcycle?",traffic
-2025-10-14 03:14:51,"sky cable no signal sa Camarines Sur National High School (CamHigh), nakakainis.",utilities
-2025-10-14 04:17:27,"hearing aid tulong sa may Del Rosario, ano na?",social_services
-2025-10-14 07:39:11,"Ask ko lang sa likod ng Del Rosario, livestock dispersal?",social_services
-2025-10-14 09:54:41,urban gardening seeds dito.,social_services
-2025-10-14 21:19:47,CARA Y CRUZ ON STREET OUTSIDE OUR LADY OF IMMACULATE CONCEPTION!!!,public_safety
-2025-10-15 07:13:02,lung center referral sa tapat ng Pacol kailan ito maaayos?,health
-2025-10-15 07:29:45,"in front of Bicol AccessHealth, may lighting poor at work.",employment
-2025-10-16 19:47:33,"Excuse me, sparking wires sa poste sa kanto ng Deca Homes area salamat.",utilities
-2025-10-16 21:39:04,"Good day, reconnection fee tanong in front of Civic Center ang tagal na nito.",utilities
-2025-10-17 07:40:51,"birthday cash gift for senior at Metropolitan Cathedral, hays.",social_services
-2025-10-17 14:55:15,"Grabe, fake id usage sa may Santa Cruz",public_safety
-2025-10-17 18:30:20,"sa tapat ng Tabuco, report ko death certificate error.",social_services
-2025-10-18 08:47:11,"Tanong lang behind Dayangdang, historical marker missing?",infrastructure
-2025-10-18 19:38:24,"Hoy, terminal flooring broken sa Igualdad salamat.",infrastructure
-2025-10-19 02:40:36,piggery too close to houses dito.,sanitation
-2025-10-19 07:33:02,"sa loob ng San Isidro, may 4ps delisting reklamo.",social_services
-2025-10-19 10:43:18,"May update ba sa Igualdad, burial tulong request?",social_services
-2025-10-19 17:57:20,packet loss internet dto,utilities
-2025-10-19 22:52:15,knee deep flood sa tapat ng Cararayan thanks.,infrastructure
-2025-10-20 02:10:58,"Hello po in front of Our Lady of Immaculate Conception, madumi utensils in carinderia?",sanitation
-2025-10-20 12:33:54,"Good day, rabies vaccination pet sa labas ng Bagumbayan salamat.",social_services
-2025-10-21 15:17:15,"free tablet for students near Bicol Medical Center (BMC), nakakainis.",social_services
-2025-10-22 03:02:01,annulment process tulong sa may Barangay Hall,social_services
-2025-10-22 03:27:56,overcrowding violation sa loob ng Tinago thanks.,public_safety
-2025-10-23 09:31:52,e-trike regulation sa tapat ng Calauag,traffic
-2025-10-23 17:27:49,"Ask ko lang, basketball court no lights sa kanto ng San Jude Thaddeus Parish",infrastructure
-2025-10-24 01:42:52,"Hello po in front of Basilica Minore, comelec satellite office?",social_services
-2025-10-24 11:29:11,"overcrowding paglabag sa may Dayangdang, ano na?",public_safety
-2025-10-24 19:59:39,"Excuse me, solo parent scholarship sa loob ng Carolina",social_services
-2025-10-25 09:10:05,Urgent: stolen tubig meter sa may Sabang,utilities
-2025-10-25 11:29:23,"sa may Police Station 1, may goat manure on road.",sanitation
-2025-10-25 12:39:51,MOTORCYCLE RIDING CRIMINAL AT BALATAS!!!,public_safety
-2025-10-25 19:52:22,"sa tapat ng St. John Hospital, merong drug test for employment.",employment
-2025-10-27 09:11:33,"May update ba sa labas ng San Francisco Cgurch, kite entangled in wire?",utilities
-2025-10-27 14:19:42,tampered seal meter dito.,utilities
-2025-10-27 17:38:45,"outside Calauag, please check coughing without mask.",sanitation
-2025-10-28 11:12:04,MASS WEDDING ISKEDYUL INSIDE PLAZA MEDICA!!!,social_services
-2025-10-28 20:19:18,Notice: burial assistance request sa labas ng Pacol asap.,social_services
-2025-10-28 20:22:39,"sa Police Station 1, report ko slide rusted.",infrastructure
-2025-10-30 02:00:05,"Hello admin, rotten meat selling sa labas ng Cararayan please action.",sanitation
-2025-10-30 04:22:10,illegal tapping of water sa tapat ng Triangulo ang tagal na nito.,utilities
-2025-10-31 00:08:15,"sa loob ng Super Metro, merong legal aid free.",social_services
-2025-10-31 03:14:30,"Hoy, low water pressure tuwing umaga sa labas ng San Isidro thanks.",utilities
-2025-10-31 15:27:17,generator noise complaint sa Naga City Science High School nakakaabala na.,utilities
-2025-11-01 13:51:41,"Ask ko lang sa likod ng Mariners Polytechnic, positive sa leptospirosis?",health
-2025-11-01 22:54:43,"Hello po sa labas ng Plaza Medica, packet loss internet?",utilities
-2025-11-02 03:46:54,"bad smell from piggery inside Del Rosario, nakakainis.",sanitation
-2025-11-03 01:15:23,"sa loob ng Hall of Justice, ganap sa pwd accessibility ramp.",social_services
-2025-11-03 03:28:56,CONgAINER VAN PARKING SA TAPAT NG BASILICA MINORE!!!,traffic
-2025-11-03 14:38:11,"sa likod ng University of Nueva Caceres (UNC), report ko pedestrian not respected.",traffic
-2025-11-04 00:02:48,"sa may BISCAST, yung open pit danger.",public_safety
-2025-11-04 00:26:27,"Ask ko lang sa kanto ng Pacol, sky cable no signal?",utilities
-2025-11-04 01:11:26,annulment process help sa labas ng Pacol,social_services
-2025-11-04 01:21:49,"Tanong lang sa kanto ng Dinaga, educational assistance payout?",social_services
-2025-11-04 08:07:02,respiratory infection surge sa tapat ng Lerma hassle masyado.,health
-2025-11-04 20:52:53,missing person report dito.,public_safety
-2025-11-05 01:55:54,"vomit on sidewalk sa kabto ng Abella, ano na?",sanitation
-2025-11-05 16:08:58,"Report ko lang, fish port slimy along Metropolitan Cathedral",sanitation
-2025-11-05 16:59:19,"leaking garbage truck juice sa loob ng Peñafrancia, ano na?",sanitation
-2025-11-05 22:10:54,"breastfeeding station unavailable sa Civic Center, nakakainis.",health
-2025-11-06 01:18:55,"sa likod ng Dinaga, banda sa listahan inquiry.",social_services
-2025-11-07 03:14:38,"Grabe, union busting activity sa loob ng Dinaga please action.",employment
-2025-11-07 15:27:00,sign language interpreter sa tapat ng Tabuco,social_services
-2025-11-08 17:24:24,"leaning electric post sa may Mabolo, plss lang.",utilities
-2025-11-09 10:29:11,home for the aged visit sa labas ng SM City Naga,social_services
-2025-11-09 10:53:00,SENIOR CITIZEN PENSION DELAY SA KANTO NG PUREGOLD!!!,social_services
-2025-11-09 14:28:10,"Report ko lang, heavy lifting injury sa loob ng University of Nueva Caceres (UNC) please action.",employment
-2025-11-09 21:27:32,"Ask ko lang sa kanto ng Abella, grocery discount senior?",social_services
-2025-11-10 16:08:45,"Excuse me, mababa ang pasahod sa may San Felipe",employment
-2025-11-10 23:33:47,nutribun distribution sa tapat ng Balatas asap.,social_services
-2025-11-11 06:59:24,"unpaid overfime pay sa likod ng Concepcion Pequeña, ano na?",employment
-2025-11-12 03:33:41,"sa tapat ng Public Market, report ko tuberculosis meds out of stock.",health
-2025-11-12 04:03:39,"sa kanto ng Bicol Medical Center (BMC), banda sa rude bus conductor.",traffic
-2025-11-12 16:58:08,"Tanong lang outside San Isidro, modem replacement request?",utilities
-2025-11-12 17:48:52,"sa loob ng Del Rosario, ganap sa water chlorine smell strong.",utilities
-2025-11-14 07:35:48,"sa tapat ng Del Rosario, report ko paint thinner smell.",sanitation
-2025-11-14 09:25:36,"Tanong lang sa tapat ng San Francisco, burn victim assistance?",health
-2025-11-15 09:00:48,flu vaccine for seniors dto,health
-2025-11-15 18:45:09,"To whom it may concern, flying connection report sa labas ng Tabuco",utilities
-2025-11-16 01:40:16,"outside Our Lady of Lourdes Infirmary, may smoke belching jeep.",traffic
-2025-11-16 08:08:15,"To whom it may concern, lpg explosion danger in front of Cararayan",public_safety
-2025-11-16 08:43:46,"sa Pacol, report ko 4ps pawning cash card.",social_services
-2025-11-16 17:51:05,"across Tabuco, ganap sa senior citizen abuse.",social_services
-2025-11-16 22:54:48,"water refilling station dirty sa loob ng Carolina, hays.",sanitation
-2025-11-17 12:28:06,flooding tuwing umuulan along San Isidro ang tagal na nito.,infrastructure
-2025-11-17 12:40:24,"tambak na basura sa kalsada sa Carolina, hays.",sanitation
-2025-11-17 15:55:25,"sa tapat ng Carolina, merong relocation of post request.",utilities
-2025-11-18 02:44:03,"Good day, silt in river sa loob ng Abella ang tagal na nito.",sanitation
-2025-11-18 06:42:27,"death certificate error sa tapat ng San Felipe, nakakainis.",social_services
-2025-11-18 06:49:36,food poisoning incudent dito.,health
-2025-11-18 07:17:11,"sa tapat ng Cararayan, ganap sa may nakagat ng dog.",health
-2025-11-18 22:07:25,"sa likod ng Metropolitan Cathedral, ganap sa low tjbig pressure tuwing umaga.",utilities
-2025-11-19 11:34:13,"overpricing complaint sa may Isarog Fzmily Care, grabe.",social_services
-2025-11-19 15:08:04,legal aid free along Dinaga delikado to.,social_services
-2025-11-19 18:24:01,"Pansinin niyo to, grease trap overflow sa likod ng Calauag",sanitation
-2025-11-19 20:44:11,kulang ang binigay na relief goods dito.,social_services
-2025-11-19 23:24:48,"FYI, positive sa leptospirosis sa labas ng BISCAST hassle masyado.",health
-2025-11-19 23:31:56,"prime water complaint sa Carolina, grabe.",utilities
-2025-11-20 17:21:57,pubkic toilet walang tubig at madumi dito.,sanitation
-2025-11-21 09:13:56,Urgent: spitting momma everywhere sa Naga City Hospital,sanitation
-2025-11-21 15:28:58,senior citizen discount utility sa tapat ng Basilica Minore,utilities
-2025-11-22 12:12:15,internet slow speed along Dinaga paki-ayos please.,utilities
-2025-11-23 06:47:03,"sa loob ng Naga Parochiql School, banda sa fainting incident in public.",health
-2025-11-23 10:18:16,braille materials request sa loob ng Pacol kailan ito maaayos?,social_services
-2025-11-24 20:48:49,"Hello po sa loob ng San Jude Thaddeus Parish, food pack distribution?",social_services
-2025-11-25 07:38:30,casureco brownout schedule sa likod ng Igualdad,utilities
-2025-11-25 10:51:27,"sa may Capitol, merong solo parent benefits inquiry.",social_services
-2025-11-25 17:51:25,DUMUDURA KUNG SAAN SAAN SA LIBOTON!!!,sanitation
-2025-11-26 11:46:10,"sa tapat ng Cararayan, may annulment process help.",social_services
-2025-11-26 18:57:43,"riverbank eroding near Holy Cross Parish, hays.",infrastructure
-2025-11-27 04:48:36,"senior citizen abuse sa kanto ng San Jude Thaddeus Parish, plss lang.",social_services
-2025-11-27 06:59:57,"Ask ko lang sa San Jude Thaddeus Parish, senior citizen pension delay?",social_services
-2025-11-27 10:07:44,tambak na basura sa kalsada sa labas ng San Isidro kailan ito maaayos?,sanitation
-2025-11-27 10:10:29,"no water in second floor sa Dayangdang, nakakainis.",utilities
-2025-11-27 11:27:21,"sa loob ng Triangulo, ganap sa food pack distribution.",social_services
-2025-11-27 18:13:55,child abuse report sa kanto ng Pacol pls fix.,social_services
-2025-11-29 13:12:16,"solo parent scholarship sa tapat ng Concepcion Grande, nakskainis.",social_services
-2025-11-29 14:14:18,"Ask ko lang sa Mabolo, ambulance late?",public_safety
-2025-11-29 15:32:23,missing channels cable dito.,utilities
-2025-11-29 22:49:14,"pwd accessibility ramp sa Liboton, hays.",social_services
-2025-11-30 14:04:22,"Mayor, missing channels cable sa may LTO Naga",utilities
-2025-11-30 15:12:18,"Hello po sa loob ng Dayangdang, no water in second floor?",utilities
-2025-12-01 01:52:55,"sa kanto ng Capitol, ganap sa cement mixer spill.",sanitation
-2025-12-01 07:22:34,"supplemental feeding program sa Carmelite Monastery, ano na?",social_services
-2025-12-01 12:45:42,"May update ba sa loob ng Super Metro, electric shock from appliance?",utilities
-2025-12-01 13:34:35,"Good day, octopus connection fire hazard sa kanto ng Gaisano Mall",utilities
-2025-12-02 10:44:13,"sa loob ng Holy Cross Parish, please check wrong reading electric meter.",utilities
-2025-12-02 10:48:33,"unfinished road works causing traffic sa Ago Foundation, ano na?",infrastructure
-2025-12-02 16:56:51,covered court roof hole dito.,infrastructure
-2025-12-02 17:05:02,4ps pawning cash card dto,social_services
-2025-12-03 10:48:31,sign language interpreter dito.,social_services
-2025-12-04 00:03:51,"Ask ko lzng, lice infestation in school sa loob ng LCC Mall",health
-2025-12-04 05:43:30,playground equipment broken sa may Santa Cruz,infrastructure
-2025-12-04 10:23:06,fire alarm false sa loob ng Ateneo de Naga hassle masyado.,public_safety
-2025-12-04 13:44:46,"dumi ng dog sa sidewalk along Concepcion Pequeña, grabe.",sanitation
-2025-12-04 15:58:46,signal jammer suspicion across San Isidro hassle masyado.,utilities
-2025-12-04 19:19:04,"sa kanto ng Abella, please check rotational brownout complaint.",utilities
-2025-12-04 22:07:50,"cracked concrete pavement along Abella, ano na?",infrastructure
-2025-12-05 13:13:25,MADUMI ICE PLANT SA KANTO NG CALAUAG!!!,sanitation
-2025-12-05 22:04:35,"sa may Tabuco, ganap sa family week celebration.",social_services
-2025-12-06 21:48:11,"Hello po sa San Francisco, ang deep ng potholes sa road?",infrastructure
-2025-12-07 00:28:55,"sa Public Markey, report ko lifeline rate inquiry.",utilities
-2025-12-07 01:47:06,4ps pswning cash card sa labas ng Dinaga,social_services
-2025-12-07 17:46:11,"near Dinaga, merong illegal tapping of tubig.",utilities
-2025-12-08 04:04:09,"sa kanto ng Naga City Science High School, report ko towing reauest.",traffic
-2025-12-08 05:59:57,"medicine discount senior near Carmelite Monastery, grabe.",social_services
-2025-12-10 10:57:37,"outside Comelec Office, please check prenatal checkup iskedyul.",health
-2025-12-10 19:24:31,"Ask ko lang, lighting poor at work sa kanto ng Peñafrancia paki-ayos please.",employment
-2025-12-10 22:00:53,shocking electricity bill amount sa tapat ng St. John Hospital,utilities
-2025-12-10 22:29:16,"May update ba sa tapat ng Concepcion Pequeña, maggots in garbage pile?",sanitation
-2025-12-11 03:56:42,"Ask ko lang sa labas ng Deca Homes area, child support demand?",social_services
-2025-12-11 08:25:24,INQUIRY FOR DOLE TUPAD PROGRAM SA CARARAYAN!!!,employment
-2025-12-11 19:21:56,"sa kanto ng Concepcion Pequeña, please check tambak na basura sa kalsada.",sanitation
-2025-12-12 09:38:29,"sa labas ng Mariners Polytechnic, banda sa suicide prevention tulong.",health
-2025-12-13 09:21:34,"police response slow sa likod ng University of Nueva Caceres (UNC), plss lang.",public_safety
-2025-12-13 09:26:56,"voter registration schedule sa LTO Naga, nakakainis.",social_services
-2025-12-13 13:20:07,"ambulance late sa Mabolo, ano na?",public_safety
-2025-12-14 09:51:10,"sa lilod ng Basilica Minore, please check cgild custody tulong.",social_services
-2025-12-15 03:45:15,"sa labas ng Carolina, please check drowning risk in river.",public_safety
-2025-12-16 04:29:16,"Good day, generator smoke reklamo sa tapat ng Naga College Foundation (NCF)",utilities
-2025-12-16 06:06:02,STATUS OF SCHOLARSHIP APPLICATION SA LABAS NG SABANG!!!,social_services
-2025-12-16 11:16:15,no entry violation reports dito.,traffic
-2025-12-16 14:35:29,"Help, unannounced water interruption sa likod ng Bicol Central Station delikado to.",utilities
-2025-12-16 14:48:12,"Report ko lang, tertorist suspicion sa Concepcion Grande nakakaabala na.",public_safety
-2025-12-16 14:50:37,foster care application dito.,social_services
-2025-12-16 17:50:28,"sa kanto ng Igualdad, report ko truck ban tanong tike.",traffic
-2025-12-16 23:12:09,volunteer program join across San Felipe nakakatakot.,social_services
-2025-12-17 01:17:53,"sa Calauag, report ko electric shock from appliance.",utilities
-2025-12-18 03:59:33,"Report ko lang, rehab center referral sa kanto ng Unitop",health
-2025-12-18 05:44:32,illegal jumper cknnection sumbong dito.,utilities
-2025-12-18 21:04:22,"Paki-check naman, pwd discrimination sa kanto ng Dinaga",social_services
-2025-12-19 04:22:01,"Mayor, volunteer pfogram join sa may Lerma nakakatakot.",social_services
-2025-12-20 12:09:59,"Grabe, people defecating in riber sa tapat ng San Felipe",sanitation
-2025-12-20 14:46:44,"Hslp, rat bite concern sa loob ng Peñafrancia please action.",health
-2025-12-20 15:17:55,"manhole walang takip sa loob ng Carolina, nakakainis.",infrastructure
-2025-12-20 19:05:21,"sa tapat ng Calauag, ganap sa multiple vehicle collision.",traffic
-2025-12-21 04:29:27,"inside San Isidro, ganap sa street children rescue.",social_services
-2025-12-21 08:39:04,drainage cover is missing sa tapat ng Mariners Polytechnic nakakaabala na.,infrastructure
-2025-12-21 13:55:36,"sa likod ng Mabolo, yung calamity loan inquiry.",social_services
-2025-12-22 02:15:32,children's month contest dito.,social_services
-2025-12-22 03:35:45,"Hello admin, colorum vehicles operating in front of Tinago",traffic
-2025-12-22 09:43:26,RENOVATION REQUEST SA KANTO NG CITY HEALTH OFFICE!!!,infrastructure
-2025-12-22 15:52:00,"Tanong lang sa loob ng Concepcion Grande, grass cutting request?",sanitation
-2025-12-23 13:15:54,"Good day, medicine discount senior sa may Tinago nakakaabala na.",social_services
-2025-12-23 15:06:51,"sa labas ng NICC Doctors Hospital, please cjeck goat manure on rpad.",sanitation
-2025-12-24 06:25:01,"illegal gambling tupada sa Del Rosario, grabe.",public_safety
-2025-12-24 20:31:04,family week celebration dito.,social_services
-2025-12-25 09:29:20,animals crossing kalsada across Balatas,traffic
-2025-12-25 18:27:39,street light bulb busted inside City Hall,utilities
-2025-12-25 21:30:22,wild monkey aggressive sa kanto ng San Felipe,public_safety
-2025-12-26 01:29:51,Notice: loose gravel on road sa labas ng Liboton nakakaabala na.,traffic
-2025-12-26 03:57:28,"veterinary mission sa likod ng Concepcion Grande, nakakainis.",social_services
-2025-12-27 00:07:51,"sand clogging drainage across Carolina, plss lang.",sanitation
-2025-12-27 04:12:13,"vawc desk tulong needed near Calauag, hays.",social_services
-2025-12-27 09:12:19,"sa loob ng San Francisco Church, banda sa stampede risk.",public_safety
-2025-12-27 16:52:42,"Mayor, smoke alarm broken sa labas ng Peñafrancia hassle masyado.",public_safety
-2025-12-28 02:19:08,grass fire spreading dito.,public_safety
-2025-12-28 06:48:46,"braille materials request behind Cararayan, plss lang.",social_services
-2025-12-28 12:55:18,Notice: no sanitary permit business sa loob ng Bicol Central Station,sanitation
-2025-12-28 13:06:38,"illegal tapping of water sa loob ng Panicuason, hays.",utilities
-2025-12-28 23:10:05,termite infested post sa loob ng Carolina,utilities
-2025-12-29 00:10:46,"sa likod ng STI College Naga, merong fire exit locked.",public_safety
-2025-12-29 00:51:16,"sa tapat ng Camarines Sur National High Schoil (CamHigh), ganap sa tumatanggap ba ng security guard.",employment
-2025-12-29 02:29:53,rrckless driving report sa loob ng Liboton waiting for action.,traffic
-2025-12-29 06:47:00,sobrang hina ng signal sa San Francisco Church kailan ito maaayos?,utilities
-2025-12-29 16:44:29,"grass cutging request sa may NICC Doctors Hospital, ano na?",sanitation
-2025-12-29 19:46:11,street light sensor broken sa Pacol,utilities
-2025-12-30 01:01:33,"Hello po sa may Bagumbayan, converge no internet?",utilities
-2025-12-30 06:44:15,"FYI, depression hotline inquiry sa labas ng Balatas asap.",health
-2025-12-30 12:04:56,"fluctuating ang kuryente sa loob ng Lerma, plss lang.",utilities
-2025-12-31 01:03:06,"Excuse me, fire alarm false sa Igualdad",public_safety
-2025-12-31 10:13:10,"Grabe, bee hive dangerous sa likod ng Igualdad",public_safety
+2025-07-01 15:44:09,"Help, murky river tubig sa loob ng Comelec Office thanks.",sanitation
+2025-07-02 01:41:30,"Anuna, madumi apron food vendor behind Dayangdang",sanitation
+2025-07-02 04:18:22,"loading/unloading paglabag inside Iglesia ni Cristo, grabe.",traffic
+2025-07-02 09:53:19,"May update ba outside Abella, 911 not answering?",public_safety
+2025-07-02 14:06:50,"Admin, throw trash kahit saan inside Balatas pls fix.",waste_management
+2025-07-03 12:41:59,"sa kanto ng Holy Cross Parish, merong u-turn violation.",traffic
+2025-07-03 13:04:49,"sa labas ng Calauag, merong street light flickering on and off.",utilities
+2025-07-03 13:38:16,people defecating in river sa likod ng Ago Foundation any update?,sanitation
+2025-07-04 10:25:36,NASIRA GAMIT SA FLOOD SA LOOB NG LCC MALL!!!,social_services
+2025-07-04 15:19:00,"dugo-dugo gang sa labas ng Sabang, hays.",public_safety
+2025-07-04 20:35:05,"Paki-check naman, illegal possession of firearms sa likod ng STI College Naga delikado to.",public_safety
+2025-07-04 22:48:53,"sa tapat ng Bagumbayan, may endo contract renewal.",employment
+2025-07-05 02:00:51,"overzeas employment listing across Unitop, ano na?",employment
+2025-07-05 06:23:11,"flash flood alert sa labas ng Mariners Polytechnic, ano na?",public_safety
+2025-07-05 13:41:28,"dogs scattering basura inside Plaza Medida, grabe.",waste_management
+2025-07-05 19:16:31,"sa may Triangulo, poease check flying connection report.",utilities
+2025-07-06 03:11:59,"Help, busted ang steeet lights, madilim sa loob ng Dinaga pls fix.",infrastructure
+2025-07-06 05:53:36,"Excuse me, illegal gambling tupada outside Tinago",public_safety
+2025-07-06 14:15:50,"sa kanto ng Ago Foundation, please check pest control in barangay hall.",sanitation
+2025-07-06 21:14:51,bukas kotse gang inside Concepcion Pequeña asap.,public_safety
+2025-07-07 03:13:14,no tubig in second floor sa labas ng Cararayan any update?,utilities
+2025-07-07 15:08:44,"sa kanto ng Cararayan, yung low lying wures.",utilities
+2025-07-07 20:28:17,"drainage disconnected sa loob ng Fire Station, ano na?",infrastructure
+2025-07-08 05:56:40,"Tanong lang inside Super Metro, seesaw sira?",infrastructure
+2025-07-08 06:10:40,"across Panicuason, merong tsunami alert siren.",public_safety
+2025-07-08 09:23:42,"in front of Bapatas, banda sa high tubig bill.",utilities
+2025-07-08 09:44:46,"Hello admin, sobrang ingay ng videoke sa loob ng San Felipe",public_safety
+2025-07-08 17:26:35,marriage license requirement sa may Del Rosario paki-ayos please.,social_services
+2025-07-08 23:02:01,"Admin, scaffolding collapse sa tapat ng University of Nueva Caceres (UNC) nakakatakot.",public_safety
+2025-07-08 23:16:13,"Pansinin niyo to, toxic boss sumbong near San Francisco delikado to.",employment
+2025-07-09 03:08:42,hindi dumaan ang garbage truck dito.,waste_management
+2025-07-09 10:35:11,"budol-budol gang along Naga College Foundation (NCF), plss lang.",public_safety
+2025-07-09 14:52:20,"Ask ko lang sa Metropolitan Cathedral, no entry violation reports?",traffic
+2025-07-09 19:16:17,"Ask ko lang sa likod ng Civic Center, mosquito breeding ground?",sanitation
+2025-07-09 23:18:43,disaster preparedness seminar sa kanto ng Abella,social_services
+2025-07-10 11:09:21,"sa likod ng Calauag, report ko structural integrity doubt.",infrastructure
+2025-07-10 13:59:36,BARANGAY HEALTH WORKER RUDE SA LIKOD NG SABANG!!!,health
+2025-07-10 15:23:55,online scammer location sa likod ng Tabuco thanks.,public_safety
+2025-07-10 16:48:45,MARRIAGE LICENSE REQUIREMENT SA SAN FRANCISCO!!!,social_services
+2025-07-10 23:04:14,legal aid free sa kanto ng Carmelite Monastery delikado to.,social_services
+2025-07-12 10:12:45,"Ask ko lang, pldt down no service sa may Naga College Foundation (NCF)",utilities
+2025-07-12 16:04:54,BACKYARD PIGGERY SMELL SA KANTO NG NAGA CITY HOSPITAL!!!,sanitation
+2025-07-12 16:05:01,"sa ksnto ng San Felipe, merong traffic enforcer nangongotong.",traffic
+2025-07-12 16:17:55,"sa likod ng Hall of Justice, merong aspalto natutunaw.",infrastructure
+2025-07-13 14:55:37,TERMINAL FLOORING BROKEN SA TAPAT NG ABELLA!!!,infrastructure
+2025-07-14 04:21:09,"no attending physician sa loob ng Calauag, nakakainis.",health
+2025-07-14 06:47:31,"across LCC Mall, please check vawc restraining order.",social_services
+2025-07-15 10:36:05,"laptop loan for teachers sa labas ng San Isidro, grabe.",social_services
+2025-07-16 15:24:38,"skin rashes outbreak sa likod ng Dinaga, ano na?",health
+2025-07-16 16:04:35,"crosswalk blocked sa likod ng Bicol AccessHealth, grabe.",traffic
+2025-07-16 18:28:06,landline noisy static sa labas ng Dayangdang pski-ayos please.,utilities
+2025-07-17 16:51:41,HEAT STROKE VICTIM SA MAY LIBOTON!!!,health
+2025-07-18 13:36:50,"May update ba at Vista Mall, animals crossing kalsada?",traffic
+2025-07-18 17:02:58,"Paki-check naman, high water bill sa may Cararayan",utilities
+2025-07-19 02:16:14,"sa loob ng Carolina, report ko motornapping incident.",public_safety
+2025-07-19 03:53:55,Notice: recycling inquiry sa likod ng Carmelite Monastery pls fix.,waste_management
+2025-07-19 14:15:38,fainting incident in public dito.,health
+2025-07-19 14:17:24,Urgent: salary antala sa labas ng Robinsons Place please action.,employment
+2025-07-19 18:17:12,laptop loan for teachers dito.,social_services
+2025-07-19 23:07:04,lifeline rate inquiry sa may Public Market thanks.,utilities
+2025-07-20 13:21:41,"sa Triangulo, merong untegistered vehicle.",traffic
+2025-07-20 18:52:51,wild monkey aggressive sa loob ng Abella,public_safety
+2025-07-20 22:14:54,SPARKING WIRES SA POSTE SA LABAS NG BRENTWOOD COLLEGE!!!,utilities
+2025-07-21 05:09:12,"birthday cash gift for senior sa kanto ng Bicol AccessHealth, ano na?",social_services
+2025-07-21 19:20:11,"sa may Concepcion Grande, banda sa deep well permit inquiry.",utilities
+2025-07-21 19:21:07,"FYI, community service inquiry sa Mother Sefon Hospital pls fix.",social_services
+2025-07-21 19:25:57,e-waste disposal where sa may Liboton ang tagal na nito.,waste_management
+2025-07-22 03:44:50,"across St. John Hospital, may brownout nanaman dito.",utilities
+2025-07-22 11:20:33,"To whom it may concern, heat stroke victim sa kanto ng Barangay Hall nakakatakot.",health
+2025-07-23 01:08:14,"Hoy, cement curing too long sa Bagumbayan paki-ayos pls",infrastructure
+2025-07-23 02:55:30,"substation noise sa Holy Cross Parish, nakakainis.",utilities
+2025-07-23 11:04:32,"Ask ko lang sa likod ng Ateneo de Nagq, malasakit center requirements?",health
+2025-07-23 18:07:17,"Hoy, solo parent id renewal sa kanto ng Puregold",social_services
+2025-07-23 21:29:03,"sa Isarog Family Care, report ko sira ang traffic light.",traffic
+2025-07-23 21:44:14,"relocation of post request behind Gaisano Mall, nakakainis.",utilities
+2025-07-24 10:23:04,BARANGAY CLEARANCE FEE SA LIKOD NG SAN FRANCISCO!!!,social_services
+2025-07-25 05:35:45,"sa kanto ng Calauag, banda sa lighting poor at work.",employment
+2025-07-25 18:11:53,"Ask ko lang, social pension payout schedule sa kanto ng Naga City Hospital asap.",social_services
+2025-07-26 01:23:57,handling food with bare hands sa loob ng Pacol ang tagal na nito.,sanitation
+2025-07-26 05:04:07,"Ask ko lang at San Isidro, pwd accessibility ramp?",social_services
+2025-07-26 07:24:15,rapidly rising water sa may Taguco nakakatakot.,public_safety
+2025-07-27 09:52:57,"Ask ko lang sa labas ng Liboton, flies swarming trash?",sanitation
+2025-07-28 06:00:12,"mababa ang pasahod behind Pacol, hays.",employment
+2025-07-28 11:28:38,"Excuse me, pest control in barangay hall sa labas ng Lerma kailan ito maaayos?",sanitation
+2025-07-28 21:22:08,"Good day, very weak ng signal behind Peñafrancia Shrine",utilities
+2025-07-29 04:20:21,"Ask ko lang sa loob ng Carmelite Monastery, food poisoning insidente?",sanitation
+2025-07-29 04:41:12,ang lalim ng lubak sa daan sa loob ng Tinago thanks.,infrastructure
+2025-07-29 14:10:19,"Pansinin niyo to, urine smell underpass sa Holy Cross Parish waiting for action.",sanitation
+2025-07-30 05:45:17,solar panel grid tie sa likod ng Comelec Office asap.,utilities
+2025-07-30 11:37:13,nagnakaw ng motor dito.,public_safety
+2025-07-30 18:31:50,"May update ba across Unitop, organ donor tanong?",health
+2025-07-30 18:51:33,"sa kanto ng Mabolo, may spitting momma everywhere.",sanitation
+2025-07-31 02:37:53,"sa kanto ng Plaza Medica, ganap sa 4ps pawning cash card.",social_services
+2025-07-31 15:12:55,barangay health worker rude dito.,health
+2025-07-31 21:54:00,libre sakay schedule dito.,traffic
+2025-08-01 05:16:16,"sa loob ng Bicol AccessHealth, report ko signal jammer suspicion.",utilities
+2025-08-01 09:12:14,uniform allowance student dito.,social_services
+2025-08-01 13:08:08,BICYCLE LANE BLOCKED INSIDE SANTA CRUZ!!!,traffic
+2025-08-01 22:09:19,cockroach in restaurant outside San Felipe salamat.,sanitation
+2025-08-02 00:24:38,"respiratory infection surge sa likod ng Calauag, plss lang.",health
+2025-08-02 18:16:22,ASPALTO NATUyUNAW SA LIKOD NG POLICE STATION 1!!!,infrastructure
+2025-08-04 14:26:51,"rabies vaccination pet near San Isidro, ano na?",social_services
+2025-08-04 16:02:33,flood control failure dito.,infrastructure
+2025-08-04 19:09:58,"Excuse me, rabies vaccination pet sa likod ng Peñafrancia paki-ayos please.",social_services
+2025-08-05 11:05:09,trash patrol sumbong dito.,waste_management
+2025-08-05 19:22:09,"stolen water meter sa loob ng San Felipe, plss lang.",utilities
+2025-08-06 14:22:21,HUMAN WASTE IN RIVER SA IGLESIA NI CRISTO!!!,sanitation
+2025-08-06 17:35:08,"biodegradable not collected sa Carmelite Minastery, hays.",waste_management
+2025-08-07 14:31:26,"May update ba sa may Triangulo, overloading trocycle?",traffic
+2025-08-07 20:32:12,"Tanong lang sa kanto ng Puregold, styrofoam pollutipn?",waste_management
+2025-08-07 21:33:26,"Tanong lang sa loob ng Hall of Justice, plastic straw ban inquiry?",waste_management
+2025-08-07 22:52:24,"sa likod ng Basilica Minore, merong impassable kalsada due to baha.",traffic
+2025-08-08 11:09:24,milk feeding program sa kanto ng Del Rosario paki-ayos please.,social_services
+2025-08-08 11:31:02,"FYI, encroachment on sidewalk sa tapat ng Camarines Sur National High School (CamHigh)",infrastructure
+2025-08-09 12:00:30,tree touching wire inside Naga College Foundation (NCF) please action.,utilities
+2025-08-09 20:41:22,Notice: landline noisy static outside Our Lady of Immaculate Conception hassle masyado.,utilities
+2025-08-10 07:07:12,tampered seal meter sa likod ng LCC Mall salamat.,utilities
+2025-08-10 10:35:25,"tricycle overcharging fare sa loob ng Tabuco, hays.",traffic
+2025-08-10 11:10:00,"Anuna, mnwd water interruption sa kanto ng Santa Cruz delikado to.",utilities
+2025-08-10 11:16:09,status of scholarship aplikasyon outside NICC Doctors Hospital thanks.,social_services
+2025-08-11 04:22:05,solo parent id renewal sa may Triangulo,social_services
+2025-08-11 13:21:30,"Tanong lang sa likod ng Ldrma, nlrc case filing?",employment
+2025-08-12 03:41:11,"Grabe, prime tubig reklamo at Dinaga salamat.",utilities
+2025-08-12 09:34:06,adoption process inquiry dito.,social_services
+2025-08-12 21:08:46,"tampered seal mwter sa labas ng Metro Health, plss lang.",utilities
+2025-08-12 22:21:08,"Paki-check naman, no water in second floor sa tapat ng Deca Homes area",utilities
+2025-08-13 22:20:34,DEAD SPOT AREA FOR GLOBE/SMART SA LIKOD NG DEL ROSARIO!!!,utilities
+2025-08-14 16:07:19,"dirty apron food vendor sa Cararayan, plss lang.",sanitation
+2025-08-14 19:57:58,"Ask ko lang, chemotherapy financial aid sa tapat ng Naga Central School",health
+2025-08-14 21:27:52,SPAY AND NEUTER FREE AT AGO FOUNDATION!!!,social_services
+2025-08-14 23:32:49,CONSUMER COMPLAINT DTI SA MAY BAGUMBAYAN!!!,social_services
+2025-08-15 05:03:11,cable tv fuzzy dito.,utilities
+2025-08-15 08:17:14,BUILDING CODE VIOLATION SA MAY SAN ISIDRO!!!,infrastructure
+2025-08-16 04:04:19,"portalet full near Sabang, hays.",sanitation
+2025-08-16 05:59:05,"To whom it may concern, hair in food complaint sa labas ng Bicol Medical Center (BMC) asap.",sanitation
+2025-08-16 17:14:07,"Paki-check naman, tetanus shot request inside Public Marlet pls fix.",health
+2025-08-16 21:02:26,"wasp nest removal sa tapat ng Cararayan, grabe.",public_safety
+2025-08-17 01:25:27,portalet full across Naga City Hospital,sanitation
+2025-08-17 09:02:57,indigent certification sa tapat ng Igualdad ang tagal na nito.,social_services
+2025-08-17 10:56:19,"To whom it may concern, spay and neuter free sa tapat ng Panicuxson",social_services
+2025-08-17 11:46:16,"sa tapat ng Gaisano Mapl, banda sa styrofoam pollution.",waste_management
+2025-08-17 22:52:04,"Hello admin, marriage license requirement sa likod ng Triangulo waiting for action.",social_services
+2025-08-18 09:31:50,"Hello po sa tapat ng Cararayan, handling food with bare hands?",sanitation
+2025-08-19 03:47:36,stampede risk sa labas ng Holy Cross Parish,public_safety
+2025-08-19 06:04:00,"sa loob ng San Francisco, please check scabies infection in kids.",health
+2025-08-19 09:56:34,"termite infested post sa loob ng Calauag, grabe.",utilities
+2025-08-19 16:46:28,"sign language interpreter sa kanto ng Concepcion Pequeña Elfmentary School, hays.",social_services
+2025-08-19 18:36:56,"May update ba sa tapat ng Dinaga, stagnant water in tires?",sanitation
+2025-08-20 18:56:21,"Hello po sa Capitol, recyclable collection schedule?",waste_management
+2025-08-21 22:27:20,"sa likod ng Concepcion Grande, report ko worms in tap water.",sanitation
+2025-08-22 18:51:18,"Hello admin, post obstructing way sa Bagumbayan",infrastructure
+2025-08-22 21:22:44,"sa Iglesia ni Cfisto, report ko leaking garbage truck juice.",sanitation
+2025-08-23 18:50:50,"across Liboton, may budget for kalsada missing.",infrastructure
+2025-08-24 08:22:37,"Grabe, dental services unavailable along Sabang aksyonan agad.",health
+2025-08-25 03:53:31,"sa kanto ng Carolina, may illegal slaughtering.",sanitation
+2025-08-25 13:26:27,"bevind Peñafrancia Shrine, merong cracked concrete pavement.",infrastructure
+2025-08-26 04:12:30,"Hello po in front of San Francisco, accident investigation?",traffic
+2025-08-26 06:02:37,"To whom it may concern, binaha ang house kailangan relief goods at Holy Cross Parish waiting for action.",social_services
+2025-08-26 23:48:54,dirty apron food vendor dito.,sanitation
+2025-08-27 00:03:35,RED CROaS BLOOD DRIVE SA LIKOD NG PEÑAFRANCIA!!!,social_services
+2025-08-27 03:20:10,grabe ang traffic ngayon sa kanto ng San Isidro,traffic
+2025-08-27 03:52:59,leaking garbage truck juice dito.,sanitation
+2025-08-28 09:03:57,dumudura kung saan saan dito.,sanitation
+2025-08-28 09:17:05,illegal structure on road sa tapat ng LTO Naga hassle masyado.,infrastructure
+2025-08-28 10:37:59,"Pansinin niyo to, vomit on sidewalk sa likod ng Pacol asap.",sanitation
+2025-08-28 13:28:16,NIGHT DIFFERENTIAL MISSIhG SA KANTO NG CONCEPCION GRANDE!!!,employment
+2025-08-30 06:01:36,people defecating in river sa kanto ng San Jude Thaddeus Parish hassle masyado.,sanitation
+2025-08-30 08:00:24,"generator smoke complaint sa labas ng Liboton, hays.",utilities
+2025-08-30 08:24:36,"sa Liboton, plexse check women's month activity.",social_services
+2025-08-30 10:58:49,"Hello po sa kanto ng Dayangdang, crosswalk blocked?",traffic
+2025-09-01 07:47:41,"Grabe, nurae shift reklamo sa loob ng Balatas",health
+2025-09-01 11:06:57,"termite infested post sa tapat ng Lerma, hays.",utilities
+2025-09-01 14:49:18,DRAINAGE DISCONNECTED SA LOOB NG SABANG!!!,infrastructure
+2025-09-01 14:54:58,"sa labas ng Santa Cruz, may ticket contestation.",traffic
+2025-09-01 19:34:10,"sa loob ng Sabang, banda sa rotting garbage smell.",sanitation
+2025-09-01 20:02:04,"sa may Concepcion Grande, please check truck hit wire.",utilities
+2025-09-02 02:05:27,Urgent: volunteer program join sa likod ng Civic Center ang tagal na nito.,social_services
+2025-09-02 03:54:22,"Mayor, air lock in tubig pipe sa tapat ng Cararayan delikado to.",utilities
+2025-09-02 11:56:48,"senior citizen pension delay sa Mabolo, nakakainis.",social_services
+2025-09-02 14:35:26,"sa Panicuason, ganap sa not passable to light vehicles.",traffic
+2025-09-02 16:06:23,"sa likod ng Carolina, merong cable tv fuzzy.",utilities
+2025-09-02 19:23:23,"fingerlings dispersal sa likod ng AMA Computer College, nakakainis.",social_services
+2025-09-02 22:04:17,"sa tapat ng Triangulo, ganap sa sexual harassment at work.",employment
+2025-09-03 06:17:12,fainting insidente in public sa labas ng SM City Naga,health
+2025-09-04 00:45:54,"summer job application form sa tapat ng Hall of Justice, hays.",employment
+2025-09-04 14:19:19,"sa may Naga City Hospital, banda sa lifeline rate inquiry.",utilities
+2025-09-04 16:04:50,"sa may Dayangdang, please check container van parking.",traffic
+2025-09-05 01:18:18,WOMEN'S MONTH ACTIVITY SA LIKOD NG LIBOTON!!!,social_services
+2025-09-05 05:07:47,"near Calauzg, merong ambulance late.",public_safety
+2025-09-05 14:21:55,"Hello admin, blood donation drive iskedyul at Lerma",health
+2025-09-05 16:50:26,reconnection fee inquiry dito.,utilities
+2025-09-06 00:41:36,fuse cutout exploded sa labas ng Civic Center,utilities
+2025-09-07 04:31:33,"supplemental feeding program sa loob ng Basilica Minore, plss lang.",social_services
+2025-09-07 06:41:58,"near Our Lady of Immaculate Conception, banda sa death certificate error.",social_services
+2025-09-07 09:58:50,"sa tapat ng Lerma, yung bato-bato sa sasakyan.",public_safety
+2025-09-07 17:36:57,hazardous waste disposal dito.,waste_management
+2025-09-07 22:05:12,"Grabe, crane blocking view sa may Bicol Medical Center (BMC) aksyonan agad.",infrastructure
+2025-09-08 01:11:52,crocodile sighting dito.,public_safety
+2025-09-08 04:29:28,"impassable road due to flood sa Tinago, ano na?",traffic
+2025-09-08 17:46:19,"Anuna, landline noisy static sa labas ng San Francisco",utilities
+2025-09-09 04:15:15,"FYI, kailan ang next job fair sa tapat ng University of Nueva Caceres (UNC)",employment
+2025-09-09 10:00:36,LIGHT BULB DISPOSAL SA LABAS NG NAGA CENTRAL SCHOOL!!!,waste_management
+2025-09-09 13:05:21,BEE HIVE DANGEROUS SA KANTO NG BAGUMBAYAN!!!,public_safety
+2025-09-09 14:48:47,"Hello po sa labas ng Pacol, sinaksak sa tapat ng school?",public_safety
+2025-09-10 01:47:08,"sa loob ng Pacol, may wasp nest removal.",public_safety
+2025-09-10 02:37:24,dogs scattering basura near Tabuco any update?,waste_management
+2025-09-10 07:15:15,"transport strike update sa Naga City Hospital, grabe.",traffic
+2025-09-10 10:16:20,"Anuna, cargo falling from truck sa loob ng University of Nueva Caceres (UNC) asap.",traffic
+2025-09-11 14:25:54,"Excuse me, water rationing schedule sa Mabolo pls fix.",utilities
+2025-09-11 15:39:27,badjao scattering trash dito.,social_services
+2025-09-12 10:41:03,"cannot call landline sa loob ng Police Station 1, plss lang.",utilities
+2025-09-12 13:18:43,OVERPAYMENT REFUND SA MAY COMELEC OFFICE!!!,utilities
+2025-09-12 18:06:50,"traffic adjudication office sa Dayangdang, ano na?",traffic
+2025-09-12 18:20:06,"May update ba sa likod ng Bagumbayan, sanitary permit for food?",sanitation
+2025-09-12 20:23:10,"May update ba sa loob ng Tinago, walang warning sign sa roadwork?",infrastructure
+2025-09-13 07:22:24,casureco brownput schedule dito.,utilities
+2025-09-13 09:33:05,"sa likod ng LCC Mall, report ko bill delivery late.",utilities
+2025-09-14 01:20:01,"Mayor, no license plate sa kanto ng San Isidro waiting for action.",traffic
+2025-09-15 13:10:14,street light sensor broken sa tapat ng Gaisano Mall delikado to.,infrastructure
+2025-09-16 03:36:13,"very baho ng canal near San Jude Thaddeus Parish, ano na?",sanitation
+2025-09-16 19:57:34,school building condemned sa may Metro Health aksyonan agad.,infrastructure
+2025-09-17 10:20:50,"no entry violation reports sa tapat ng Bagumbayan, nakakainis.",traffic
+2025-09-17 11:01:29,"sa may Naga City People's Mall, may solar panel grid tie.",utilities
+2025-09-18 19:13:29,"low lying wires sa likod ng Tinxgo, nakakainis.",utilities
+2025-09-18 19:57:12,"May update ba sa kanto ng Panicuason, bus emitting black smoke?",traffic
+2025-09-19 00:49:38,"sa kanto ng Mabolo, ganap sa budget for road missing.",infrastructure
+2025-09-19 03:31:09,BINAHA ANG BAHAY NEED RELIEF GOODS SA KANTO NG SABANG!!,social_services
+2025-09-19 05:55:23,"FYI, may putol na kable sa daan sa may San Felipe ang tagal na nito.",utilities
+2025-09-19 17:05:38,"Good day, no hairnet food server along San Francisco Church waiting for action.",sanitation
+2025-09-19 18:29:56,NLRC CASE FILING NEAR TRIANGULO!!!,employment
+2025-09-19 21:46:25,"Grabe, no trash bins in plaza sa Diversion Road commercial area delikado to.",waste_management
+2025-09-20 11:07:11,"Admin, u-turn paglabag sa labas ng WRI College asap.",traffic
+2025-09-21 14:43:24,grass fire spreading inside San Jude Thaddeus Parish nakakatakot.,public_safety
+2025-09-22 08:43:35,"Mayor, truck breakdown blocking sa may STI College Naga",traffic
+2025-09-22 13:46:23,"no segregation no collection sa may Balatas, grabe.",waste_management
+2025-09-23 06:27:09,residual waste pile up sa Tinago hassle masyado.,waste_management
+2025-09-23 11:25:48,"4ps beneficiary inquiry sa likod ng Concepcion Pequeña, grabe.",social_services
+2025-09-24 04:06:34,"sa likod ng Diversion Road commercial aeea, yung pharmacy ran out of paracetamol.",health
+2025-09-24 10:06:37,"Anuna, tesda training iskedyul inside Carolina nakakatakot.",employment
+2025-09-24 16:00:39,"cats opening trash bags sa labas ng Bagumbayan, grabe.",waste_management
+2025-09-25 07:48:30,solar panel grid tie sa labas ng San Isidro,utilities
+2025-09-25 10:59:03,"sa tapat ng Camarines Sur National High School (CamHigh), merong fire drill request.",public_safety
+2025-09-26 19:46:51,heat stroke victim sa tapat ng City Hall aksyonan agad.,health
+2025-09-26 22:29:13,"May update ba sa kanto ng Pacol, kite entangled in wire?",utilities
+2025-09-27 00:13:25,"Admin, lice infestation in school sa likod ng AMA Computer College",health
+2025-09-27 16:39:03,"Tanong lang in front of Calauag, hospital bill dispute?",health
+2025-09-27 21:20:35,"dam gate stuck sa may Iblesia ni Cristo, ano na?",infrastructure
+2025-09-28 01:23:54,"garbage truck obstructing traffic sa likod ng Dayangdang, hays.",waste_management
+2025-09-28 11:44:53,"Report ko lang, illegal jumper connection report sa likod ng Dayangdang",utilities
+2025-09-28 17:39:36,CLAMPED VEHICLE INQUIRY SA MAY NAGA CITY HOSPITAL!!!,traffic
+2025-09-29 01:11:31,"4ps delisting complaint sa Abella, ano na?",social_services
+2025-09-29 07:31:26,sinaksak sa tapat ng school sa kanto ng Mabolo,public_safety
+2025-09-29 11:02:32,"Hello po at Peñafrancia, domestic violence sounds?",public_safety
+2025-09-29 16:28:29,"sa may Panicuason, please check benches broken.",infrastructure
+2025-09-29 18:24:19,"Help, styrofoam pollution behind Dinaga aksyonan agad.",waste_management
+2025-10-01 17:53:27,"sa may Pacol, merong investment scam.",public_safety
+2025-10-01 21:32:06,"Hello po sa loob ng Concepcion Pequeña, vawc restraining order?",social_services
+2025-10-02 05:39:57,"Anuna, low lying wires sa Igualdad pls fix.",utilities
+2025-10-02 15:02:30,closure of business pay sa likod ng Liboton,employment
+2025-10-02 21:59:18,"May update ba sa loob ng Concepcion Pequeña, trapped in house due to flood?",public_safety
+2025-10-02 22:47:21,"sa may Pdñafrancia Shrine, please check maraming langaw sa palengke.",sanitation
+2025-10-03 03:46:42,open dumpsite smell sa may Mavolo please action.,waste_management
+2025-10-03 19:19:55,disinfection of public area sa loob ng IPO Naga hassle masyado.,sanitation
+2025-10-04 04:35:09,"sa Balatas, ganap sa high latency ping.",utilities
+2025-10-04 10:45:31,market stall dirty sa may Capitol,sanitation
+2025-10-05 09:59:48,"sa labas ng Peñafrancia, may canal silted up.",infrastructure
+2025-10-05 16:20:19,"Mayor, colorum vehicles operating sa San Jude Thaddeus Parish",traffic
+2025-10-05 23:21:20,"Hello po inside Igualdad, coastal cleanup iskedyul?",waste_management
+2025-10-06 18:39:55,converge no internet sa may Capitol delikado to.,utilities
+2025-10-08 06:45:19,"Pansinin niyo to, humps masyadong mataas sa kanto ng Robinsons Plxce pls fix.",infrastructure
+2025-10-08 15:38:16,"illegal slaughtering sa tapat ng San Jude Thaddeus Parish, ano na?",sanitation
+2025-10-09 04:01:09,escalator accident dto,public_safety
+2025-10-09 12:39:19,"electric shock from appliance sa kanto ng Calauag, hays.",utilities
+2025-10-09 14:04:40,gender development program dto,social_services
+2025-10-09 14:26:18,hit and run report sa likod ng St. John Hospital aksyonan agad.,traffic
+2025-10-09 15:50:44,"sa labas ng Naga College Foundation (NCF), report ko dixaster preparedness seminar.",social_services
+2025-10-09 16:25:54,snake entered house in front of Santa Cruz,public_safety
+2025-10-10 21:56:46,GOAT MANURE ON ROAD SA LOOB NG METROPOLITAN CATHEDRAL!!!,sanitation
+2025-10-11 02:53:38,sjoke belching jeep sa labas ng Unitop please action.,traffic
+2025-10-11 07:38:11,knee deep baha for vehicles at Bagumbayan kailan ito maaayos?,traffic
+2025-10-11 14:37:53,"street children rescue sa may San Francisco, hays.",social_services
+2025-10-11 21:10:45,"sa likod ng Panicuason, report ko biodegradable not collected.",waste_management
+2025-10-13 02:34:25,"sanitary permit for food along Our Lady of Immaculate Conception, hays.",sanitation
+2025-10-13 06:35:38,"loose gravel on kalsada near San Jude Thaddeus Parish, plss lang.",traffic
+2025-10-13 06:38:05,women's month activity dito.,social_services
+2025-10-13 23:09:45,"sa loob ng St. John Hospital, report ko discrimination against lgbt at work.",employment
+2025-10-14 18:03:54,"sa Pacol, yung urine smell underpass.",sanitation
+2025-10-15 16:31:41,"Ask ko lang sa labas ng Metropolitan Cathedral, chemical smell from factory?",sanitation
+2025-10-16 00:44:52,"movie privilege senior sa kanto ng San Felipe, hays.",social_services
+2025-10-16 12:31:26,"Ask ko lang sa likod ng Isarog Family Care, senior citizen discount utility?",utilities
+2025-10-16 16:57:00,medical mission request dito.,health
+2025-10-17 03:06:18,"Admin, modem rdplacement request sa tapat ng Concepcion Grande",utilities
+2025-10-17 07:32:52,Urgent: taxi contracting fare sa Pacol,traffic
+2025-10-17 09:29:34,uniform allowance student sa may NBI Office ang tagal na nito.,social_services
+2025-10-17 10:14:13,"early bus departure sa may Dayangdang, ano na?",traffic
+2025-10-17 11:26:37,tsunami alert siren sa tapat ng Peñafrancia,public_safety
+2025-10-17 21:08:12,"sa may Metropolitan Cathedral, banda sa overflowing sewage.",sanitation
+2025-10-18 10:22:58,"price watch sumbong near Bivol Central Station, hays.",social_services
+2025-10-18 15:50:05,"adoption process inquiry sa kanto ng SM City Naga, plss lang.",social_services
+2025-10-18 16:26:15,"sa may Pacol, please check supplemental feeding program.",social_services
+2025-10-19 13:21:53,"Tanong lang sa labas ng Deca Homes area, traffic enforcer nangongotong?",traffic
+2025-10-19 20:58:43,"sparking wires sa poste sa Tinago, hays.",utilities
+2025-10-20 14:10:16,COW DUNG SCATTERING SA LABAS NG NAGA CITY HOSPITAL!!!,sanitation
+2025-10-20 20:47:33,"hospital zone noise sa labas ng Concepcion Grande, grabe.",traffic
+2025-10-20 21:25:11,"Hoy, truck ban inquury time sa tapat ng Triangulo thanks.",traffic
+2025-10-21 04:17:57,"Pqnsinin niyo to, chemotherapy financial aid sa likod ng BISCAST",health
+2025-10-21 10:11:44,"To whom it may concrrn, suspicious drug related activity sa tapat ng Our Lady of Immaculate Conception pls fix.",public_safety
+2025-10-22 00:25:10,"Pansinin niyo to, urban gardening seeds sa may Sabang",social_services
+2025-10-22 04:42:20,"To whom it may concern, solo parent discrimination sa Bicol Medical Center (BMC) nakakaabala na.",social_services
+2025-10-22 20:33:52,"Paki-check naman, solo pqrent benefits inquiry sa loob ng LTO Naga hassle masyado.",social_services
+2025-10-23 03:21:36,Notice: child custody tulong along Panicuason,social_services
+2025-10-23 06:10:59,sanitary permit for food sa labas ng Lerma please action.,sanitation
+2025-10-23 07:01:42,"Ask ko lang sa kanto ng San Francisco Church, water pipe leak sa kalsada?",utilities
+2025-10-23 12:26:17,"no entry paglabag reports along Super Metro, plss lang.",traffic
+2025-10-23 12:36:05,"sa tapat ng Concepcion Pequeña, may sanitary permit for food.",sanitation
+2025-10-23 19:43:04,"Report ko lang, no ppe provided at LTO Naga",employment
+2025-10-23 20:03:35,estero rangers inactive sa likod ng Plaza Medica thanks.,waste_management
+2025-10-24 08:49:51,"in front of Abella, banda sa 4ps pawning cash card.",social_services
+2025-10-24 09:18:51,"Good day, cats opening basura bags sa kanto ng Civic Center",waste_management
+2025-10-24 17:20:30,"sa labas ng Dinaga, may car breakdown trapik.",traffic
+2025-10-25 00:45:40,octopus connection fire hazard sa may San Isidro,utilities
+2025-10-25 02:15:19,"Tanong lang sa kanto ng Concepcion Pequeña, inom sa kzlsada hanggang madaling araw?",public_safety
+2025-10-25 02:46:12,"sa labas ng Igualdad, banda sa public attorney office.",social_services
+2025-10-25 17:28:06,"sobrang dilim ng eskinita sa loob ng San Francisco, grabe.",public_safety
+2025-10-26 18:04:42,"sa likod ng Tinago, report ko grabe ang traffic ngayon.",traffic
+2025-10-26 21:21:37,"May update ba sa likod ng Tabuco, dental services unavailable?",health
+2025-10-27 09:00:03,guy wire dangerous sa loob ng Triangulo nakakaabala na.,utilities
+2025-10-27 15:28:59,unregistered vehicle sa labas ng Dinaga,traffic
+2025-10-27 20:00:52,"near Camarines Sur National High School (CamHigh), please check no license plate.",traffic
+2025-10-28 04:02:25,farm to market road sira sa likod ng Naga City Sciehce High School salamat.,infrastructure
+2025-10-28 18:14:09,"casureco brownout iskedyul behind Mother Seton Hospital, plss lang.",utilities
+2025-10-30 05:56:46,"relocation of post request sa lilod ng Calauag, ano na?",utilities
+2025-10-30 07:16:18,blood from slaughterhouse sa may Santa Cruz,sanitation
+2025-10-30 08:22:20,"Tanong lang sa Naga Imagihg Center, bitak-bitak na ang pader?",infrastructure
+2025-10-30 10:42:35,plasma donation request sa tapat ng Igualdad hassle masyado.,health
+2025-10-31 02:00:22,"disinfection of public area in front of Hall of Justice, hays.",sanitation
+2025-10-31 03:47:50,"Ask ko lang sa kanto ng Basilica Minore, water pipe leak sa kalsada?",utilities
+2025-10-31 11:10:52,Notice: fuse cutout exploded sa Del Rosario,utilities
+2025-10-31 15:39:25,di hinahakot ang nabubulok sa Peñafrancia pls fix.,waste_management
+2025-10-31 15:51:11,"waiting shed dilapidated sa may Vista Mall, hays.",infrastructure
+2025-10-31 23:33:11,"sa may Liboton, banda sa kite entangled in wure.",utilities
+2025-11-01 00:58:35,"towing request sa labas ng Sabang, nakakainis.",traffic
+2025-11-01 01:37:53,VOTER REGISTRATION SCHEDULE SA MAY PANICUASON!!!,social_services
+2025-11-01 16:03:52,"sa loob ng Pacol, may public attorney office.",social_services
+2025-11-01 23:38:48,"Ask ko lang near Bagumbayan, sick leave deduction?",employment
+2025-11-02 19:20:24,"sa Calauag, merong asthma attacks due to dust.",health
+2025-11-03 00:46:50,"home for the aged visit sa tapat ng Public Market, nakakainis.",social_services
+2025-11-04 09:27:29,"sa tapat ng Balatas, ganap sa head on collision.",traffic
+2025-11-04 17:15:23,"Excuse me, people defecating in river sa Peñafrancia",sanitation
+2025-11-04 20:21:53,ROTATIONAL BROWNOUT REKLAMO AT TINAGO!!!,utilities
+2025-11-05 04:06:58,PAGTAPON NG BASURA SA ILOG SA LOOB NG AGO FOUNDATION!!!,waste_management
+2025-11-06 03:05:24,"Hello po sa tapst ng Concepcion Grande, garbage collector asking money?",waste_management
+2025-11-06 21:10:44,"sa likod ng University of Nueva Caceres (UNC), ganap sa air lock in water pipe.",utilities
+2025-11-06 22:34:37,4ps pawning cash card dito.,social_services
+2025-11-07 03:15:08,"sanitary napkin clutter sa likod ng Abella, grabe.",waste_management
+2025-11-07 14:13:19,"sa labas ng St. John Hospital, merong maraming langaw sa palengke.",sanitation
+2025-11-08 02:29:45,Notice: crosswalk blocked along Concepcion Pequeña pls fix.,traffic
+2025-11-08 19:40:29,"sa kanto ng San Jude Thaddeus Parish, please check loading/unloading violation.",traffic
+2025-11-09 02:05:53,"unknown insect bite swelling sa likod ng Calauag, plss lang.",health
+2025-11-09 18:46:10,"Mayor, estero cleaning needed sa Dinaga",sanitation
+2025-11-09 19:51:03,street light sensor broken dito.,infrastructure
+2025-11-10 00:46:34,"Hello po sa may Naga City Hospital, ventilation poor at work?",employment
+2025-11-10 07:06:55,"Ask ko lang, may nag-aaway na lasing sa likod ng Our Lady of Immaculate Conception",public_safety
+2025-11-10 09:43:51,"Tanong lang sa tapat ng Ago Foundation, dust from construction?",sanitation
+2025-11-10 11:33:27,"sa loob ng IPO Naga, please check low water pressure tuwing umaga.",utilities
+2025-11-10 16:43:21,"tricycle fare matrix sa tapat ng Deca Homes area, nakakainis.",traffic
+2025-11-11 12:05:38,"walang trapik enforcer sa likod ng BISCAST, ano na?",traffic
+2025-11-11 14:54:38,positive sa leptospirosis dito.,health
+2025-11-12 12:37:06,"Hello admin, illegal landfill sumbong inside BISCAST kailan ito maaayos?",waste_management
+2025-11-12 20:35:08,WASTING WATER CAR WASH SA LABAS NG YASHANO MALL!!!,utilities
+2025-11-13 10:56:43,"child abuse sumbong along Mabolo, nakakainis.",social_services
+2025-11-14 00:11:38,KNEE DEEP FLOOD FOR VEHICLES SA TAPAT NG MABOLO!!!,traffic
+2025-11-14 00:57:23,CASURECO BROWNOUT ISKEDYUL NEAR CONCEPCION PEQUEÑA!!!,utilities
+2025-11-14 18:57:44,"along Igualdad, please check monument vandalized.",infrastructure
+2025-11-14 19:40:36,"Ask ko lang, garbage collwctor rude sa loob ng Isarog Family Care salamat.",waste_management
+2025-11-14 20:33:11,"sa IPO Naga, banda sa emergency room full.",health
+2025-11-15 13:23:34,"Tanong lang sa kanto ng IPO Naga, cane for blind request?",social_services
+2025-11-15 13:37:15,"sa likod ng Peñafranvia Shrine, report ko overcrowding violation.",public_safety
+2025-11-15 19:11:31,"Paki-check naman, overflowing sewage sa kanto ng Dayangdang waiting for action.",sanitation
+2025-11-15 20:04:02,4ps delisting reklamo dito.,social_services
+2025-11-16 08:30:05,"Tanong lang sa loob ng Bagumbayan, historical marker missing?",infrastructure
+2025-11-16 13:51:46,elevator stuck dito.,public_safety
+2025-11-16 13:56:57,"burst sewage pipe sa loob ng Ago Foundation, ano na?",sanitation
+2025-11-17 00:08:44,catcalling complaint sa likod ng Tinago,public_safety
+2025-11-17 04:20:28,"bad smell from piggery behind Santa Cruz, hays.",sanitation
+2025-11-17 07:29:30,many children ang nilalagnat dito.,health
+2025-11-17 13:06:13,"Help, loose gravel on road sa likod ng Dinaga waiting for action.",traffic
+2025-11-17 16:57:55,"Hello po behind NICC Doctors Hospital, cement curing too long?",infrastructure
+2025-11-18 13:10:12,"Anuna, family week celebration sa Concepcion Grande",social_services
+2025-11-18 15:19:22,indigent certification dito.,social_services
+2025-11-19 15:07:37,"Hello po sa may Igualdad, no 13th month pay?",employment
+2025-11-19 18:48:33,"sa loob ng Concepcion Pequeña, report ko electric shock from appliance.",utilities
+2025-11-20 17:33:22,"madumi utensils in carinderia at Santa Cruz, nakakainis.",sanitation
+2025-11-21 19:09:25,"Mayor, u-turn violation sa tapat ng Peñafrancia Shrine",traffic
+2025-11-22 02:15:21,"sa tapat ng Santa Cruz, may walang sidewalk na madaanan.",infrastructure
+2025-11-22 06:06:37,MASS WEDDING SCHEDULE SA LABAS NG PACOL!!,social_services
+2025-11-22 13:13:07,"outside Public Market, merong lung center referral.",health
+2025-11-23 18:50:31,"sa San Isidro, yung low lying wires.",utilities
+2025-11-24 03:32:16,"sa loob ng Hall of Justice, yung wrong reading electric meter.",utilities
+2025-11-24 16:28:30,"Help, electrocution hazard sa likod ng Del Rosario",public_safety
+2025-11-25 07:34:02,"sa kanto ng Tinago High School, merong motornapping incident.",public_safety
+2025-11-25 13:40:02,"sa Metropolitan Cathedral, report ko illegal slaughtering.",sanitation
+2025-11-25 17:14:35,"Hello po sa likod ng Iglesia ni Cristo, dirty apron food vendof?",sanitation
+2025-11-25 20:31:03,"Mayor, leaking fire hydrant sa tapat ng Carolina",utilities
+2025-11-25 21:42:30,"sa Liboton, yung expired registration.",traffic
+2025-11-26 05:35:31,"algae bloom in pond sa kanto ng San Francisco, grabe.",sanitation
+2025-11-26 06:29:02,"sa NBI Office, may goat manure on kalsada.",sanitation
+2025-11-26 13:37:37,how get ng pwd id dito.,social_services
+2025-11-26 22:58:01,"Hello po along Dayangdang, madumi urensils in carinderia?",sanitation
+2025-11-26 23:05:35,special waxte handling dto,waste_management
+2025-11-27 00:49:33,"grease trap overflow sa labas ng Comelec Office, nakakainis.",sanitation
+2025-11-27 06:34:59,"Help, pagtapon ng basura sa ilog sa labas ng Liboton salamat.",waste_management
+2025-11-27 13:52:25,DEAD DOG DECOMPOSING SA KANTO NG PANICUASON!!!,waste_management
+2025-11-27 20:11:16,"Hello po sa labas ng San Isidro, profiteering complaint?",social_services
+2025-11-27 22:58:32,"Admin, out of stock na ang medicine sa center along Hall of Justice",health
+2025-11-28 04:30:06,"monitor lizard in ceiling across Tinago, nakakainis.",public_safety
+2025-11-28 06:17:11,"Anuns, bird nest on transformer near Peñafrancia paki-ayos pls",utilities
+2025-11-28 08:02:03,"May update ba sa likod ng Del Rosario, fire alarm false?",public_safety
+2025-11-28 11:25:18,"Hoy, historical marker missing sa may Civic Center",infrastructure
+2025-11-28 20:13:33,"sa kanto ng Naga City Hospital, please check no hairnet food server.",sanitation
+2025-11-29 07:36:58,"illegal landfill report sa Mabopo, plss lang.",waste_management
+2025-11-29 09:03:41,"at San Francisco, report ko feeding program request for kids.",social_services
+2025-11-30 08:08:51,"conduction sticker missing sa tapat ng Bicol Medical Center (BMC), ano na?",traffic
+2025-11-30 14:46:04,"Help, skin rashes outbrwak sa Dinaga",health
+2025-11-30 15:54:33,"sa may Police Station 1, ganap sa illegal dumping site sa vacant lot.",waste_management
+2025-11-30 16:24:34,Notice: wedding civil ceremony sa Comepec Office,social_services
+2025-12-01 12:00:56,"unsafe driving bus sa may Peñafrancia, grabe.",traffic
+2025-12-03 03:48:18,livelihood training tesda dito.,social_services
+2025-12-04 06:52:37,"sa LCC Mall, yung food pack distribution.",social_services
+2025-12-04 18:17:10,suspicious person taking photos dito.,public_safety
+2025-12-05 04:45:57,"behind Dayangdang, report ko cable tv fuzzy.",utilities
+2025-12-05 05:04:18,"frequent power blink sa kanto ng Sabang, plss lang.",utilities
+2025-12-05 06:30:29,konstruksyon accident dkto.,public_safety
+2025-12-05 10:01:36,tzpon basura kahit saan sa labas ng Tinago High School,waste_management
+2025-12-05 11:40:54,"Grabe, biohazard waste exposed sa Basilica Minore pls fix.",public_safety
+2025-12-06 00:17:35,smoke from burning rubber dito.,sanitation
+2025-12-06 06:38:40,"Admin, adoption process tanong inside San Isidro",social_services
+2025-12-06 18:40:19,evacuation center request sa Peñafrancia asap.,social_services
+2025-12-06 20:13:06,market stall dirty sa Sabang,sanitation
+2025-12-07 16:52:23,no ppe provided sa Lerma nakakaabala na.,employment
+2025-12-08 07:36:41,"bus terminal chaotic in front of Puregold, hays.",traffic
+2025-12-08 15:02:55,DAYCARE CENTER ENROLLMENT SA LIKOD NG SABANG!!!,social_services
+2025-12-09 04:05:21,"sa loob ng Del Rosario, merong scabies infection in kids.",health
+2025-12-09 06:01:52,"rude ang nurse sa clinic sa tapat ng Calauag, hays.",health
+2025-12-09 09:48:55,"sa kanto ng Naga Central School, report ko application for new meter.",utilities
+2025-12-09 15:18:31,"stage renovation request sa Liboton, ano na?",infrastructure
+2025-12-09 21:36:02,heart center referral dito.,health
+2025-12-09 21:43:41,"sa loob ng Police Station 1, may tribal hall request.",social_services
+2025-12-10 02:23:24,"inside Pacol, report ko very weak ng signal.",utilities
+2025-12-10 03:58:36,"Admin, traffic rerouting confusion sa likod ng Isarog Family Care asap.",traffic
+2025-12-12 08:43:38,adoption process inquiry sa likod ng Barangay Hall aksyonan agad.,social_services
+2025-12-13 04:52:53,"Hello admin, missing channels cable sa kanto ng Police Station 1 ang tagal na nitl.",utilities
+2025-12-13 09:36:37,"Paki-check naman, barangay clearance fee sa may BISCAST hassle masyado.",social_services
+2025-12-13 12:34:27,cockroach in restaurant sa loob ng NICC Doctors Hospital,sanitation
+2025-12-13 14:26:46,"medical mission request outside Primark Town Center, plss lang.",health
+2025-12-14 11:19:14,"sa likod ng Del Rosario, may abusive supervisor.",employment
+2025-12-14 23:24:43,ILLEGAL GAMBLING TUPADA SA SAN ISIDRO!!!,public_safety
+2025-12-15 00:24:41,Notice: overloading tricycle sa Liboton,traffic
+2025-12-15 13:06:56,Urgent: overpayment refund sa labas ng Panicuason,utilities
+2025-12-15 16:59:21,"outside Comelec Office, merong overflowing sewage.",sanitation
+2025-12-15 20:21:46,"across Tinago, ganap sa nasunugan kailangan tulong.",social_services
+2025-12-16 04:50:40,medical assistance for indigent dto,social_services
+2025-12-16 06:55:34,ambulance late dito.,public_safety
+2025-12-17 11:46:45,JOB OPENING FOR SENIOR HIGH SA TAPAT NG TRIANGULO!!!,employment
+2025-12-18 00:40:46,"behind STI College Naga, yung ergonomics bad chaur.",employment
+2025-12-18 16:16:57,community service inquiry sa labas ng Cojelec Office hassle masyado.,social_services
+2025-12-19 01:54:10,cedula application dito.,social_services
+2025-12-19 07:17:00,gender development program dto,social_services
+2025-12-19 09:12:54,"FYI, ecobrick donation sa loob ng Naga Parochial School paki-ayos please.",waste_management
+2025-12-20 09:07:55,no segregation no collection sa may San Isidro,waste_management
+2025-12-20 09:56:32,"rabies vaccination pet sa may LCC Mall, nakakainis.",social_services
+2025-12-20 17:47:44,"in front of Bicol AccessHealth, banda sa aplikasyon for new meter.",utilities
+2025-12-21 02:32:23,"nagsusunog ng plastic ang kapitbahay sa likod ng Holy Cross Parish, plss lang.",waste_management
+2025-12-22 08:53:40,"sa loob ng Naga City Science High School, banda sa badjao scattering trash.",social_services
+2025-12-22 14:28:34,"FYI, 4ps gambling money sa kanto ng Cararayan hassle masyado.",social_services
+2025-12-22 22:20:08,INSULATOR BROKEN SA KANTO NG PACOL!!!,utilities
+2025-12-22 22:41:06,"sa labas ng Del Rosario, may tumataas ang cases ng dengue.",health
+2025-12-22 23:23:57,ang lalim ng lubak sa daan dito.,infrastructure
+2025-12-23 05:33:06,"unannounced water interruption sa kanto ng Bagumbayan, hays.",utilities
+2025-12-24 07:09:41,"sa labas ng Brentwood College, yung clamped vehicle inquiry.",traffic
+2025-12-24 10:55:14,termite infested post sa Tinago nakakaabala na.,utilities
+2025-12-24 21:00:34,educational assistance payout dito.,social_services
+2025-12-25 01:25:09,hit and run report sa tapat ng Del Rosario nakakatakot.,traffic
+2025-12-25 05:58:30,"sa may Hall of Justice, merong walang drainage system.",infrastructure
+2025-12-25 10:08:53,MEDICAL TULONG FOR INDIGENT AT UNIVERSITY OF NUEVA CACERES (UNC)!!!,social_services
+2025-12-25 10:23:43,repetitive strain injury near Isarog Family Care,employment
+2025-12-25 11:02:56,"Pansinin niyo to, 4ps delisting complaint sa Concrpcion Pequeña",social_services
+2025-12-25 21:18:45,"sa kanto ng Sabang, report ko cash assistance psyout.",social_services
+2025-12-26 02:33:11,"walang available na covid vaccine sa loob ng Triangulo, nakakainis.",health
+2025-12-26 20:23:13,"Pansinin niyo to, restroom at work madumi sa tapat ng Magsaysay Food Strip",employment
+2025-12-27 09:08:19,driving without license outside Igualdad please action.,traffic
+2025-12-27 21:24:40,water rationing schedule sa Calauag waiting for action.,utilities
+2025-12-28 01:27:18,"Pansinin niyo to, taxi meter not used sa loob ng Carolina pls fix.",traffic
+2025-12-28 04:05:07,"hoarding complaint sa labas ng City Health Office, hays.",social_services
+2025-12-29 06:18:11,"separation pay dispute sa Peñafrancia, grabe.",employment
+2025-12-30 03:50:55,skin rashes outbreak sa kanto ng Robertson Mall,health
+2025-12-30 12:52:12,unfinished road works causing traffic sa may San Francisco,infrastructure
+2025-12-31 03:13:32,"behind Hall of Justice, banda sa brownout nanaman dito.",utilities
+2025-12-31 11:39:03,many children ang nilalagnat dito.,health
+2025-12-31 22:03:32,modem replacement request dito.,utilities
