@@ -1,4 +1,154 @@
 text,label,intensity
+HOY CASURECO ANUNA BROWN OUT NA NAMAN SA PACOL!!,negative,1.94
+Thanks Mayor for the quick response sa financial assistance.,positive,1.67
+Grabe ang traffic sa Magsaysay Avenue wala bang blue boys dyan?,negative,1.42
+Open po ba ang Health Center bukas ng sabado?,neutral,0.23
+Sobrang hassle mag-commute sa Centro pag rush hour.,negative,1.15
+Wow galing ng MNWD walang tubig pero may hangin yung gripo.,negative,1.68
+Very accommodating yung staff sa Mayor's Office kanina.,positive,1.35
+Saan po pwede mag-report ng sirang ilaw sa Concepcion?,neutral,0.38
+WALANG KWENTA ANG INTERNET SA PLAZA QUEZON SAYANG LANG PUNTA KO.,negative,1.88
+Good job sa garbage collection sa San Felipe consistent.,positive,1.21
+May pasok ba bukas o suspended?,neutral,0.12
+Nakaka-stress yung pila sa City Hall ang init init!,negative,1.55
+Ang ganda ng lights sa Plaza Quezon pag gabi nakaka-relax.,positive,1.45
+Baha na naman sa Dayangdang konting ulan lang.,negative,1.32
+Aq lang ba o talagang mabagal ang process sa renewal?,negative,0.87
+Salamat po sa libreng gamot laking tulong nito.,positive,1.72
+Blue Boys paki-ayos naman yung trapik sa Triangulo ang gulo eh.,negative,1.26
+Anyare sa tubig sa Panicuason 2 days na kaming wala?,negative,1.58
+Okay naman yung bagong sistema sa pila.,positive,0.65
+Ano ba yan CASURECO sira na appliances namin sa kaka-brownout niyo!!!,negative,1.99
+Magkano po pamasahe sa trimobile papuntang SM?,neutral,0.15
+Super helpful ni ate sa front desk thanks po.,positive,1.48
+Ang baho ng basura sa kanto ng Peñafrancia di kinukuha.,negative,1.43
+Safe ba mag-jogging sa Pacol road pag gabi?,neutral,0.35
+Jusko naman ang trimobile drivers dito ang tataga maningil.,negative,1.52
+Solid ng support ng LGU sa education keep it up!,positive,1.76
+Waiting pa din sa update ng scholarship application.,neutral,0.42
+It's so traffic naman in Magsaysay like gumagalaw pa ba tayo?,negative,1.18
+Paki-check po yung poste sa harap namin delikado na.,negative,1.12
+Bilis ng transaction sa birth certificate infairness.,positive,1.33
+Ano na balita sa inaayos na kalsada sa Concepcion Grande?,neutral,0.48
+GRABE YUNG BAHA SA CENTRO WALA BA KAYONG GAGAWIN??,negative,1.92
+Thank u po sa food packs laking tulong sa pamilya namin.,positive,1.65
+Nakakainis yung ingay ng karaoke sa kapitbahay dis-oras na ng gabi.,negative,1.45
+Efficient service sa vaccination site mabilis lang.,positive,1.25
+MNWD paki-explain bakit madumi yung tubig??,negative,1.56
+Ask ko lang kung kailan deadline ng tax payment?,neutral,0.22
+Best Mayor ever!! Ramdam ang malasakit.,positive,1.95
+Hassle mag-park sa centro wala mapwestuhan.,negative,0.95
+Sana all maayos ang kalsada gaya sa San Felipe.,positive,1.10
+Wara man lang pasabi na mawawalan ng kuryente nakakainis.,negative,1.38
+Pwede po ba mag-walk in sa health center?,neutral,0.28
+Ang dumi dumi ng public comfort room paki-linis naman.,negative,1.62
+Love the vibe sa Plaza Rizal pag Sunday family day.,positive,1.55
+Bakit ang sungit nung guard sa city hall?,negative,1.22
+Sobrang dilim sa may Balatas paki-lagyan ng ilaw please.,negative,1.47
+Kudos to the rescue team ang bibilis kumilos.,positive,1.82
+Wala bang aksyon sa mga asong gala sa kalye?,negative,1.35
+Confirmed na ba yung schedule ng job fair?,neutral,0.18
+PALPAK TALAGA SERBISYO NG CASURECO WALANG PAGBABAGO!,negative,1.91
+Sana all barangay kagaya ng San Felipe may disiplina.,positive,1.15
+Grabe ang usok ng mga jeep sa Centro nakaka-suffocate na.,negative,1.48
+Anong oras po ang last trip ng jeep pa-Panicuason?,neutral,0.25
+HOY MNWD AYUSIN NYO NAMAN ANG SERVICE NYO WALANG MAIGIB!!,negative,1.93
+Very organized ang distribution ng relief goods good job.,positive,1.54
+Bakit ang dilim sa may Cathedral banda nakakatakot maglakad.,negative,1.28
+Pwede po ba mag-request ng fogging dito sa Calauag?,neutral,0.45
+Napaka-bastos ng driver ng trimobile na nasakyan ko body number 1023.,negative,1.65
+Ang ganda ng view sa Panicuason nakaka-proud maging Nagueño.,positive,1.78
+Traffic enforcer sa Magsaysay text lang ng text habang traffic.,negative,1.38
+Wala bang balak ayusin yung lubak sa Concepcion? Ang lalim na.,negative,1.24
+Super fast transaction sa business permit renewal thanks LGU!,positive,1.62
+Kailan po kaya ang dating ng senior citizen pension?,neutral,0.32
+CASURECO baka naman pwede ibalik na ang kuryente ang init eh.,negative,1.15
+Wow magic biglang nawala ang traffic nung dumating Blue Boys.,positive,1.35
+Anyare sa drainage project sa Triangulo? Tengga na.,negative,1.18
+Ask q lng kung may bayad ang anti-rabies vaccine?,neutral,0.18
+SOBRANG BAHO NG KANAL DITO SA TABUCO PAKI-LINIS PLS!!,negative,1.87
+Thanks sa free wifi sa Plaza Quezon laking tipid.,positive,1.42
+Parang tanga lang yung sistema sa pila walang number.,negative,1.56
+May libreng check-up po ba bukas sa center?,neutral,0.21
+Galing ng CASURECO parang disco light ang kuryente patay sindi.,negative,1.64
+I love the new parks in Naga very family friendly.,positive,1.58
+Sana naman hulihin yung mga nag-iinuman sa kalsada ang iingay.,negative,1.32
+Status po ng national ID ko 1 year na wala pa din?,neutral,0.65
+Mabait si Doc sa health center very patient mag-explain.,positive,1.36
+WALANG TUBIG SA UMAGA WALANG TUBIG SA GABI ANUNA MNWD??,negative,1.97
+Paki-ayos po yung traffic light sa Diversion sira na naman.,negative,1.12
+Okay lang ba mag-park sa gilid ng simbahan?,neutral,0.35
+Ang bilis ng responde ng bumbero sa sunog kanina salute!,positive,1.85
+Daming lamok sa Dayangdang baka magka-dengue kami dito.,negative,1.25
+Sain po ang sakayan papuntang Carolina?,neutral,0.15
+Nakaka-high blood ang traffic sa Panganiban Drive walang galawan.,negative,1.52
+Thank you sa pa-zumba ni Mayora enjoy kami.,positive,1.28
+Bakit laging brownout pag linggo???,negative,1.45
+Very helpful ang website ng Naga City updated lagi.,positive,1.34
+Ano requirements para sa financial aid sa students?,neutral,0.28
+NAPAKA-INIT SA WAITING SHED WALANG BUBONG!,negative,1.68
+Keep up the good work LGU Naga proud kami sa inyo.,positive,1.75
+Di man lang nag-reply sa complain ko sa FB page seen zoned lang.,negative,1.16
+Open ba ang library ng weekends for students?,neutral,0.22
+Grabe naman yung truck ng basura nagkakalat sa kalsada.,negative,1.46
+Ang linis ng CR sa bus terminal infairness.,positive,1.18
+Paano po mag-apply ng scholarship kay Mayor?,neutral,0.30
+Sobrang bagal ng usad sa LTO Naga abutin ka ng siyam-siyam.,negative,1.55
+Salamat sa mabilis na pag-ayos ng poste sa harap namin.,positive,1.48
+It's so maingay here sa Centro daming sasakyan.,negative,0.92
+Wala bang action sa mga illegal parking sa Magsaysay??,negative,1.35
+Congrats Naga City for being the most competitive city!,positive,1.82
+BAHA NA NAMAN SA LOOB NG BAHAY NAMIN DAHIL SA DRAINAGE NA YAN!!,negative,1.95
+GRABE NA TO TRAFFIC SA TRIANGULO WALA NA GALAWAN!!,negative,1.92
+Mabilis naman yung pila sa treasury office in fairness.,positive,1.15
+Saan po banda ang PSA office dito sa Naga?,neutral,0.20
+Thank you so much LGU Naga sa scholarship laking tulong!,positive,1.85
+MNWD paki-check yung tubig ang labo parang kape.,negative,1.45
+Salamat CASURECO sa romantic dinner candlelight na naman kami.,negative,1.65
+Nice one ang linis ng plaza ngayon.,positive,0.95
+Baha sa Magsaysay konting ulan lang anuna?,negative,1.35
+May coding ba ngayon sa Centro?,neutral,0.15
+ANG BAHO NG BASURA DITO SA LERMA DI PA KINUKUHA 1 WEEK NA!,negative,1.88
+It's so init in the City Hall sira ba aircon?,negative,1.12
+Very approachable si Kapitan madaling kausap.,positive,1.25
+aq nlng lagi nag aadjust sa trapik d2 sa diversion.,negative,1.28
+Proud to be Nagueño ang ganda ng Christmas lights!,positive,1.78
+Daming aso sa daan sa San Felipe delikado sa motor.,negative,1.32
+Ask ko lang if open ang Peoples Hall for events?,neutral,0.28
+Wala bang kwenta traffic lights niyo? Sira na naman.,negative,1.62
+Thanks Blue Boys safe nakatawid anak ko.,positive,1.48
+Grabe maningil trimobile driver 50 pesos ang lapit lang?,negative,1.52
+Casureco ano na matutunaw na ice cream ko sa brownout.,negative,1.22
+Sain po pwede mag-apply para sa solo parent ID?,neutral,0.32
+HOY AYUSIN NYO KALSADA SA PACOL ANG LALIM NG LUBAK!,negative,1.90
+Efficient service at the assessors office thanks.,positive,1.30
+What time po start ng parade bukas?,neutral,0.18
+Ang dumi ng palengke ngayon maputik.,negative,1.25
+Solid ng free wifi sa Centro ang bilis mag-load.,positive,1.65
+Wait lang why is there no water na naman? So hassle.,negative,1.18
+Pwede po ba mag-walk in sa vaccination site?,neutral,0.25
+WALANG SILBI ANG HOTLINE NIYO DI SUMASAGOT SA TAWAG!!,negative,1.82
+Good job sa traffic management kanina smooth lang.,positive,1.10
+Paki-huli yung mga nagvi-videoke ng hatinggabi may pasok pa bukas.,negative,1.40
+Bakit may bayad ang CR sa terminal? Ang panghi naman.,negative,1.38
+Update po sa class suspension may bagyo ba?,neutral,0.45
+Ang ganda ng decor sa Plaza Rizal nakaka-good vibes.,positive,1.52
+Sira na naman ang ATM sa munisipyo hassle mag-withdraw.,negative,1.15
+ANO BA YAN MNWD WALA NA NAMAN TUBIG SAWANG SAWA NA KAMI!!,negative,1.96
+Very helpful ang staff sa senior citizen office.,positive,1.45
+Sain po dadaan ang prusisyon bukas?,neutral,0.22
+Ang bagal ng truck ng basura ngayon tanghali na ang baho na.,negative,1.12
+Thank you Mayor for the unwavering support sa mga students!,positive,1.80
+Trapik na sa Magsaysay trapik pa sa Panganiban saan kami dadaan?,negative,1.55
+Open po ba ang library pag holiday?,neutral,0.15
+MNWD anuna? Kulay chocolate ang tubig namin!,negative,1.68
+Feels safe walking in Magsaysay at night thanks to the lights.,positive,1.35
+Daming ipis sa food court paki-check sanitation please.,negative,1.58
+luh anyare s kuryente patay sindi nkakatakot.,negative,1.25
+GRABE NAMAN YUNG USOK NG JEEP NA YAN PAKI-HULI!,negative,1.75
+Salamat sa ayuda Mayor laking tulong saamin.,positive,1.42
+Kailan po ang job fair sa city hall?,neutral,0.20
+Sobrang sikip sa Peñafrancia pag may event di makadaan.,negative,1.15
 WALANG TUBIG DITO SA PACOL 3 DAYS NA!!!,negative,1.95
 Sobrang baho na ng basura sa Triangulo bakit di kinukuha?,negative,1.60
 Good morning po ask ko lang kung open ang health center sa sabado?,neutral,0.25
