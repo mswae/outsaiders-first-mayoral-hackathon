@@ -1,0 +1,166 @@
+text,label,intensity
+WALANG TUBIG DITO SA PACOL 3 DAYS NA!!!,negative,1.95
+Sobrang baho na ng basura sa Triangulo bakit di kinukuha?,negative,1.60
+Good morning po ask ko lang kung open ang health center sa sabado?,neutral,0.25
+Thank you Mayor Legacion sa mabilis na action sa ilaw!,positive,1.75
+CASURECO ANUNA BROWN OUT NA NAMAN KAMI SA SAN FELIPE!!,negative,1.90
+Garo wara man kwenta ang traffic enforcer sa Magsaysay.,negative,1.40
+Mabilis ang process ng business permit renewal ngayon in fairness.,positive,1.35
+Anyare sa tubig sa Balatas? Ang dumi.,negative,1.45
+Sain po pwede magpa-register para sa coding?,neutral,0.30
+GRABE BAHA DITO SA DAYANGDANG DELIKADO NA!,negative,1.85
+Mabagal ang usad sa Panganiban Drive.,neutral,0.40
+Super helpful nung staff sa City Hall kanina tnx po.,positive,1.55
+Paki-check man po ang poste sa harap ng UNC delikado baga.,negative,1.20
+Wala bang pasok bukas?,neutral,0.10
+Best LGU talaga ang Naga!! Proud Nagueño here!,positive,1.80
+Ang dumi ng plaza ngayon daming kalat.,negative,1.15
+Late na naman ang truck ng basura sa Concepcion Pequeña.,negative,1.10
+Please po pakiusap ayusin nyo na ang kalsada sa Panicuason hirap na kami.,negative,1.65
+Okay man su service kang trimobile driver.,positive,0.80
+May schedule na ba ng garbage collection?,neutral,0.20
+MNWD wala na naman tubig??!,negative,1.50
+Love the new lights sa Centro ang ganda tignan.,positive,1.45
+Grabe ang init sa city hall paki-ayos aircon.,negative,1.25
+Sana all mabilis ang wifi sa barangay hall.,neutral,0.60
+Nakakatakot dumaan sa Balatas pag gabi walang ilaw.,negative,1.70
+Ano ba yan, sira na naman ang traffic light sa Diversion!!,negative,1.60
+Very accommodating si Doc sa health center.,positive,1.30
+Ask lng po if may job fair sa Plaza?,neutral,0.25
+HOY CASURECO SIRA ANG APPLIANCES NAMIN DAHIL SA BROWNOUT!,negative,1.98
+Safe ba mag-jogging sa Magsaysay pag umaga?,neutral,0.35
+Ang galing ng rescue team alerto agad.,positive,1.50
+Paki-huli naman yung mga asong gala sa Calauag delikado sa bata.,negative,1.30
+Waiting pa din sa financial assistance update.,neutral,0.45
+Kudos to the Blue Boys for managing the traffic well.,positive,1.40
+Traffic nnman sa rotonda jusko.,negative,1.05
+Wara man lang abiso na mawawalan ng tubig.,negative,1.35
+Iyo man maganda ang programa sa education.,positive,1.10
+Pwede po ba mag-request ng cctv sa Concepcion Grande?,neutral,0.50
+Sobrang ingay ng karaoke dito sa kapitbahay lagpas 10pm na!!,negative,1.75
+Marhay na aga, may libreng gamot po ba sa center?,neutral,0.20
+Thanks sa scholarship allowance laking tulong.,positive,1.60
+Bulok na sistema sa terminal ang gulo gulo.,negative,1.55
+Sain banda ang pila para sa national ID?,neutral,0.15
+Nakaka-proud maging taga-Naga malinis at progressive.,positive,1.70
+Ang bastos nung guard sa city hall grabe.,negative,1.45
+Di man lang nag-reply sa chat ang page niyo.,negative,1.15
+Consistent ang garbage collection sa Tinago good job.,positive,1.25
+Baha na naman sa may SM banda ingat kayo.,neutral,0.60
+Please fix the potholes in Cararayan super hassle.,negative,1.30
+Wow ang bilis ng response time ng emergency hotline!,positive,1.85
+Ano na balita sa inaayos na drainage sa Mabolo?,neutral,0.40
+Sana i-maintain ang kalinisan sa Peñafrancia.,neutral,0.70
+Napakabagal ng internet sa library sayang lang punta.,negative,1.20
+Solid ang support ng LGU sa mga athletes.,positive,1.50
+Grabe na ang traffic sa Centro di na gumagalaw!,negative,1.65
+Paki-check daw ang tubig sa Pacol garo may lasa.,negative,1.40
+May bayad po ba magpa-checkup?,neutral,0.10
+Salamat po sa food packs nung bagyo.,positive,1.60
+ANG BAHO NG BASURA D2 SA MAY SABANG!,negative,1.70
+Efficient ang vaccination drive mabilis lang.,positive,1.35
+Anyare sa street lights sa Liboton?? Ang dilim!!,negative,1.55
+Okay lang ba mag-park sa may cathedral?,neutral,0.30
+Daming lamok sa canal namin paki-spray naman po.,negative,1.25
+Magalang yung mga tanod sa barangay namin.,positive,1.10
+Update sa schedule ng truck ng basura pls.,neutral,0.35
+Parang awa niyo na ayusin niyo na ang tubig sa Carolina!!,negative,1.80
+Garo wara man nangyayari sa request ko.,negative,0.90
+Good pm open pa ba ang treasurer's office?,neutral,0.20
+Ang ganda ng decor sa Plaza Rizal nakaka-good vibes.,positive,1.40
+Sira na naman ang ATM sa munisipyo??,negative,1.10
+Paano po mag-apply ng mayor's permit online?,neutral,0.25
+Grabe ang traffic enforcer nangongotong??,negative,1.60
+Nice one Naga City for the awards!,positive,1.50
+Bakit laging baha sa Lerma kahit konting ulan?,negative,1.35
+Mabilis mag-reply sa FB page ang LGU helpful.,positive,1.20
+Sain pwede mag-reklamo about sa maingay na kapitbahay?,neutral,0.45
+Nakakainis yung trimobile driver nanaga ng pasahe!,negative,1.50
+Wala bang aksyon sa mga illegal parking sa Tabuco?,negative,1.30
+Thank u po sa free medical mission.,positive,1.40
+Status po ng ID ko?,neutral,0.15
+NAPAKA-INIT DITO SA OPISINA NYO WALANG ELECTRIC FAN!,negative,1.65
+Very organized ang event sa Plaza Quezon.,positive,1.25
+Hindi kinukuha ang basura pag walang lagay??,negative,1.55
+Pwede po humingi ng tulong para sa gamot?,neutral,0.55
+Saludo ako sa mga sweepers ang aga naglilinis.,positive,1.35
+Ang dumi ng public cr sa market kadiri.,negative,1.45
+Kelan po ang deadline ng tax payment?,neutral,0.20
+Salamat sa ilaw sa may Bagumbayan maliwanag na.,positive,1.30
+CASURECO PLEASE NAMAN MAAWA KAYO SA MGA STUDYANTE!,negative,1.85
+Hassle mag-commute pag rush hour sa Naga.,negative,1.15
+May libreng bakuna ba sa aso ngayon?,neutral,0.30
+Super traffic sa may diversion road iwas muna kayo.,neutral,0.60
+Ang gulo ng pila sa DSWD.,negative,1.25
+Very fast transaction sa registrar.,positive,1.45
+Sain ang sakayan pa-Panicuason?,neutral,0.10
+Bakit ang mahal ng singil sa tubig??,negative,1.40
+Thank you sa scholarship program ni Mayor laking bawas sa tuition.,positive,1.75
+Di ko feel ang safety sa gabi sa may diversion.,negative,1.20
+Okay naman ang serbisyo sa barangay hall namin.,positive,0.90
+Ano requirements para sa financial aid?,neutral,0.25
+WALANG KWENTA ANG CUSTOMER SERVICE NG MNWD!,negative,1.90
+Masaya ako sa improvement ng Naga.,positive,1.30
+Puno na naman ang basurahan sa kanto paki-kuha.,negative,1.10
+Saan pwede mag-report ng sirang poste?,neutral,0.35
+Dapat gayahin ng ibang city ang Naga.,positive,1.55
+Sobrang traffic sa may SM banda pag hapon.,negative,1.15
+Paayos naman ng lubak sa San Felipe nakakasira ng sasakyan.,negative,1.35
+Mabait si Kapitan madaling lapitan.,positive,1.40
+Ask ko lang kung kailan ang dating ng senior citizen pension?,neutral,0.40
+BAHA NA SA LOOB NG BAHAY NAMIN DITO SA TRIANGULO!,negative,1.95
+Noted po sa announcement salamat.,neutral,0.20
+Disappointed sa service ng Casureco palaging brownout.,negative,1.25
+Garo malabo na maayos ang traffic sa centro.,negative,1.00
+Nice project sa eco-park ang ganda.,positive,1.45
+Paki-huli yung mga nag-iinom sa kalsada ang iingay.,negative,1.30
+Safe ba ang water sa nawasa pwede inumin?,neutral,0.45
+Ang bilis ng internet sa plaza wow.,positive,1.60
+Wara man lang nag-aasikaso sa complain ko.,negative,1.10
+Kamusta po ang lagay ng kalsada papuntang Carolina?,neutral,0.30
+Sobrang dilim sa may Pacol road nakakatakot.,negative,1.50
+Thanks for the quick response team!,positive,1.35
+Ano ba yan, sira na naman ang traffic light.,negative,1.15
+Sain makakabili ng trash bags na required?,neutral,0.25
+Keep up the good work LGU Naga!,positive,1.50
+Daming lamok sa barangay namin baka magka-dengue.,negative,1.25
+Nagkalat ang basura sa Magsaysay pag umaga.,negative,1.30
+Very peaceful sa Naga I love it here.,positive,1.65
+May update na po sa request ko last week?,neutral,0.35
+Grabe ang usok ng mga jeep sa centro.,negative,1.20
+Mabilis na ang pila sa NBI Naga thanks.,positive,1.30
+Hassle ang tubig hina ng pressure.,negative,1.10
+Pwede po ba magpa-blotter online?,neutral,0.30
+Ang susungit ng staff sa munisipyo palitan niyo yan.,negative,1.60
+Salamat sa pa-zumba ni Mayora enjoy.,positive,1.25
+Kailan po matatapos ang road repair sa Balatas?,neutral,0.40
+WORST TRAFFIC EVER SA MAGSAYSAY!,negative,1.90
+Ang ganda ng view sa Panicuason road.,positive,1.50
+Paki-ayos ang drainage sa Calauag bumabaha.,negative,1.35
+Open ba ang library ng weekends?,neutral,0.15
+Good job sa pag-maintain ng cleanliness.,positive,1.20
+Bakit walang tubig tuwing umaga??,negative,1.40
+Sain pwede mag-donate para sa victims?,neutral,0.50
+Ang baho ng kanal sa may palengke.,negative,1.30
+Very smooth process sa pagkuha ng cedula.,positive,1.15
+Wara kwenta ang hotline hindi sumasagot.,negative,1.50
+Please pakibalik ang ilaw sa poste namin.,negative,1.05
+Proud to be Nagueño!,positive,1.80
+Anong oras start ng parade?,neutral,0.20
+Lubak lubak ang daan sa Concepcion Grande.,negative,1.25
+Sobrang init sa waiting shed walng bubong.,negative,1.15
+Thanks po sa relief goods.,positive,1.40
+Baka naman pwede pabilisin ang internet sa city hall.,negative,0.95
+Sain po ang drop off ng donations?,neutral,0.30
+Efficient system sa business one stop shop.,positive,1.50
+Napaka-ingay ng mga motor sa gabi paki-check.,negative,1.35
+MAY SUNOG SA MAY TABUCO TUMAWAG KAYO BUMBERO!,negative,2.00
+Okay man su flow kang traffic kaina.,positive,0.85
+Update po sa suspended classes?,neutral,0.25
+Ang bagal ng usad ng pila sa cashier.,negative,1.10
+Happy with the new developments in the city.,positive,1.30
+Parang gago yung driver ng truck muntik na ako mahagip.,negative,1.70
+Salamat po sa tulong pinansyal.,positive,1.45
+Saan ang opisina ng mayor?,neutral,0.10
+BULOK ANG SERBISYO NG MNWD MAGSARA NA KAYO!,negative,1.95
+Ang linis ng hangin sa Naga fresh.,positive,1.25
