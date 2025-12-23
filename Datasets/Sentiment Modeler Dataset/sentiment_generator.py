@@ -1,25 +1,27 @@
+
 import pandas as pd
 import random
 import numpy as np
 
 # ==========================================
-# 1. CONFIGURATION & TUNING KNOBS
+# 1. CONFIGURATION
 # ==========================================
 OUTPUT_FILENAME = "peopulse_sentiment_dataset.csv"
-NUM_ROWS = 1000            
-NOISE_PROBABILITY = 0.30   
-BICOL_NUANCE_PROB = 0.20   
-INTENSITY_SIGMA = 0.15     
 
-PROB_NEGATIVE = 0.45
-PROB_POSITIVE = 0.45
-# Remaining 0.10 is Neutral
+# Exact Class Counts
+NUM_POS = 700
+NUM_NEG = 700
+NUM_NEU = 700
+
+# Feature Probabilities
+NOISE_PROBABILITY = 0.30    
+BICOL_NUANCE_PROB = 0.35    
+INTENSITY_SIGMA = 0.15       # Jitter standard deviatio
 
 # ==========================================
 # 2. DATA ASSETS (VOCABULARY & TEMPLATES)
 # ==========================================
 
-# Mixed Barangays + Specific Landmarks found in Ground Truth
 LOCATIONS = [
     "Triangulo", "Calauag", "Concepcion Pequeña", "Concepcion Grande", 
     "Balatas", "San Felipe", "Pacol", "Carolina", "Panicuason", 
@@ -29,7 +31,6 @@ LOCATIONS = [
     "Panganiban Drive", "Diversion Road", "SM Naga", "Cathedral"
 ]
 
-# Expanded Services including specific Utilities & Local Terms
 SERVICES = [
     # General
     "garbage collection", "basura", "truck ng basura",
@@ -37,8 +38,8 @@ SERVICES = [
     "drainage", "kanal", "baha",
     "road repairs", "lubak", "kalsada",
     # Specific Entities (High Intensity Targets)
-    "CASURECO", "brownout", "kuryente", # Electricity
-    "MNWD", "nawasa", "tubig", "water supply", # Water
+    "CASURECO", "brownout", "kuryente", 
+    "MNWD", "nawasa", "tubig", "water supply", 
     # Local Governance
     "Blue Boys", "traffic enforcer", "trapik",
     "Health Center", "checkup", "gamot", "bakuna",
@@ -68,15 +69,12 @@ NEUTRAL_ADJECTIVES = [
     "recent", "upcoming", "regular", "status of", "latest"
 ]
 
-# --- TEMPLATES DERIVED FROM GROUND TRUTH ---
 NEG_TEMPLATES = [
-    # High Intensity / Urgent
     "HOY {serv} ANUNA?? {loc} NA NAMAN KAMI!!",
     "WALANG {serv} DITO SA {loc} 3 DAYS NA!!!",
     "{serv} PLEASE NAMAN MAAWA KAYO SA MGA TAO SA {loc}!",
     "GRABE {adj} DITO SA {loc} DELIKADO NA!",
     "WORST {serv} EVER SA {loc}!",
-    # Standard Complaints
     "Sobrang {adj} na ng {serv} sa {loc} bakit di inaaksyunan?",
     "Garo wara man kwenta ang {serv} sa {loc}.",
     "Anyare sa {serv} sa {loc}? Ang {adj}.",
@@ -90,7 +88,6 @@ NEG_TEMPLATES = [
 ]
 
 POS_TEMPLATES = [
-    # Praise / Gratitude
     "Thank you Mayor Legacion sa mabilis na action sa {serv} sa {loc}!",
     "Mabilis ang process ng {serv} ngayon in fairness.",
     "Super helpful nung staff sa {serv} sa {loc} tnx po.",
@@ -109,7 +106,6 @@ POS_TEMPLATES = [
 ]
 
 NEU_TEMPLATES = [
-    # Inquiries / Passive
     "Good morning po ask ko lang kung open ang {serv} sa {loc}?",
     "Sain po pwede magpa-register para sa {serv}?",
     "May schedule na ba ng {serv} sa {loc}?",
@@ -131,53 +127,38 @@ NEU_TEMPLATES = [
 # ==========================================
 
 def inject_bicolano_nuance(text):
-    """
-    Injects Naga-specific particles and vocabulary swaps based on 
-    Ground Truth analysis.
-    """
+    """Injects Naga-specific particles and vocabulary swaps."""
     words = text.split()
     new_words = []
     
-    # Vocabulary Swaps (Tagalog -> Bicol/Naga Mix)
     swaps = {
-        "saan": "sain",
-        "ngayon": "ngunyan",
-        "wala": "wara",
-        "meron": "igwa",
-        "ang": "su", # Context dependent, but adds flavor
-        "bago": "ba'go",
-        "hindi": "di",
-        "kanina": "kaina"
+        "saan": "sain", "ngayon": "ngunyan", "wala": "wara",
+        "meron": "igwa", "ang": "su", "bago": "ba'go",
+        "hindi": "di", "kanina": "kaina"
     }
-    
-    # Particles to insert randomly
     particles = ["man", "baga", "daw", "po", "garo", "uni", "iyo"]
 
     for i, word in enumerate(words):
         clean_word = word.lower().strip(".,!?")
         
-        # 1. Apply Swap if exists
+        # Swap
         if clean_word in swaps:
-            # Preserve case
             if word[0].isupper():
                 word = swaps[clean_word].capitalize()
             else:
                 word = swaps[clean_word]
-        
         new_words.append(word)
         
-        # 2. Random Particle Injection (Don't inject at very end or very start usually)
+        # Inject Particle
         if i > 0 and i < len(words) - 1:
-            if random.random() < 0.15: # 15% chance after any word
+            if random.random() < 0.15:
                 p = random.choice(particles)
                 new_words.append(p)
 
     return " ".join(new_words)
 
 def inject_noise(text):
-    """
-    Simulates realistic human typing patterns (Typos, Jejemon).
-    """
+    """Simulates realistic human typing patterns."""
     shortcuts = {
         "ako": "aq", "siya": "xa", "si": "c", "po": "p", 
         "mo": "m", "ko": "q", "dito": "d2", "niyo": "nyo",
@@ -191,94 +172,88 @@ def inject_noise(text):
 
     for word in words:
         clean_word = word.lower().strip(".,!?")
-        
         if clean_word in shortcuts and random.random() < 0.30:
             new_words.append(shortcuts[clean_word])
             continue
 
         new_chars = []
         for c in word:
-            # Vowel Elongation
             if c.lower() in "aeiou" and random.random() < 0.05:
                 new_chars.append(c * random.randint(2, 4))
                 continue
-            # Casing Swap
             if c.isalpha() and random.random() < 0.02:
                 new_chars.append(c.swapcase())
                 continue
-            # Dropped Char
             if random.random() < 0.01:
                 continue
             new_chars.append(c)
-        
         new_words.append("".join(new_chars))
 
     return " ".join(new_words)
 
+# ==========================================
+# 4. CATEGORY GENERATOR LOGIC
+# ==========================================
 
-def generate_naga_feedback(num_rows, noise_prob):
+def generate_category(target_label, count):
+    """
+    Generates a specific number of rows for a single category (Pos, Neg, or Neu).
+    """
     data = []
-
-    for _ in range(num_rows):
-        roll = random.random()
+    
+    for _ in range(count):
         loc = random.choice(LOCATIONS)
         serv = random.choice(SERVICES)
         
+        # Jitter Base
         jitter = np.random.normal(loc=0.0, scale=INTENSITY_SIGMA)
         current_intensity = 0.0
-
-        # --- SENTIMENT LOGIC ---
-        if roll < PROB_NEGATIVE:
-            label = "negative"
+        text_raw = ""
+        
+        if target_label == "negative":
             adj, base_score = random.choice(NEGATIVE_ADJECTIVES)
             template = random.choice(NEG_TEMPLATES)
             text_raw = template.format(adj=adj, serv=serv, loc=loc)
             
             current_intensity = base_score + jitter
             
-            # --- UPDATED INTENSITY LOGIC (Based on Ground Truth) ---
+            # --- Negative Intensity Logic ---
+            critical = ["CASURECO", "brownout", "MNWD", "tubig", "water", "sunog"]
+            if any(k in text_raw for k in critical):
+                current_intensity += 0.35 
             
-            # 1. Critical Utilities Boost (CASURECO/MNWD/Water/Brownout = High Anger)
-            critical_keywords = ["CASURECO", "brownout", "MNWD", "tubig", "water", "sunog"]
-            if any(k in text_raw for k in critical_keywords):
-                current_intensity += 0.35 # Significant boost
-            
-            # 2. Urgent Words Boost
-            urgent_keywords = ["Mayor", "Emergency", "Attention", "Please", "delikado"]
-            if any(k in text_raw for k in urgent_keywords):
+            urgent = ["Mayor", "Emergency", "Attention", "Please", "delikado"]
+            if any(k in text_raw for k in urgent):
                 current_intensity += 0.15
 
-            # 3. Shout Logic
             if current_intensity > 1.6:
                 text_raw = text_raw.upper()
                 current_intensity += 0.2
-                
-        elif roll < (PROB_NEGATIVE + PROB_POSITIVE):
-            label = "positive"
+
+        elif target_label == "positive":
             adj, base_score = random.choice(POSITIVE_ADJECTIVES)
             template = random.choice(POS_TEMPLATES)
             text_raw = template.format(adj=adj, serv=serv, loc=loc)
             
             current_intensity = base_score + jitter
             
+            # --- Positive Intensity Logic ---
             if any(x in text_raw for x in ["Mayor", "Salamat", "Thank", "Proud"]):
                 current_intensity += 0.1
-            
-        else:
-            label = "neutral"
+
+        elif target_label == "neutral":
             adj = random.choice(NEUTRAL_ADJECTIVES)
             template = random.choice(NEU_TEMPLATES)
             text_raw = template.format(adj=adj, serv=serv, loc=loc)
-            current_intensity = abs(np.random.normal(0.25, 0.1)) # Slight bump for inquiries
+            
+            # Neutral intensity is low (observation/inquiry)
+            current_intensity = abs(np.random.normal(0.25, 0.1))
 
-        # --- LINGUISTIC INJECTION LAYERS ---
-        
-        # Layer 1: Bicolano Nuance (Apply before noise)
+        # --- LINGUISTIC INJECTION ---
         if random.random() < BICOL_NUANCE_PROB:
             text_raw = inject_bicolano_nuance(text_raw)
 
-        # Layer 2: Noise/Typos
-        if random.random() < noise_prob:
+        if random.random() < NOISE_PROBABILITY:
             final_text = inject_noise(text_raw)
         else:
             final_text = text_raw
@@ -287,25 +262,42 @@ def generate_naga_feedback(num_rows, noise_prob):
         clamped_intensity = np.clip(current_intensity, 0.0, 2.0)
         final_intensity = round(clamped_intensity, 2)
         
-        data.append([final_text, label, final_intensity])
-
-    return pd.DataFrame(data, columns=["text", "label", "intensity"])
-
+        data.append([final_text, target_label, final_intensity])
+    
+    return data
 
 # ==========================================
-# 4. MAIN EXECUTION BLOCK
+# 5. MAIN EXECUTION BLOCK
 # ==========================================
 if __name__ == "__main__":
-    print(f"--- Peopulse 'Nagueño' Synthetic Data Generator ---")
-    print(f"Generating {NUM_ROWS} rows...")
+    print(f"--- Peopulse 'Balanced' Data Generator ---")
+    print(f"Target: {NUM_POS} Pos | {NUM_NEG} Neg | {NUM_NEU} Neu")
     
-    # Generate Data
-    df = generate_naga_feedback(NUM_ROWS, NOISE_PROBABILITY)
+    # 1. Generate Categories
+    pos_data = generate_category("positive", NUM_POS)
+    neg_data = generate_category("negative", NUM_NEG)
+    neu_data = generate_category("neutral", NUM_NEU)
     
-    # Save to CSV
+    # 2. Combine Data
+    all_data = pos_data + neg_data + neu_data
+    
+    # 3. Create DataFrame
+    df = pd.DataFrame(all_data, columns=["text", "label", "intensity"])
+    
+    # 4. Shuffle (CRITICAL STEP)
+    df = df.sample(frac=1, random_state=42).reset_index(drop=True)
+    
+    # 5. Validation
+    print("-" * 30)
+    print("Class Balance Check:")
+    print(df['label'].value_counts())
+    print("-" * 30)
+    
+    # 6. Save
     try:
         df.to_csv(OUTPUT_FILENAME, index=False)
         print(f"SUCCESS: Data saved to '{OUTPUT_FILENAME}'")
-        print("-" * 30)
+        print("Sample Preview:")
+        print(df.head(5))
     except Exception as e:
         print(f"ERROR: Could not save file. {e}")
