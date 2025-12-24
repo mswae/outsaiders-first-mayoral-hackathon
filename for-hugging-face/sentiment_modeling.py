@@ -1,5 +1,4 @@
 import pandas as pd
-import torch
 
 from typing import Tuple
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline

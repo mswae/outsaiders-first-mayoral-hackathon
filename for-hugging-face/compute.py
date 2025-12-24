@@ -1,6 +1,3 @@
-import pandas as pd
-import numpy as np
-
 class ParticipationAdoptionIndex:
     
     def __init__ (
@@ -57,18 +54,18 @@ class ParticipationAdoptionIndex:
             )
                 
         # ---------- public API ----------
-        def compute_pai(self, participants_by_group=None, threshold=0.2):
+        def compute_pai(self, participants_by_group=None):
             # absolute counts
-            spi_a_abs = target_population - num_participants
-            spi_b_abs = target_population - spi_a_abs - feedback_volume
-            peg_abs = num_participants - feedback_volume
+            spi_a_abs = self.target_population - self.num_participants
+            spi_b_abs = self.target_population - spi_a_abs - self.feedback_volume
+            peg_abs = self.num_participants - self.feedback_volume
 
             # ----- required PAI components -----
-            pcr = num_participants / target_population
-            spi_a = spi_a_abs / target_population
-            spi_b = spi_b_abs / target_population
-            spa = w_pos - w_neg
-            peg = peg_abs / target_population
+            pcr = self.num_participants / self.target_population
+            spi_a = spi_a_abs / self.target_population
+            spi_b = spi_b_abs / self.target_population
+            spa = self.w_pos - self.w_neg
+            peg = peg_abs / self.target_population
             
             if participants_by_group is not None:
                 if not isinstance(participants_by_group, dict):
