@@ -10,3 +10,5 @@ This is a shared repo for our hackathon docs, links, and media.
 **Google Docs**: https://docs.google.com/document/d/14xdiqNfL1QGucGvAEVnGuXXOvATcDJQDXMk_G_FO0f8/edit?usp=sharing
 
 **Figma Design**:
+
+**Hugging Face**: https://huggingface.co/spaces/sdbrgo/Peopulse
