@@ -18,10 +18,8 @@ def assign_typology(sorted_components, high_th=0.4, th=0.2):
         else:
             low_impact.append(entry)
 
-    typology = {
+    return {
         "high": high_impact,
         "medium": medium_impact,
         "low": low_impact
     }
-
-    return typology

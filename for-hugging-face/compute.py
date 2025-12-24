@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler
 
 class ParticipationAdoptionIndex:
     
@@ -56,21 +55,8 @@ class ParticipationAdoptionIndex:
                     reverse=True
                 )
             )
-        
-        # def _apply_threshold(self, components, threshold):
-        #     if threshold is None:
-        #         return components
-            
-        #     filtered_components = {} # dictionary of filtered components
-
-        #     for component_name, value in components.items():
-        #         if abs(value) >= threshold:
-        #             filtered_components[component_name] = value
-
-        #     return filtered_components
-        
+                
         # ---------- public API ----------
-
         def compute_pai(self, participants_by_group=None, threshold=0.2):
             # absolute counts
             spi_a_abs = target_population - num_participants
@@ -104,7 +90,5 @@ class ParticipationAdoptionIndex:
             self._normalize_components()
 
             sorted_components = self._sort_components()
-
-            # filtered = self._apply_threshold(organized, threshold)
 
             return sorted_components
