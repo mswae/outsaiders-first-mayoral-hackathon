@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events App</title>
+    <style>
+        /* Base styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #fcfcfc; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; padding: 40px; color: #111; }
+        
+        /* View Manager */
+        .view { display: none; width: 100%; max-width: 1000px; animation: fadeIn 0.3s ease-out; }
+        .view.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Shared Card Container */
+        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid #f9f9f9; }
+        .centered-container { max-width: 500px; margin: 0 auto; text-align: center; }
+
+        /* Buttons & Nav */
+        .nav-icon { color: #888; font-size: 18px; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; transition: color 0.2s; }
+        .nav-icon:hover { color: #111; }
+        
+        .gradient-btn {
+            background: linear-gradient(90deg, #f5a623, #9013fe);
+            color: white; border: none; padding: 12px 24px; border-radius: 24px; cursor: pointer; font-weight: 600; font-size: 14px;
+            transition: opacity 0.2s, transform 0.1s; display: inline-block;
+        }
+        .gradient-btn:hover { opacity: 0.9; }
+        .gradient-btn:active { transform: scale(0.98); }
+        .gradient-btn.full-width { width: 100%; margin-top: 20px; }
+
+        /* --- EVENTS PAGE STYLES --- */
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; gap: 20px; }
+        .header h1 { font-size: 28px; font-weight: 800; }
+        
+        .search-container { flex: 1; max-width: 300px; position: relative; margin-right: auto; margin-left: 20px; }
+        .search-container input { width: 100%; padding: 10px 35px 10px 15px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 14px; outline: none; }
+        .search-container .search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 14px; }
+
+        .events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 35px; margin-bottom: 50px; }
+        .event-card {
+            background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #f0f0f0;
+        }
+        .event-card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); border-color: #e4e4e4; }
+        
+        .event-image { width: 100%; height: 160px; background-color: #111; object-fit: cover; display: block; }
+        .event-details { padding: 20px; display: flex; gap: 15px; }
+        
+        .event-date { color: #5c5cff; font-weight: bold; font-size: 11px; text-transform: uppercase; text-align: center; }
+        .event-date span { font-size: 26px; color: #111; display: block; margin-top: -2px; font-weight: 800; letter-spacing: -1px; }
+        
+        .event-text-content { flex: 1; text-align: left; }
+        .event-title { font-size: 15px; margin-bottom: 6px; font-weight: 700; }
+        .event-location { font-size: 11px; color: #777; margin-bottom: 12px; }
+        .event-desc { font-size: 12px; color: #555; line-height: 1.5; }
+
+        .pagination { display: flex; justify-content: center; gap: 4px; }
+        .page-btn { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: none; background: #f5f5f5; color: #666; border-radius: 4px; font-size: 12px; cursor: pointer; font-weight: 600; }
+        .page-btn.active { background: #f5a623; color: white; }
+        .page-btn:hover:not(.active) { background: #e0e0e0; }
+
+        /* --- COMMENT PAGE STYLES --- */
+        .comment-header { text-align: left; margin-bottom: 25px; }
+        .comment-header h2 { font-size: 22px; margin-bottom: 8px; }
+        .comment-header p { color: #666; font-size: 14px; }
+        
+        textarea {
+            width: 100%; height: 180px; padding: 15px; border: 1px solid #ddd;
+            border-radius: 8px; margin-bottom: 10px; resize: vertical; font-size: 15px;
+            background: #fafafa; transition: border-color 0.2s, background 0.2s;
+        }
+        textarea:focus { outline: none; border-color: #9013fe; background: white; }
+
+        /* --- SUCCESS PAGE STYLES --- */
+        .success-icon {
+            width: 80px; height: 80px; background: linear-gradient(135deg, #f5a623, #9013fe);
+            color: white; font-size: 40px; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; margin: 0 auto 25px auto;
+        }
+        #view-success h2 { font-size: 24px; margin-bottom: 10px; }
+        #view-success p { color: #666; margin-bottom: 30px; font-size: 15px; }
+
+    </style>
+</head>
+<body>
+
+    <div id="view-events" class="view active container">
+        <div class="nav-icon">≡</div>
+        <div class="header">
+            <h1>Events</h1>
+            <div class="search-container">
+                <input type="text" placeholder="Search events">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+
+        <div class="events-grid">
+            <div class="event-card" data-event="C(art)ful Saturdays">
+                <img src="https://via.placeholder.com/400x200/1a1a1a/ffffff?text=Night+Market+Lights" class="event-image" alt="Event Image">
+                <div class="event-details">
+                    <div class="event-date">Apr<br><span>14</span></div>
+                    <div class="event-text-content">
+                        <h3 class="event-title">C(art)ful Saturdays</h3>
+                        <div class="event-location">📍 Barlin St. and Jacob St., Naga City</div>
+                        <p class="event-desc">We'll get you directly seated and inside for you to enjoy the show.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="event-card" data-event="Tech Mixer 2026">
+                <img src="https://via.placeholder.com/400x200/1a1a1a/ffffff?text=Night+Market+Lights" class="event-image" alt="Event Image">
+                <div class="event-details">
+                    <div class="event-date">Apr<br><span>15</span></div>
+                    <div class="event-text-content">
+                        <h3 class="event-title">Tech Mixer 2026</h3>
+                        <div class="event-location">📍 Barlin St. and Jacob St., Naga City</div>
+                        <p class="event-desc">We'll get you directly seated and inside for you to enjoy the show.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card" data-event="Local Indie Fest">
+                <img src="https://via.placeholder.com/400x200/1a1a1a/ffffff?text=Night+Market+Lights" class="event-image" alt="Event Image">
+                <div class="event-details">
+                    <div class="event-date">Apr<br><span>16</span></div>
+                    <div class="event-text-content">
+                        <h3 class="event-title">Local Indie Fest</h3>
+                        <div class="event-location">📍 Barlin St. and Jacob St., Naga City</div>
+                        <p class="event-desc">We'll get you directly seated and inside for you to enjoy the show.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="page-btn">&lt;</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">&gt;</button>
+        </div>
+    </div>
+
+    <div id="view-comment" class="view container centered-container">
+        <div class="nav-icon" id="back-to-events-btn">← Back to Events</div>
+        
+        <div class="comment-header">
+            <h2 id="comment-title">Leave a Comment</h2>
+            <p>What are your thoughts on <strong id="target-event-name">this event</strong>?</p>
+        </div>
+
+        <textarea id="comment-input" placeholder="Write your feedback here..."></textarea>
+        
+        <button class="gradient-btn full-width" id="submit-comment-btn">Submit Comment</button>
+    </div>
+
+    <div id="view-success" class="view container centered-container">
+        <div class="success-icon">✓</div>
+        <h2>Comment Submitted</h2>
+        <p>Thank you for your feedback! Your thoughts have been successfully recorded.</p>
+        <button class="gradient-btn full-width" id="return-home-btn">Back to Events</button>
+    </div>
+
+    <script>
+        // DOM Elements
+        const viewEvents = document.getElementById('view-events');
+        const viewComment = document.getElementById('view-comment');
+        const viewSuccess = document.getElementById('view-success');
+        
+        const eventCards = document.querySelectorAll('.event-card');
+        const targetEventNameDisplay = document.getElementById('target-event-name');
+        const commentInput = document.getElementById('comment-input');
+        
+        const backToEventsBtn = document.getElementById('back-to-events-btn');
+        const submitCommentBtn = document.getElementById('submit-comment-btn');
+        const returnHomeBtn = document.getElementById('return-home-btn');
+
+        let currentEvent = "";
+
+        // Navigation Helper
+        function showView(viewElement) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            viewElement.classList.add('active');
+            window.scrollTo(0, 0); // Reset scroll position on page change
+        }
+
+        // 1. Click Event Card -> Go to Comment Page
+        eventCards.forEach(card => {
+            card.addEventListener('click', () => {
+                currentEvent = card.getAttribute('data-event');
+                targetEventNameDisplay.textContent = currentEvent;
+                commentInput.value = ''; // clear previous inputs
+                showView(viewComment);
+                commentInput.focus();
+            });
+        });
+
+        // 2. Click Back Button -> Go to Events Page
+        backToEventsBtn.addEventListener('click', () => {
+            showView(viewEvents);
+        });
+
+        // 3. Submit Comment -> Go to Success Page
+        submitCommentBtn.addEventListener('click', () => {
+            if (commentInput.value.trim() === '') {
+                alert('Please write a comment before submitting.');
+                return;
+            }
+            // Logic to send data to backend would go here
+            console.log(`Submitting comment for ${currentEvent}: ${commentInput.value}`);
+            showView(viewSuccess);
+        });
+
+        // 4. Return Home -> Go to Events Page
+        returnHomeBtn.addEventListener('click', () => {
+            showView(viewEvents);
+        });
+    </script>
+</body>
+</html>
