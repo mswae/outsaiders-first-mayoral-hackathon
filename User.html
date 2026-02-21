@@ -3,39 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events App</title>
+    <title>Citizen Portal - Peopulse</title>
     <style>
         /* Base styles */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #fcfcfc; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; padding: 40px; color: #111; }
         
-        /* View Manager */
-        .view { display: none; width: 100%; max-width: 1000px; animation: fadeIn 0.3s ease-out; }
-        .view.active { display: block; }
+        /* Main Container */
+        .container { width: 100%; max-width: 1000px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid #f9f9f9; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        /* Top Nav Icon */
+        .nav-icon { color: #888; font-size: 18px; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; font-weight: 600; }
 
-        /* Shared Card Container */
-        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid #f9f9f9; }
-        .centered-container { max-width: 500px; margin: 0 auto; text-align: center; }
-
-        /* Buttons & Nav */
-        .nav-icon { color: #888; font-size: 18px; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; transition: color 0.2s; }
-        .nav-icon:hover { color: #111; }
-        
-        .gradient-btn {
-            background: linear-gradient(90deg, #f5a623, #9013fe);
-            color: white; border: none; padding: 12px 24px; border-radius: 24px; cursor: pointer; font-weight: 600; font-size: 14px;
-            transition: opacity 0.2s, transform 0.1s; display: inline-block;
-        }
-        .gradient-btn:hover { opacity: 0.9; }
-        .gradient-btn:active { transform: scale(0.98); }
-        .gradient-btn.full-width { width: 100%; margin-top: 20px; }
-
-        /* --- EVENTS PAGE STYLES --- */
+        /* Header */
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; gap: 20px; }
         .header h1 { font-size: 28px; font-weight: 800; }
         
@@ -43,12 +23,16 @@
         .search-container input { width: 100%; padding: 10px 35px 10px 15px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 14px; outline: none; }
         .search-container .search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 14px; }
 
-        .events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 35px; margin-bottom: 50px; }
+        /* Grid Layout */
+        .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-bottom: 50px; }
+
+        /* Event Card */
         .event-card {
-            background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.08);
             cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #f0f0f0;
+            position: relative;
         }
-        .event-card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); border-color: #e4e4e4; }
+        .event-card:hover { transform: translateY(-3px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: #e4e4e4; }
         
         .event-image { width: 100%; height: 160px; background-color: #111; object-fit: cover; display: block; }
         .event-details { padding: 20px; display: flex; gap: 15px; }
@@ -61,82 +45,83 @@
         .event-location { font-size: 11px; color: #777; margin-bottom: 12px; }
         .event-desc { font-size: 12px; color: #555; line-height: 1.5; }
 
+        /* Pagination */
         .pagination { display: flex; justify-content: center; gap: 4px; }
         .page-btn { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: none; background: #f5f5f5; color: #666; border-radius: 4px; font-size: 12px; cursor: pointer; font-weight: 600; }
-        .page-btn.active { background: #f5a623; color: white; }
+        .page-btn.active { background: #5c5cff; color: white; }
         .page-btn:hover:not(.active) { background: #e0e0e0; }
 
-        /* --- COMMENT PAGE STYLES --- */
-        .comment-header { text-align: left; margin-bottom: 25px; }
-        .comment-header h2 { font-size: 22px; margin-bottom: 8px; }
-        .comment-header p { color: #666; font-size: 14px; }
+        /* Shared View Styles */
+        .view { display: none; width: 100%; animation: fadeIn 0.2s ease-out; }
+        .view.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
         
-        textarea {
-            width: 100%; height: 180px; padding: 15px; border: 1px solid #ddd;
-            border-radius: 8px; margin-bottom: 10px; resize: vertical; font-size: 15px;
-            background: #fafafa; transition: border-color 0.2s, background 0.2s;
+        /* --- SUBMIT VIEW STYLES --- */
+        .back-header { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 700; margin-bottom: 30px; cursor: pointer; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px;}
+        .back-icon { color: #888; font-weight: normal; font-size: 18px; }
+        .back-header:hover .back-icon { color: #111; }
+        
+        .section-title { font-size: 18px; font-weight: 800; margin-bottom: 5px; letter-spacing: -0.5px; }
+        .event-subtitle { font-size: 14px; color: #5c5cff; font-weight: 600; margin-bottom: 30px; display: block; }
+        
+        .form-group { margin-bottom: 25px; }
+        .form-label { display: block; font-size: 11px; text-transform: uppercase; color: #888; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px; }
+        .form-input, .form-textarea { width: 100%; padding: 12px 15px; border: 1px solid #e5e5e5; border-radius: 6px; font-size: 14px; outline: none; transition: border-color 0.2s; background: white; }
+        .form-input:focus, .form-textarea:focus { border-color: #5c5cff; }
+        .form-textarea { resize: vertical; min-height: 120px; }
+        
+        .submit-row { display: flex; justify-content: flex-end; margin-top: 30px; border-top: 1px solid #f0f0f0; padding-top: 20px; align-items: center; gap: 20px;}
+        
+        .submit-btn {
+            background: linear-gradient(90deg, #5c5cff, #9013fe);
+            color: white; border: none; padding: 12px 30px; border-radius: 24px; cursor: pointer; font-weight: 600; font-size: 14px;
+            transition: opacity 0.2s, transform 0.1s;
         }
-        textarea:focus { outline: none; border-color: #9013fe; background: white; }
+        .submit-btn:hover { opacity: 0.9; }
+        .submit-btn:active { transform: scale(0.98); }
+        .submit-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; opacity: 1; }
 
-        /* --- SUCCESS PAGE STYLES --- */
-        .success-icon {
-            width: 80px; height: 80px; background: linear-gradient(135deg, #f5a623, #9013fe);
-            color: white; font-size: 40px; display: flex; align-items: center; justify-content: center;
-            border-radius: 50%; margin: 0 auto 25px auto;
+        .status-msg { font-size: 13px; font-weight: 600; flex: 1; text-align: right; display: none; }
+        .status-msg.success { color: #22c55e; display: block; }
+        .status-msg.error { color: #ef4444; display: block; }
+
+        /* --- MOBILE RESPONSIVE QUERIES --- */
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            .container { padding: 20px; }
+            
+            .header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .header h1 { font-size: 24px; }
+            .search-container { width: 100%; max-width: none; margin-left: 0; }
+            
+            /* SCROLLABLE 1 COLUMN ON MOBILE */
+            .events-grid { grid-template-columns: 1fr; gap: 20px; }
+            .event-image { height: 180px; }
+            
+            .submit-row { flex-direction: column-reverse; align-items: stretch; gap: 10px; }
+            .status-msg { text-align: center; }
+            .submit-btn { width: 100%; padding: 15px; }
         }
-        #view-success h2 { font-size: 24px; margin-bottom: 10px; }
-        #view-success p { color: #666; margin-bottom: 30px; font-size: 15px; }
 
     </style>
 </head>
 <body>
 
-    <div id="view-events" class="view active container">
-        <div class="nav-icon">≡</div>
+    <!-- VIEW: DASHBOARD -->
+    <div class="container view active" id="view-dashboard">
+        <div class="nav-icon">≡ Citizen Portal</div>
+        
         <div class="header">
-            <h1>Events</h1>
+            <h1>Select Event to Evaluate</h1>
             <div class="search-container">
                 <input type="text" placeholder="Search events">
                 <span class="search-icon">🔍</span>
             </div>
+            <!-- NO ADD EVENT BUTTON HERE -->
         </div>
 
-        <div class="events-grid">
-            <div class="event-card" data-event="C(art)ful Saturdays">
-                <img src="https://via.placeholder.com/400x200/1a1a1a/ffffff?text=Night+Market+Lights" class="event-image" alt="Event Image">
-                <div class="event-details">
-                    <div class="event-date">Apr<br><span>14</span></div>
-                    <div class="event-text-content">
-                        <h3 class="event-title">C(art)ful Saturdays</h3>
-                        <div class="event-location">📍 Barlin St. and Jacob St., Naga City</div>
-                        <p class="event-desc">We'll get you directly seated and inside for you to enjoy the show.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="event-card" data-event="Tech Mixer 2026">
-                <img src="https://via.placeholder.com/400x200/1a1a1a/ffffff?text=Night+Market+Lights" class="event-image" alt="Event Image">
-                <div class="event-details">
-                    <div class="event-date">Apr<br><span>15</span></div>
-                    <div class="event-text-content">
-                        <h3 class="event-title">Tech Mixer 2026</h3>
-                        <div class="event-location">📍 Barlin St. and Jacob St., Naga City</div>
-                        <p class="event-desc">We'll get you directly seated and inside for you to enjoy the show.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="event-card" data-event="Local Indie Fest">
-                <img src="https://via.placeholder.com/400x200/1a1a1a/ffffff?text=Night+Market+Lights" class="event-image" alt="Event Image">
-                <div class="event-details">
-                    <div class="event-date">Apr<br><span>16</span></div>
-                    <div class="event-text-content">
-                        <h3 class="event-title">Local Indie Fest</h3>
-                        <div class="event-location">📍 Barlin St. and Jacob St., Naga City</div>
-                        <p class="event-desc">We'll get you directly seated and inside for you to enjoy the show.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="events-grid" id="user-events-grid">
+            <!-- Dynamic events from Firebase will be loaded here. -->
         </div>
 
         <div class="pagination">
@@ -148,79 +133,195 @@
         </div>
     </div>
 
-    <div id="view-comment" class="view container centered-container">
-        <div class="nav-icon" id="back-to-events-btn">← Back to Events</div>
-        
-        <div class="comment-header">
-            <h2 id="comment-title">Leave a Comment</h2>
-            <p>What are your thoughts on <strong id="target-event-name">this event</strong>?</p>
+    <!-- VIEW: SUBMIT EVALUATION FORM -->
+    <div class="container view" id="view-submit">
+        <div class="back-header" id="back-to-dashboard">
+            <span class="back-icon">←</span> Back to Events
         </div>
 
-        <textarea id="comment-input" placeholder="Write your feedback here..."></textarea>
+        <h2 class="section-title">Submit Evaluation</h2>
+        <span class="event-subtitle" id="submit-event-title">Selected Event Name</span>
         
-        <button class="gradient-btn full-width" id="submit-comment-btn">Submit Comment</button>
+        <form id="feedback-form">
+            <!-- THE USER ID IS NOW HIDDEN. The system uses this fixed value to enforce the 1-per-user rule without showing it to the UI -->
+            <input type="hidden" id="citizen-id" value="MY_NAGA_USER_001">
+
+            <div class="form-group">
+                <label class="form-label">Your Feedback</label>
+                <textarea id="feedback-text" class="form-textarea" placeholder="What did you think about the event? What could be improved?" required></textarea>
+            </div>
+
+            <div class="submit-row">
+                <div id="status-container" class="status-msg"></div>
+                <button type="submit" class="submit-btn" id="submit-btn">Submit Evaluation</button>
+            </div>
+        </form>
     </div>
 
-    <div id="view-success" class="view container centered-container">
-        <div class="success-icon">✓</div>
-        <h2>Comment Submitted</h2>
-        <p>Thank you for your feedback! Your thoughts have been successfully recorded.</p>
-        <button class="gradient-btn full-width" id="return-home-btn">Back to Events</button>
-    </div>
-
-    <script>
-        // DOM Elements
-        const viewEvents = document.getElementById('view-events');
-        const viewComment = document.getElementById('view-comment');
-        const viewSuccess = document.getElementById('view-success');
+    <!-- NEW FIREBASE ENABLED SCRIPT WITH EXTERNAL IMPORT -->
+    <script type="module">
+        import { collection, getDocs, doc, getDoc, setDoc, addDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
         
-        const eventCards = document.querySelectorAll('.event-card');
-        const targetEventNameDisplay = document.getElementById('target-event-name');
-        const commentInput = document.getElementById('comment-input');
+        // 1. IMPORT YOUR CONFIG AND INITIALIZED INSTANCES FROM SHARED FILE
+        import { db, firebaseConfig } from './firebase-config.js';
+
+        // --- View Switching Logic ---
+        const viewDashboard = document.getElementById('view-dashboard');
+        const viewSubmit = document.getElementById('view-submit');
+        let currentEventId = ""; // Stores the ID of the event the user clicked
         
-        const backToEventsBtn = document.getElementById('back-to-events-btn');
-        const submitCommentBtn = document.getElementById('submit-comment-btn');
-        const returnHomeBtn = document.getElementById('return-home-btn');
-
-        let currentEvent = "";
-
-        // Navigation Helper
-        function showView(viewElement) {
+        function switchView(viewToShow) {
             document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-            viewElement.classList.add('active');
-            window.scrollTo(0, 0); // Reset scroll position on page change
+            viewToShow.classList.add('active');
+            window.scrollTo(0, 0);
         }
 
-        // 1. Click Event Card -> Go to Comment Page
-        eventCards.forEach(card => {
+        document.getElementById('back-to-dashboard').addEventListener('click', () => switchView(viewDashboard));
+
+        function showStatus(message, type) {
+            const statusContainer = document.getElementById('status-container');
+            statusContainer.textContent = message;
+            statusContainer.className = `status-msg ${type}`;
+        }
+
+        // --- Card Click Logic ---
+        function attachCardListener(card) {
             card.addEventListener('click', () => {
-                currentEvent = card.getAttribute('data-event');
-                targetEventNameDisplay.textContent = currentEvent;
-                commentInput.value = ''; // clear previous inputs
-                showView(viewComment);
-                commentInput.focus();
+                const title = card.querySelector('.event-title').textContent;
+                
+                // Set the targeted event for submission
+                currentEventId = card.dataset.eventId; 
+                document.getElementById('submit-event-title').textContent = "Evaluating: " + title;
+                
+                // Reset form state
+                document.getElementById('feedback-form').reset();
+                document.getElementById('status-container').style.display = 'none';
+                document.getElementById('submit-btn').disabled = false;
+                
+                switchView(viewSubmit);
             });
-        });
+        }
 
-        // 2. Click Back Button -> Go to Events Page
-        backToEventsBtn.addEventListener('click', () => {
-            showView(viewEvents);
-        });
+        function formatCardDate(dateString) {
+            if (!dateString) return `TBD<br><span>--</span>`;
+            const [year, month, day] = dateString.split('-');
+            const date = new Date(year, month - 1, day);
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            return `${months[date.getMonth()]}<br><span>${date.getDate()}</span>`;
+        }
 
-        // 3. Submit Comment -> Go to Success Page
-        submitCommentBtn.addEventListener('click', () => {
-            if (commentInput.value.trim() === '') {
-                alert('Please write a comment before submitting.');
+        // --- FETCH EVENTS FROM FIREBASE (Purely Database Driven) ---
+        async function loadEvents() {
+            const grid = document.getElementById('user-events-grid');
+            
+            if (!firebaseConfig.projectId || firebaseConfig.projectId === "YOUR_PROJECT_ID") {
+                grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red; font-weight: bold; background: #fee2e2; padding: 15px; border-radius: 8px;">⚠️ Firebase configuration is missing! Please update your firebase-config.js file.</p>';
                 return;
             }
-            // Logic to send data to backend would go here
-            console.log(`Submitting comment for ${currentEvent}: ${commentInput.value}`);
-            showView(viewSuccess);
-        });
 
-        // 4. Return Home -> Go to Events Page
-        returnHomeBtn.addEventListener('click', () => {
-            showView(viewEvents);
+            grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #888;">Loading events from database...</p>';
+
+            try {
+                const querySnapshot = await getDocs(collection(db, "events"));
+                grid.innerHTML = ''; // Clear loading text
+                
+                if (querySnapshot.empty) {
+                    grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #888;">No events available at this time.</p>';
+                    return;
+                }
+
+                const eventsList = [];
+                querySnapshot.forEach((doc) => {
+                    eventsList.push({ id: doc.id, ...doc.data() });
+                });
+
+                // Sort newest first
+                eventsList.sort((a, b) => {
+                    const timeA = a.created_at ? a.created_at.toMillis() : 0;
+                    const timeB = b.created_at ? b.created_at.toMillis() : 0;
+                    return timeB - timeA;
+                });
+
+                eventsList.forEach(event => {
+                    const card = document.createElement('div');
+                    card.className = 'event-card';
+                    card.dataset.eventId = event.id; // Crucial for database submission
+                    
+                    const eventTitle = event.event_name || 'Unnamed Event';
+                    const imgText = encodeURIComponent(eventTitle);
+
+                    card.innerHTML = `
+                        <img src="https://placehold.co/400x200/1a1a1a/ffffff?text=${imgText}" class="event-image" alt="Event Image">
+                        <div class="event-details">
+                            <div class="event-date">${formatCardDate(event.date)}</div>
+                            <div class="event-text-content">
+                                <h3 class="event-title">${eventTitle}</h3>
+                                <div class="event-location">📍 ${event.location || 'TBA'}</div>
+                                <p class="event-desc">${event.description || 'No description provided.'}</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    attachCardListener(card);
+                    grid.appendChild(card);
+                });
+            } catch (error) {
+                console.error("Error loading dynamic events: ", error);
+                grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red;">Error loading events from database.</p>';
+            }
+        }
+
+        // Load database events immediately
+        loadEvents();
+
+        // --- SUBMIT FEEDBACK LOGIC (Multiple evaluations allowed for now per your previous request) ---
+        document.getElementById('feedback-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!firebaseConfig.projectId || firebaseConfig.projectId === "YOUR_PROJECT_ID") {
+                showStatus("System offline: Edit firebase-config.js", "error");
+                return;
+            }
+
+            // Grabs the hidden dummy ID
+            const citizenId = document.getElementById('citizen-id').value.trim();
+            const comment = document.getElementById('feedback-text').value.trim();
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (!citizenId || !comment || !currentEventId) {
+                showStatus("Please fill out all fields.", "error");
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Submitting...";
+            document.getElementById('status-container').style.display = 'none';
+
+            try {
+                // By using addDoc, we generate a random ID for every submission.
+                // This allows you to test multiple comments quickly. 
+                await addDoc(collection(db, "feedback"), {
+                    event_id: currentEventId,
+                    user_id: citizenId,
+                    comment: comment,
+                    timestamp: new Date()
+                });
+
+                // Success message and auto-redirect!
+                showStatus("Evaluation submitted! Redirecting...", "success");
+                document.getElementById('feedback-form').reset();
+                
+                // Go back to the dashboard after 1.5 seconds
+                setTimeout(() => {
+                    switchView(viewDashboard);
+                }, 1500);
+                
+            } catch (error) {
+                console.error("Error saving feedback: ", error);
+                showStatus("Error saving feedback. Please try again.", "error");
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Submit Evaluation";
+            }
         });
     </script>
 </body>

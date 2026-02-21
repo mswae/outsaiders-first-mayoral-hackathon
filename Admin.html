@@ -161,6 +161,29 @@
         .sentiments-box::-webkit-scrollbar { width: 4px; }
         .sentiments-box::-webkit-scrollbar-track { background: transparent; }
         .sentiments-box::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+
+        /* --- MOBILE RESPONSIVE QUERIES --- */
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            .container { padding: 20px; }
+            
+            .header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .header h1 { font-size: 24px; }
+            .search-container { width: 100%; max-width: none; margin-left: 0; }
+            .add-event-btn { width: 100%; text-align: center; }
+
+            .events-grid { grid-template-columns: 1fr; gap: 20px; }
+            
+            .form-row { flex-direction: column; gap: 0; }
+            
+            /* Analysis view adjustments */
+            .analysis-layout { flex-direction: column; gap: 20px; }
+            .analysis-sidebar { width: 100%; border-right: none; border-bottom: 1px solid #f0f0f0; padding-right: 0; padding-bottom: 20px; }
+            .analysis-main { padding-left: 0; }
+            
+            .chart-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .char-cards-row { flex-direction: column; gap: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -179,40 +202,7 @@
         </div>
 
         <div class="events-grid" id="admin-events-grid">
-            <!-- Event Cards -->
-            <div class="event-card">
-                <img src="https://via.placeholder.com/400x200/1a1a1a/ffffff?text=Night+Market+Lights" class="event-image" alt="Event Image">
-                <div class="event-details">
-                    <div class="event-date">Apr<br><span>14</span></div>
-                    <div class="event-text-content">
-                        <h3 class="event-title">C(art)ful Saturdays</h3>
-                        <div class="event-location">📍 Barlin St. and Jacob St., Naga City</div>
-                        <p class="event-desc">We'll get you directly seated and inside for you to enjoy the show.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="event-card">
-                <img src="https://via.placeholder.com/400x200/1a1a1a/ffffff?text=Night+Market+Lights" class="event-image" alt="Event Image">
-                <div class="event-details">
-                    <div class="event-date">May<br><span>21</span></div>
-                    <div class="event-text-content">
-                        <h3 class="event-title">Tech Innovation Mixer</h3>
-                        <div class="event-location">📍 Magsaysay Ave, Naga City</div>
-                        <p class="event-desc">A networking event for local developers and designers.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="event-card">
-                <img src="https://via.placeholder.com/400x200/1a1a1a/ffffff?text=Night+Market+Lights" class="event-image" alt="Event Image">
-                <div class="event-details">
-                    <div class="event-date">Jun<br><span>05</span></div>
-                    <div class="event-text-content">
-                        <h3 class="event-title">Plaza Quince Martires Tour</h3>
-                        <div class="event-location">📍 San Francisco, Naga City</div>
-                        <p class="event-desc">A guided historical walk through the city center.</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Events will be populated dynamically from Firebase -->
         </div>
 
         <div class="pagination">
@@ -248,6 +238,17 @@
             </div>
         </div>
 
+        <div class="form-row">
+            <div class="form-col form-group">
+                <label class="form-label">Target Population</label>
+                <input type="number" id="event-target-pop-input" class="form-input" placeholder="e.g. 10000">
+            </div>
+            <div class="form-col form-group">
+                <label class="form-label">Expected Participants</label>
+                <input type="number" id="event-participants-input" class="form-input" placeholder="e.g. 1000">
+            </div>
+        </div>
+
         <div class="form-group">
             <label class="form-label">Description</label>
             <textarea id="event-desc-input" class="form-textarea" placeholder="Event Description"></textarea>
@@ -277,9 +278,9 @@
             <div class="analysis-sidebar">
                 <button class="analysis-back-btn" id="back-from-analysis">←</button>
                 
-                <h2 class="analysis-title" id="analysis-event-title">C(ART)FUL SATURDAYS</h2>
-                <p class="analysis-meta" id="analysis-event-date">February 21</p>
-                <p class="analysis-meta" id="analysis-event-loc">Barlin St. and Jacob St, Naga City</p>
+                <h2 class="analysis-title" id="analysis-event-title">EVENT NAME</h2>
+                <p class="analysis-meta" id="analysis-event-date">Date</p>
+                <p class="analysis-meta" id="analysis-event-loc">Location</p>
                 
                 <div class="analysis-tags">
                     <span class="analysis-tag">Outdoor</span>
@@ -417,8 +418,14 @@
         </div>
     </div>
 
-    <script>
-        // View switching logic
+    <!-- NEW FIREBASE ENABLED SCRIPT WITH EXTERNAL IMPORT -->
+    <script type="module">
+        import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+        
+        // 1. IMPORT YOUR CONFIG AND INITIALIZED INSTANCES FROM SHARED FILE
+        import { db, firebaseConfig } from './firebase-config.js';
+
+        // --- View Switching Logic ---
         const viewDashboard = document.getElementById('view-dashboard');
         const viewAddEvent = document.getElementById('view-add-event');
         const viewAnalysis = document.getElementById('view-analysis');
@@ -429,40 +436,25 @@
             window.scrollTo(0, 0);
         }
 
-        // Dashboard -> Add Event
         document.getElementById('add-event-btn').addEventListener('click', () => switchView(viewAddEvent));
-        
-        // Add Event -> Dashboard
         document.getElementById('back-to-dashboard').addEventListener('click', () => switchView(viewDashboard));
-        
-        // Analysis -> Dashboard
         document.getElementById('back-from-analysis').addEventListener('click', () => switchView(viewDashboard));
 
-        // Attach click listener to cards to open Analysis View
         function attachCardListener(card) {
             card.addEventListener('click', () => {
-                // Extract info from the clicked card
                 const title = card.querySelector('.event-title').textContent;
                 const loc = card.querySelector('.event-location').textContent.replace('📍 ', '');
-                
-                // Parse the date (which contains <br> and <span> tags)
                 const dateEl = card.querySelector('.event-date');
-                const dateText = dateEl.innerText.replace('\n', ' '); // format "Apr 14"
+                const dateText = dateEl.innerText.replace('\n', ' '); 
                 
-                // Populate the Analysis view
                 document.getElementById('analysis-event-title').textContent = title;
                 document.getElementById('analysis-event-date').textContent = dateText;
                 document.getElementById('analysis-event-loc').textContent = loc;
                 
-                // Show analysis view
                 switchView(viewAnalysis);
             });
         }
 
-        // Initialize existing cards
-        document.querySelectorAll('.event-card').forEach(attachCardListener);
-
-        // --- Save Event Form Logic ---
         function formatCardDate(dateString) {
             if (!dateString) return `TBD<br><span>--</span>`;
             const [year, month, day] = dateString.split('-');
@@ -471,33 +463,124 @@
             return `${months[date.getMonth()]}<br><span>${date.getDate()}</span>`;
         }
 
-        document.getElementById('save-event-btn').addEventListener('click', () => {
+        // --- FETCH EVENTS LOGIC ---
+        async function loadEvents() {
+            const grid = document.getElementById('admin-events-grid');
+            
+            if (!firebaseConfig.projectId || firebaseConfig.projectId === "YOUR_PROJECT_ID") {
+                grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red; font-weight: bold; background: #fee2e2; padding: 15px; border-radius: 8px;">⚠️ Firebase configuration is missing!<br><br>Please edit your <code>firebase-config.js</code> file.</p>';
+                return;
+            }
+
+            grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #888;">Loading events...</p>';
+
+            try {
+                const querySnapshot = await getDocs(collection(db, "events"));
+                grid.innerHTML = ''; // Clear loading text
+
+                if (querySnapshot.empty) {
+                    grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #888;">No events found in the database. Add one!</p>';
+                    return;
+                }
+
+                const eventsList = [];
+                querySnapshot.forEach((doc) => {
+                    eventsList.push({ id: doc.id, ...doc.data() });
+                });
+
+                // Sort so newest events appear first
+                eventsList.sort((a, b) => {
+                    const timeA = a.created_at ? a.created_at.toMillis() : 0;
+                    const timeB = b.created_at ? b.created_at.toMillis() : 0;
+                    return timeB - timeA;
+                });
+
+                eventsList.forEach(event => {
+                    const card = document.createElement('div');
+                    card.className = 'event-card';
+                    card.dataset.eventId = event.id;
+                    
+                    const eventTitle = event.event_name || 'Unnamed Event';
+                    const imgText = encodeURIComponent(eventTitle);
+
+                    card.innerHTML = `
+                        <img src="https://placehold.co/400x200/1a1a1a/ffffff?text=${imgText}" class="event-image" alt="Event Image">
+                        <div class="event-details">
+                            <div class="event-date">${formatCardDate(event.date)}</div>
+                            <div class="event-text-content">
+                                <h3 class="event-title">${eventTitle}</h3>
+                                <div class="event-location">📍 ${event.location || 'TBA'}</div>
+                                <p class="event-desc">${event.description || 'No description provided.'}</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    attachCardListener(card);
+                    grid.appendChild(card);
+                });
+            } catch (error) {
+                console.error("Error loading events: ", error);
+                grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red;">Failed to load events from database. Check console.</p>';
+            }
+        }
+
+        // Run this immediately when the page loads!
+        loadEvents();
+
+        // --- Save Event Form Logic (Writing to Firestore) ---
+        document.getElementById('save-event-btn').addEventListener('click', async () => {
+            
+            if (!firebaseConfig.projectId || firebaseConfig.projectId === "YOUR_PROJECT_ID") {
+                alert("⚠️ Cannot save event: Edit your firebase-config.js file to include your actual keys.");
+                return;
+            }
+
             const titleInput = document.getElementById('event-title-input');
             const dateInput = document.getElementById('event-date-input');
+            const locInput = document.getElementById('event-location-input');
+            const descInput = document.getElementById('event-desc-input');
+            const targetPopInput = document.getElementById('event-target-pop-input');
+            const participantsInput = document.getElementById('event-participants-input');
+
             if (!titleInput.value.trim() || !dateInput.value) {
                 alert('Please provide at least a Title and a Date.'); return;
             }
+            if (!targetPopInput.value || !participantsInput.value) {
+                alert('Please provide Target Population and Expected Participants. The backend needs these for analysis.'); return;
+            }
 
-            const newCard = document.createElement('div');
-            newCard.className = 'event-card';
-            newCard.innerHTML = `
-                <img src="https://via.placeholder.com/400x200/1a1a1a/ffffff?text=New+Event" class="event-image">
-                <div class="event-details">
-                    <div class="event-date">${formatCardDate(dateInput.value)}</div>
-                    <div class="event-text-content">
-                        <h3 class="event-title">${titleInput.value}</h3>
-                        <div class="event-location">📍 ${document.getElementById('event-location-input').value || 'TBA'}</div>
-                        <p class="event-desc">${document.getElementById('event-desc-input').value || 'No description provided.'}</p>
-                    </div>
-                </div>
-            `;
-            
-            attachCardListener(newCard);
-            document.getElementById('admin-events-grid').prepend(newCard);
-            
-            titleInput.value = ''; document.getElementById('event-location-input').value = '';
-            dateInput.value = ''; document.getElementById('event-desc-input').value = '';
-            switchView(viewDashboard);
+            const saveBtn = document.getElementById('save-event-btn');
+            saveBtn.disabled = true;
+            saveBtn.innerText = "Saving...";
+
+            try {
+                // Push to Firebase Database
+                const docRef = await addDoc(collection(db, "events"), {
+                    event_name: titleInput.value,
+                    location: locInput.value || 'TBA',
+                    date: dateInput.value,
+                    description: descInput.value || 'No description provided.',
+                    target_population: Number(targetPopInput.value),
+                    num_participants: Number(participantsInput.value),
+                    created_at: new Date()
+                });
+                console.log("Database entry created with ID: ", docRef.id);
+
+                // CLEAR inputs
+                titleInput.value = ''; locInput.value = ''; dateInput.value = ''; 
+                descInput.value = ''; targetPopInput.value = ''; participantsInput.value = '';
+                
+                // Sync UI again
+                await loadEvents();
+                switchView(viewDashboard);
+                
+            } catch (e) {
+                console.error("Error adding document to Firebase: ", e);
+                alert("Database Error: Could not save the event.");
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.innerText = "Save Event";
+            }
         });
     </script>
 </body>
