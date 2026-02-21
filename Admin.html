@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Events Management</title>
+    <style>
+        /* Base styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #fcfcfc; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; padding: 40px; color: #111; }
+        
+        /* Main Container */
+        .container { width: 100%; max-width: 1000px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid #f9f9f9; }
+
+        /* Top Nav Icon */
+        .nav-icon { color: #888; font-size: 18px; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; font-weight: 600; }
+
+        /* Header */
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; gap: 20px; }
+        .header h1 { font-size: 28px; font-weight: 800; }
+        
+        .search-container { flex: 1; max-width: 300px; position: relative; margin-right: auto; margin-left: 20px; }
+        .search-container input { width: 100%; padding: 10px 35px 10px 15px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 14px; outline: none; }
+        .search-container .search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 14px; }
+
+        /* Admin Action Button */
+        .add-event-btn {
+            background: linear-gradient(90deg, #f5a623, #9013fe);
+            color: white; border: none; padding: 12px 24px; border-radius: 24px; cursor: pointer; font-weight: 600; font-size: 14px;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+        .add-event-btn:hover { opacity: 0.9; }
+        .add-event-btn:active { transform: scale(0.98); }
+
+        /* Grid Layout */
+        .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-bottom: 50px; }
+
+        /* Event Card */
+        .event-card {
+            background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #f0f0f0;
+            position: relative;
+        }
+        .event-card:hover { transform: translateY(-3px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: #e4e4e4; }
+        
+        .event-image { width: 100%; height: 160px; background-color: #111; object-fit: cover; display: block; }
+        .event-details { padding: 20px; display: flex; gap: 15px; }
+        
+        .event-date { color: #5c5cff; font-weight: bold; font-size: 11px; text-transform: uppercase; text-align: center; }
+        .event-date span { font-size: 26px; color: #111; display: block; margin-top: -2px; font-weight: 800; letter-spacing: -1px; }
+        
+        .event-text-content { flex: 1; text-align: left; }
+        .event-title { font-size: 15px; margin-bottom: 6px; font-weight: 700; }
+        .event-location { font-size: 11px; color: #777; margin-bottom: 12px; }
+        .event-desc { font-size: 12px; color: #555; line-height: 1.5; }
+
+        /* Pagination */
+        .pagination { display: flex; justify-content: center; gap: 4px; }
+        .page-btn { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: none; background: #f5f5f5; color: #666; border-radius: 4px; font-size: 12px; cursor: pointer; font-weight: 600; }
+        .page-btn.active { background: #f5a623; color: white; }
+        .page-btn:hover:not(.active) { background: #e0e0e0; }
+
+        /* Shared View Styles */
+        .view { display: none; width: 100%; animation: fadeIn 0.2s ease-out; }
+        .view.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* --- ADD EVENT VIEW STYLES --- */
+        .back-header { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 700; margin-bottom: 30px; cursor: pointer; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px;}
+        .back-icon { color: #888; font-weight: normal; font-size: 18px; }
+        .back-header:hover .back-icon { color: #111; }
+        
+        .section-title { font-size: 18px; font-weight: 800; margin-bottom: 25px; letter-spacing: -0.5px; }
+        
+        .form-group { margin-bottom: 25px; }
+        .form-row { display: flex; gap: 20px; }
+        .form-col { flex: 1; }
+        .form-label { display: block; font-size: 11px; text-transform: uppercase; color: #888; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px; }
+        .form-input, .form-textarea { width: 100%; padding: 12px 15px; border: 1px solid #e5e5e5; border-radius: 6px; font-size: 14px; outline: none; transition: border-color 0.2s; background: white; }
+        .form-input:focus, .form-textarea:focus { border-color: #9013fe; }
+        .form-textarea { resize: vertical; min-height: 120px; }
+        
+        .category-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; }
+        .tag.active { background: #f0f0f0; color: #111; }
+        .tag.inactive { background: #fcfcfc; color: #aaa; border: 1px solid #eee; }
+        .tag:hover { background: #e4e4e4; color: #111; }
+        
+        .submit-row { display: flex; justify-content: flex-end; margin-top: 30px; border-top: 1px solid #f0f0f0; padding-top: 20px; }
+
+        /* --- ANALYSIS VIEW STYLES --- */
+        .analysis-layout { display: flex; gap: 40px; margin-top: -10px; }
+        .analysis-sidebar { width: 220px; flex-shrink: 0; border-right: 1px solid #f0f0f0; padding-right: 30px; }
+        .analysis-main { flex: 1; padding-left: 10px; }
+        
+        .analysis-back-btn { background: none; border: none; font-size: 18px; cursor: pointer; margin-bottom: 20px; color: #555; transition: color 0.2s; }
+        .analysis-back-btn:hover { color: #111; }
+        
+        .analysis-title { font-size: 16px; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; line-height: 1.2; }
+        .analysis-meta { font-size: 10px; color: #777; margin-bottom: 4px; }
+        .analysis-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 15px; margin-bottom: 30px; }
+        .analysis-tag { font-size: 8px; padding: 4px 8px; background: #f5f5f5; border: 1px solid #e0e0e0; border-radius: 12px; font-weight: 700; text-transform: uppercase; }
+        
+        .legend-section { margin-top: 30px; padding-top: 30px; border-top: 1px solid #f0f0f0; }
+        .legend-title { font-size: 10px; font-weight: 700; margin-bottom: 15px; }
+        .legend-item { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 15px; }
+        .legend-text-col { flex: 1; padding-right: 10px; }
+        .legend-label { font-size: 10px; font-weight: 800; text-transform: uppercase; margin-bottom: 4px; line-height: 1.2; }
+        .legend-desc { font-size: 9px; color: #888; line-height: 1.3; }
+        .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 2px; }
+        .dot-red { background-color: #ef4444; }
+        .dot-yellow { background-color: #eab308; }
+        .dot-green { background-color: #22c55e; }
+
+        .analysis-section-title { font-size: 16px; font-weight: 800; margin-bottom: 25px; letter-spacing: -0.5px; }
+        
+        /* Chart area */
+        .chart-row { display: flex; gap: 30px; align-items: center; margin-bottom: 40px; }
+        .donut-chart {
+            width: 90px; height: 90px; border-radius: 50%;
+            background: conic-gradient(#ef4444 0% 25%, #22c55e 25% 60%, #cbd5e1 60% 100%);
+            position: relative; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .donut-inner { width: 50px; height: 50px; background: white; border-radius: 50%; }
+        .chart-labels { display: flex; gap: 6px; margin-bottom: 8px; }
+        .chart-label { font-size: 8px; padding: 3px 8px; border-radius: 4px; color: white; font-weight: 700; text-transform: uppercase; }
+        .chart-label.red { background: #ef4444; }
+        .chart-label.grey { background: #94a3b8; }
+        .chart-label.green { background: #22c55e; }
+        .chart-desc { font-size: 9px; color: #666; line-height: 1.5; }
+
+        /* Characteristics Cards */
+        .char-group { padding: 15px 20px; border-radius: 12px; margin-bottom: 20px; }
+        .char-group-title { font-size: 11px; font-weight: 700; margin-bottom: 12px; margin-left: 2px; }
+        .char-group.driving { background: #fef2f2; }
+        .char-group.significant { background: #fefce8; }
+        .char-group.informational { background: #f0fdf4; }
+        
+        .char-cards-row { display: flex; gap: 15px; }
+        .char-card {
+            background: white; border-radius: 8px; padding: 15px; flex: 1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.03);
+        }
+        .char-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .char-card-title { font-size: 9px; font-weight: 700; text-transform: uppercase; color: #555; width: 80%; }
+        .char-card-icon { color: #ccc; font-size: 12px; }
+        .char-card-value { font-size: 16px; font-weight: 800; margin-bottom: 5px; }
+        .char-card-desc { font-size: 8px; color: #888; line-height: 1.3; }
+
+        /* Accordions */
+        .accordion { display: flex; justify-content: space-between; padding: 12px 5px; border-bottom: 1px solid #f0f0f0; font-size: 11px; font-weight: 600; color: #333; cursor: pointer; }
+        .accordion:last-of-type { border-bottom: none; margin-bottom: 30px; }
+        .accordion-icon { color: #aaa; font-weight: normal; }
+
+        /* Sentiments */
+        .sentiments-box { background: #f8f9fa; border-radius: 8px; padding: 20px; height: 180px; overflow-y: auto; margin-top: 15px; border: 1px solid #f0f0f0; }
+        .sentiment-item { font-size: 11px; color: #444; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+        .sentiment-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        
+        /* Custom scrollbar */
+        .sentiments-box::-webkit-scrollbar { width: 4px; }
+        .sentiments-box::-webkit-scrollbar-track { background: transparent; }
+        .sentiments-box::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+
+        /* --- MOBILE RESPONSIVE QUERIES --- */
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            .container { padding: 20px; }
+            
+            .header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .header h1 { font-size: 24px; }
+            .search-container { width: 100%; max-width: none; margin-left: 0; }
+            .add-event-btn { width: 100%; text-align: center; }
+
+            .events-grid { grid-template-columns: 1fr; gap: 20px; }
+            
+            .form-row { flex-direction: column; gap: 0; }
+            
+            /* Analysis view adjustments */
+            .analysis-layout { flex-direction: column; gap: 20px; }
+            .analysis-sidebar { width: 100%; border-right: none; border-bottom: 1px solid #f0f0f0; padding-right: 0; padding-bottom: 20px; }
+            .analysis-main { padding-left: 0; }
+            
+            .chart-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .char-cards-row { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- VIEW: DASHBOARD -->
+    <div class="container view active" id="view-dashboard">
+        <div class="nav-icon">≡ Admin Dashboard</div>
+        
+        <div class="header">
+            <h1>Events</h1>
+            <div class="search-container">
+                <input type="text" placeholder="Search events">
+                <span class="search-icon">🔍</span>
+            </div>
+            <button class="add-event-btn" id="add-event-btn">Add Event +</button>
+        </div>
+
+        <div class="events-grid" id="admin-events-grid">
+            <!-- Events will be populated dynamically from Firebase -->
+        </div>
+
+        <div class="pagination">
+            <button class="page-btn">&lt;</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">&gt;</button>
+        </div>
+    </div>
+
+    <!-- VIEW: ADD EVENT FORM -->
+    <div class="container view" id="view-add-event">
+        <div class="back-header" id="back-to-dashboard">
+            <span class="back-icon">←</span> Add Event
+        </div>
+
+        <h2 class="section-title">Event Details</h2>
+        
+        <div class="form-group">
+            <label class="form-label">Event</label>
+            <input type="text" id="event-title-input" class="form-input" placeholder="Event Title">
+        </div>
+
+        <div class="form-row">
+            <div class="form-col form-group">
+                <label class="form-label">Location</label>
+                <input type="text" id="event-location-input" class="form-input" placeholder="Location">
+            </div>
+            <div class="form-col form-group">
+                <label class="form-label">Date</label>
+                <input type="date" id="event-date-input" class="form-input">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-col form-group">
+                <label class="form-label">Target Population</label>
+                <input type="number" id="event-target-pop-input" class="form-input" placeholder="e.g. 10000">
+            </div>
+            <div class="form-col form-group">
+                <label class="form-label">Expected Participants</label>
+                <input type="number" id="event-participants-input" class="form-input" placeholder="e.g. 1000">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Description</label>
+            <textarea id="event-desc-input" class="form-textarea" placeholder="Event Description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Category</label>
+            <div class="category-tags">
+                <button type="button" class="tag inactive">Food</button>
+                <button type="button" class="tag active">Businesses</button>
+                <button type="button" class="tag active">Outdoor</button>
+                <button type="button" class="tag active">Community</button>
+                <button type="button" class="tag inactive">Civic</button>
+            </div>
+        </div>
+        
+        <div class="submit-row">
+            <button class="add-event-btn" id="save-event-btn">Save Event</button>
+        </div>
+    </div>
+
+    <!-- VIEW: ANALYSIS -->
+    <div class="container view" id="view-analysis">
+        <div class="analysis-layout">
+            
+            <!-- Sidebar -->
+            <div class="analysis-sidebar">
+                <button class="analysis-back-btn" id="back-from-analysis">←</button>
+                
+                <h2 class="analysis-title" id="analysis-event-title">EVENT NAME</h2>
+                <p class="analysis-meta" id="analysis-event-date">Date</p>
+                <p class="analysis-meta" id="analysis-event-loc">Location</p>
+                
+                <div class="analysis-tags">
+                    <span class="analysis-tag">Outdoor</span>
+                    <span class="analysis-tag">Community</span>
+                    <span class="analysis-tag">Food</span>
+                    <span class="analysis-tag">Businesses</span>
+                </div>
+                
+                <div class="legend-section">
+                    <h4 class="legend-title">Legend</h4>
+                    
+                    <div class="legend-item">
+                        <div class="legend-text-col">
+                            <div class="legend-label">Driving Characteristics</div>
+                            <div class="legend-desc">High-impact components in need of attention.</div>
+                        </div>
+                        <div class="legend-dot dot-red"></div>
+                    </div>
+                    
+                    <div class="legend-item">
+                        <div class="legend-text-col">
+                            <div class="legend-label">Significant Characteristics</div>
+                            <div class="legend-desc">Medium-impact components.</div>
+                        </div>
+                        <div class="legend-dot dot-yellow"></div>
+                    </div>
+                    
+                    <div class="legend-item">
+                        <div class="legend-text-col">
+                            <div class="legend-label">Informational Characteristics</div>
+                            <div class="legend-desc">Low impact components that are safe, balanced, or normal.</div>
+                        </div>
+                        <div class="legend-dot dot-green"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="analysis-main">
+                <h2 class="analysis-section-title">Participation & Adoption Characteristics</h2>
+                
+                <div class="chart-row">
+                    <div class="donut-chart">
+                        <div class="donut-inner"></div>
+                    </div>
+                    <div>
+                        <div class="legend-label" style="margin-bottom: 8px;">Weighted Sentiment Ratio</div>
+                        <div class="chart-labels">
+                            <span class="chart-label red">Negative</span>
+                            <span class="chart-label grey">Neutral</span>
+                            <span class="chart-label green">Positive</span>
+                        </div>
+                        <p class="chart-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    </div>
+                </div>
+
+                <!-- Characteristics Groups -->
+                <div class="char-group driving">
+                    <div class="char-group-title">Driving Characteristics</div>
+                    <div class="char-cards-row">
+                        <div class="char-card">
+                            <div class="char-card-header">
+                                <span class="char-card-title">Participation Coverage Ratio</span>
+                                <span class="char-card-icon">v</span>
+                            </div>
+                            <div class="char-card-value">0.0137</div>
+                            <div class="char-card-desc">Physical presence matches vocal participation.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="char-group significant">
+                    <div class="char-group-title">Significant Characteristics</div>
+                    <div class="char-cards-row">
+                        <div class="char-card">
+                            <div class="char-card-header">
+                                <span class="char-card-title">Participation Concentration Index</span>
+                                <span class="char-card-icon">v</span>
+                            </div>
+                            <div class="char-card-value">0.0137</div>
+                            <div class="char-card-desc">Physical presence matches vocal participation.</div>
+                        </div>
+                        <div class="char-card">
+                            <div class="char-card-header">
+                                <span class="char-card-title">Silent Non-Adopters (SPI-3)</span>
+                                <span class="char-card-icon">v</span>
+                            </div>
+                            <div class="char-card-value">0.0137</div>
+                            <div class="char-card-desc">Physical presence matches vocal participation.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="char-group informational">
+                    <div class="char-group-title">Informational Characteristics</div>
+                    <div class="char-cards-row">
+                        <div class="char-card">
+                            <div class="char-card-header">
+                                <span class="char-card-title">Sentiment Asymmetry (SPA)</span>
+                                <span class="char-card-icon">v</span>
+                            </div>
+                            <div class="char-card-value">0.0137</div>
+                            <div class="char-card-desc">Physical presence matches vocal participation.</div>
+                        </div>
+                        <div class="char-card">
+                            <div class="char-card-header">
+                                <span class="char-card-title">Silent Adopters (SPI-5)</span>
+                                <span class="char-card-icon">v</span>
+                            </div>
+                            <div class="char-card-value">0.0137</div>
+                            <div class="char-card-desc">Physical presence matches vocal participation.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordions -->
+                <div class="accordion">Driving Characteristics <span class="accordion-icon">v</span></div>
+                <div class="accordion">Significant Characteristics <span class="accordion-icon">v</span></div>
+                <div class="accordion">Informational Characteristics <span class="accordion-icon">v</span></div>
+
+                <hr style="border: 0; border-top: 1px solid #f0f0f0; margin: 30px 0;">
+
+                <h2 class="analysis-section-title">Sentiments</h2>
+                <div class="sentiments-box">
+                    <div class="sentiment-item">"Great setup, but the parking was a nightmare to find."</div>
+                    <div class="sentiment-item">"Absolutely loved the artisan vendors. Will come back."</div>
+                    <div class="sentiment-item">"The seating arrangement was confusing, needs better signs."</div>
+                    <div class="sentiment-item">"Food was amazing, but lines were way too long during peak hours."</div>
+                    <div class="sentiment-item">"Loved the ambiance! The string lights made it feel magical."</div>
+                    <div class="sentiment-item">"Need more trash cans around the food stalls."</div>
+                    <div class="sentiment-item">"Fantastic community event. So glad Naga is doing this."</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW FIREBASE ENABLED SCRIPT WITH EXTERNAL IMPORT -->
+    <script type="module">
+        import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+        
+        // 1. IMPORT YOUR CONFIG AND INITIALIZED INSTANCES FROM SHARED FILE
+        import { db, firebaseConfig } from './firebase-config.js';
+
+        // --- View Switching Logic ---
+        const viewDashboard = document.getElementById('view-dashboard');
+        const viewAddEvent = document.getElementById('view-add-event');
+        const viewAnalysis = document.getElementById('view-analysis');
+        
+        function switchView(viewToShow) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            viewToShow.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        document.getElementById('add-event-btn').addEventListener('click', () => switchView(viewAddEvent));
+        document.getElementById('back-to-dashboard').addEventListener('click', () => switchView(viewDashboard));
+        document.getElementById('back-from-analysis').addEventListener('click', () => switchView(viewDashboard));
+
+        function attachCardListener(card) {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('.event-title').textContent;
+                const loc = card.querySelector('.event-location').textContent.replace('📍 ', '');
+                const dateEl = card.querySelector('.event-date');
+                const dateText = dateEl.innerText.replace('\n', ' '); 
+                
+                document.getElementById('analysis-event-title').textContent = title;
+                document.getElementById('analysis-event-date').textContent = dateText;
+                document.getElementById('analysis-event-loc').textContent = loc;
+                
+                switchView(viewAnalysis);
+            });
+        }
+
+        function formatCardDate(dateString) {
+            if (!dateString) return `TBD<br><span>--</span>`;
+            const [year, month, day] = dateString.split('-');
+            const date = new Date(year, month - 1, day);
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            return `${months[date.getMonth()]}<br><span>${date.getDate()}</span>`;
+        }
+
+        // --- FETCH EVENTS LOGIC ---
+        async function loadEvents() {
+            const grid = document.getElementById('admin-events-grid');
+            
+            if (!firebaseConfig.projectId || firebaseConfig.projectId === "YOUR_PROJECT_ID") {
+                grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red; font-weight: bold; background: #fee2e2; padding: 15px; border-radius: 8px;">⚠️ Firebase configuration is missing!<br><br>Please edit your <code>firebase-config.js</code> file.</p>';
+                return;
+            }
+
+            grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #888;">Loading events...</p>';
+
+            try {
+                const querySnapshot = await getDocs(collection(db, "events"));
+                grid.innerHTML = ''; // Clear loading text
+
+                if (querySnapshot.empty) {
+                    grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #888;">No events found in the database. Add one!</p>';
+                    return;
+                }
+
+                const eventsList = [];
+                querySnapshot.forEach((doc) => {
+                    eventsList.push({ id: doc.id, ...doc.data() });
+                });
+
+                // Sort so newest events appear first
+                eventsList.sort((a, b) => {
+                    const timeA = a.created_at ? a.created_at.toMillis() : 0;
+                    const timeB = b.created_at ? b.created_at.toMillis() : 0;
+                    return timeB - timeA;
+                });
+
+                eventsList.forEach(event => {
+                    const card = document.createElement('div');
+                    card.className = 'event-card';
+                    card.dataset.eventId = event.id;
+                    
+                    const eventTitle = event.event_name || 'Unnamed Event';
+                    const imgText = encodeURIComponent(eventTitle);
+
+                    card.innerHTML = `
+                        <img src="https://placehold.co/400x200/1a1a1a/ffffff?text=${imgText}" class="event-image" alt="Event Image">
+                        <div class="event-details">
+                            <div class="event-date">${formatCardDate(event.date)}</div>
+                            <div class="event-text-content">
+                                <h3 class="event-title">${eventTitle}</h3>
+                                <div class="event-location">📍 ${event.location || 'TBA'}</div>
+                                <p class="event-desc">${event.description || 'No description provided.'}</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    attachCardListener(card);
+                    grid.appendChild(card);
+                });
+            } catch (error) {
+                console.error("Error loading events: ", error);
+                grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red;">Failed to load events from database. Check console.</p>';
+            }
+        }
+
+        // Run this immediately when the page loads!
+        loadEvents();
+
+        // --- Save Event Form Logic (Writing to Firestore) ---
+        document.getElementById('save-event-btn').addEventListener('click', async () => {
+            
+            if (!firebaseConfig.projectId || firebaseConfig.projectId === "YOUR_PROJECT_ID") {
+                alert("⚠️ Cannot save event: Edit your firebase-config.js file to include your actual keys.");
+                return;
+            }
+
+            const titleInput = document.getElementById('event-title-input');
+            const dateInput = document.getElementById('event-date-input');
+            const locInput = document.getElementById('event-location-input');
+            const descInput = document.getElementById('event-desc-input');
+            const targetPopInput = document.getElementById('event-target-pop-input');
+            const participantsInput = document.getElementById('event-participants-input');
+
+            if (!titleInput.value.trim() || !dateInput.value) {
+                alert('Please provide at least a Title and a Date.'); return;
+            }
+            if (!targetPopInput.value || !participantsInput.value) {
+                alert('Please provide Target Population and Expected Participants. The backend needs these for analysis.'); return;
+            }
+
+            const saveBtn = document.getElementById('save-event-btn');
+            saveBtn.disabled = true;
+            saveBtn.innerText = "Saving...";
+
+            try {
+                // Push to Firebase Database
+                const docRef = await addDoc(collection(db, "events"), {
+                    event_name: titleInput.value,
+                    location: locInput.value || 'TBA',
+                    date: dateInput.value,
+                    description: descInput.value || 'No description provided.',
+                    target_population: Number(targetPopInput.value),
+                    num_participants: Number(participantsInput.value),
+                    created_at: new Date()
+                });
+                console.log("Database entry created with ID: ", docRef.id);
+
+                // CLEAR inputs
+                titleInput.value = ''; locInput.value = ''; dateInput.value = ''; 
+                descInput.value = ''; targetPopInput.value = ''; participantsInput.value = '';
+                
+                // Sync UI again
+                await loadEvents();
+                switchView(viewDashboard);
+                
+            } catch (e) {
+                console.error("Error adding document to Firebase: ", e);
+                alert("Database Error: Could not save the event.");
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.innerText = "Save Event";
+            }
+        });
+    </script>
+</body>
+</html>
