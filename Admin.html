@@ -5,25 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Events Management</title>
     <style>
-        /* Base styles */
+        /**
+         * GLOBAL STYLES & RESET
+         * Establishes the baseline typography, color palette, and layout constraints.
+         */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #fcfcfc; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; padding: 40px; color: #111; }
-        
-        /* Main Container */
         .container { width: 100%; max-width: 1000px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid #f9f9f9; }
 
-        /* Top Nav Icon */
+        /**
+         * NAVIGATION & HEADER COMPONENTS
+         * Defines the top-level UI elements including the navigation icon and search bar.
+         */
         .nav-icon { color: #888; font-size: 18px; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; font-weight: 600; }
-
-        /* Header */
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; gap: 20px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; gap: 20px; flex-wrap: wrap; }
         .header h1 { font-size: 28px; font-weight: 800; }
         
-        .search-container { flex: 1; max-width: 300px; position: relative; margin-right: auto; margin-left: 20px; }
-        .search-container input { width: 100%; padding: 10px 35px 10px 15px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 14px; outline: none; }
+        .search-container { flex: 1; min-width: 250px; max-width: 300px; position: relative; margin-right: auto; margin-left: 20px; }
+        .search-container input { width: 100%; padding: 10px 35px 10px 15px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 14px; outline: none; transition: border-color 0.2s; }
+        .search-container input:focus { border-color: #9013fe; }
         .search-container .search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 14px; }
 
-        /* Admin Action Button */
+        /**
+         * CALL TO ACTION BUTTONS
+         * Styling for primary administrative actions.
+         */
         .add-event-btn {
             background: linear-gradient(90deg, #f5a623, #9013fe);
             color: white; border: none; padding: 12px 24px; border-radius: 24px; cursor: pointer; font-weight: 600; font-size: 14px;
@@ -31,118 +37,115 @@
         }
         .add-event-btn:hover { opacity: 0.9; }
         .add-event-btn:active { transform: scale(0.98); }
+        .add-event-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
-        /* Grid Layout */
-        .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-bottom: 50px; }
+        /**
+         * EVENT GRID & CARDS
+         * Responsive grid layout and individual event card styling.
+         */
+        .events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 35px; margin-bottom: 30px; min-height: 200px; }
 
-        /* Event Card */
         .event-card {
             background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.08);
             cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #f0f0f0;
-            position: relative;
+            position: relative; display: flex; flex-direction: column;
         }
         .event-card:hover { transform: translateY(-3px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: #e4e4e4; }
         
         .event-image { width: 100%; height: 160px; background-color: #111; object-fit: cover; display: block; }
-        .event-details { padding: 20px; display: flex; gap: 15px; }
+        .event-details { padding: 20px; display: flex; gap: 15px; flex: 1; }
         
-        .event-date { color: #5c5cff; font-weight: bold; font-size: 11px; text-transform: uppercase; text-align: center; }
+        .event-date { color: #5c5cff; font-weight: bold; font-size: 11px; text-transform: uppercase; text-align: center; min-width: 45px; }
         .event-date span { font-size: 26px; color: #111; display: block; margin-top: -2px; font-weight: 800; letter-spacing: -1px; }
         
         .event-text-content { flex: 1; text-align: left; }
-        .event-title { font-size: 15px; margin-bottom: 6px; font-weight: 700; }
+        .event-title { font-size: 15px; margin-bottom: 6px; font-weight: 700; line-height: 1.2; }
         .event-location { font-size: 11px; color: #777; margin-bottom: 12px; }
-        .event-desc { font-size: 12px; color: #555; line-height: 1.5; }
+        .event-desc { font-size: 12px; color: #555; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
-        /* Shared View Styles */
+        /**
+         * PAGINATION CONTROLS
+         * Styling for multi-page navigation UI elements.
+         */
+        .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+        .page-btn { padding: 8px 14px; border: 1px solid #e0e0e0; background: white; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; color: #555; transition: all 0.2s; }
+        .page-btn:hover:not(.active) { background: #f4f4f4; }
+        .page-btn.active { background: #9013fe; color: white; border-color: #9013fe; }
+
+        /**
+         * VIEW MANAGEMENT
+         * Utility classes for toggling application views (SPA routing).
+         */
         .view { display: none; width: 100%; animation: fadeIn 0.2s ease-out; }
         .view.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* --- ADD EVENT VIEW STYLES --- */
+        /**
+         * EVENT CREATION VIEW STYLES
+         * Layout and typography for form inputs and structural elements.
+         */
         .back-header { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 700; margin-bottom: 30px; cursor: pointer; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px;}
-        .back-icon { color: #888; font-weight: normal; font-size: 18px; }
-        .back-header:hover .back-icon { color: #111; }
+        .back-icon { color: #888; font-weight: normal; font-size: 18px; transition: transform 0.2s; }
+        .back-header:hover .back-icon { color: #111; transform: translateX(-4px); }
         
         .section-title { font-size: 18px; font-weight: 800; margin-bottom: 25px; letter-spacing: -0.5px; }
         
         .form-group { margin-bottom: 25px; }
-        .form-row { display: flex; gap: 20px; }
-        .form-col { flex: 1; }
+        .form-row { display: flex; gap: 20px; flex-wrap: wrap; }
+        .form-col { flex: 1; min-width: 200px; }
         .form-label { display: block; font-size: 11px; text-transform: uppercase; color: #888; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px; }
-        .form-input, .form-textarea { width: 100%; padding: 12px 15px; border: 1px solid #e5e5e5; border-radius: 6px; font-size: 14px; outline: none; transition: border-color 0.2s; background: white; }
-        .form-input:focus, .form-textarea:focus { border-color: #9013fe; }
+        .form-input, .form-textarea { width: 100%; padding: 12px 15px; border: 1px solid #e5e5e5; border-radius: 6px; font-size: 14px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; background: white; }
+        .form-input:focus, .form-textarea:focus { border-color: #9013fe; box-shadow: 0 0 0 3px rgba(144, 19, 254, 0.1); }
         .form-textarea { resize: vertical; min-height: 120px; }
         
-        .category-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; }
-        .tag.active { background: #e0e0e0; color: #111; }
-        .tag.inactive { background: #fcfcfc; color: #aaa; border: 1px solid #eee; }
+        .input-error { border-color: #ef4444 !important; background-color: #fef2f2; }
         
-        /* --- NEW ANALYSIS VIEW STYLES --- */
+        /**
+         * TOAST NOTIFICATION STYLES
+         * Floating notifications for success or error feedback.
+         */
+        .toast { position: fixed; bottom: 30px; right: 30px; padding: 14px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transform: translateY(100px); opacity: 0; transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index: 1000; display: flex; align-items: center; gap: 10px; }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast.error { background-color: #ef4444; }
+        .toast.success { background-color: #22c55e; }
+
+        /**
+         * ANALYTICS DASHBOARD STYLES
+         * Highly structured layouts for displaying diagnostic data, donuts, and sentiment items.
+         */
         .analysis-top-header { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 40px; }
         .analysis-back-btn { background: none; border: none; font-size: 24px; cursor: pointer; color: #555; transition: color 0.2s; margin-top: -2px; }
-        .analysis-back-btn:hover { color: #111; }
+        .analysis-back-btn:hover { color: #111; transform: translateX(-4px); }
         .analysis-title-main { font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.5px; margin-bottom: 5px; }
         .analysis-meta-main { font-size: 13px; color: #777; line-height: 1.4; margin-bottom: 12px; }
-        
         .analysis-section-title { font-size: 18px; font-weight: 800; margin: 40px 0 20px 0; letter-spacing: -0.5px; }
-
-        /* Section 1: Participation & Adoption */
         .adoption-row { display: flex; gap: 20px; height: 280px; }
-        .sentiments-box {
-            flex: 2; background: #f4f4f4; border-radius: 12px; padding: 25px; overflow-y: auto;
-        }
+        .sentiments-box { flex: 2; background: #f4f4f4; border-radius: 12px; padding: 25px; overflow-y: auto; }
         .sentiment-item { font-size: 13px; color: #333; margin-bottom: 16px; line-height: 1.4; border-left: 3px solid #22c55e; padding-left: 10px; }
-        
         .sentiments-box::-webkit-scrollbar { width: 6px; }
         .sentiments-box::-webkit-scrollbar-track { background: transparent; }
         .sentiments-box::-webkit-scrollbar-thumb { background: #ccc; border-radius: 6px; }
-
-        .sentiment-ratio-card {
-            flex: 1; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-            display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 30px; border: 1px solid #f0f0f0;
-        }
+        
+        .sentiment-ratio-card { flex: 1; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 30px; border: 1px solid #f0f0f0; }
         .ratio-card-title { font-size: 11px; font-weight: 800; text-transform: uppercase; color: #888; margin-bottom: 30px; letter-spacing: 0.5px; width: 100%; text-align: center; }
-        
-        .donut-chart {
-            width: 170px; height: 170px; border-radius: 50%;
-            /* Rotated to start at 260deg so the negative/red portion aligns top-left like the image */
-            background: conic-gradient(from 260deg, #ef4444 0% 4%, #cbd5e1 4% 7%, #22c55e 7% 100%);
-            display: flex; align-items: center; justify-content: center; margin-bottom: 35px;
-        }
-        /* Increased inner circle size relative to outer to get that exact ring thickness */
+        .donut-chart { width: 170px; height: 170px; border-radius: 50%; background: conic-gradient(from 260deg, #ef4444 0% 4%, #cbd5e1 4% 7%, #22c55e 7% 100%); display: flex; align-items: center; justify-content: center; margin-bottom: 35px; }
         .donut-inner { width: 100px; height: 100px; background: white; border-radius: 50%; }
-        
         .donut-legend { display: flex; width: 100%; justify-content: space-around; text-align: center; padding: 0 10px; }
         .legend-col { display: flex; flex-direction: column; align-items: center; }
         .legend-val { font-size: 20px; font-weight: 800; color: #111; margin-bottom: 4px; }
         .legend-label { font-size: 9px; color: #888; text-transform: capitalize; font-weight: 600; display: flex; align-items: center; gap: 5px; }
         .dot { width: 8px; height: 8px; border-radius: 50%; }
         .dot.red { background: #ef4444; } .dot.grey { background: #cbd5e1; } .dot.green { background: #22c55e; }
-
-        /* Section 2 & 3: Dynamics / Reach & Equity */
-        .dynamics-row { display: flex; gap: 20px; }
-        .dynamic-col-wrapper { flex: 1; display: flex; flex-direction: column; }
         
-        .dynamic-bg {
-            border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 15px; min-height: 220px;
-        }
-        .bg-red { background: #ef4444; }
-        .bg-yellow { background: #eab308; }
-        .bg-green { background: #22c55e; }
-        .bg-neutral { background: #e2e8f0; } /* For Reach & Equity */
-        .bg-blue { background: #60a5fa; }   /* For Reach & Equity */
-        .bg-purple { background: #a855f7; } /* For Reach & Equity */
-
+        .dynamics-row { display: flex; gap: 20px; flex-wrap: wrap; }
+        .dynamic-col-wrapper { flex: 1; display: flex; flex-direction: column; min-width: 250px;}
+        .dynamic-bg { border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 15px; min-height: 220px; }
+        .bg-red { background: #ef4444; } .bg-yellow { background: #eab308; } .bg-green { background: #22c55e; } .bg-neutral { background: #e2e8f0; } .bg-blue { background: #60a5fa; } .bg-purple { background: #a855f7; }
         .dyn-card { background: white; border-radius: 8px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .dyn-val { font-size: 18px; font-weight: 800; margin-bottom: 5px; color: #111; }
         .dyn-title { font-size: 9px; font-weight: 800; text-transform: uppercase; color: #555; margin-bottom: 5px; }
         .dyn-desc { font-size: 10px; color: #777; line-height: 1.3; }
-
-        .dynamic-footer {
-            display: flex; justify-content: space-between; align-items: flex-start; margin-top: 15px; padding: 0 5px;
-        }
+        .dynamic-footer { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 15px; padding: 0 5px; }
         .footer-text b { font-size: 11px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 2px; }
         .footer-text span { font-size: 10px; color: #888; }
         .footer-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 4px; }
@@ -150,22 +153,40 @@
 </head>
 <body>
 
+    <!--
+      ~ TOAST NOTIFICATION CONTAINER
+      ~ Displays temporary system messages (success or errors).
+    -->
+    <div id="toast" class="toast">
+        <span id="toast-icon"></span>
+        <span id="toast-message">Message</span>
+    </div>
+
+    <!--
+      ~ MAIN DASHBOARD VIEW
+      ~ Displays available events, search functionality, and pagination controls.
+    -->
     <div class="container view active" id="view-dashboard">
         <div class="nav-icon">≡ Admin Dashboard</div>
         
         <div class="header">
             <h1>Events</h1>
             <div class="search-container">
-                <input type="text" placeholder="Search events">
+                <input type="text" id="event-search-input" placeholder="Search by title, location or desc...">
                 <span class="search-icon">🔍</span>
             </div>
             <button class="add-event-btn" id="add-event-btn">Add Event +</button>
         </div>
 
-        <div class="events-grid" id="admin-events-grid">
-            </div>
+        <div class="events-grid" id="admin-events-grid"></div>
+        
+        <div id="pagination-controls" class="pagination"></div>
     </div>
 
+    <!--
+      ~ ADD EVENT VIEW
+      ~ Provides the form interface for administrators to create and save new events.
+    -->
     <div class="container view" id="view-add-event">
         <div class="back-header" id="back-to-dashboard">
             <span class="back-icon">←</span> Add Event
@@ -194,8 +215,11 @@
         </div>
     </div>
 
+    <!--
+      ~ ANALYSIS VIEW
+      ~ Displays detailed diagnostic data, engagement dynamics, and public sentiment for a specific event.
+    -->
     <div class="container view" id="view-analysis">
-        
         <div class="analysis-top-header">
             <button class="analysis-back-btn" id="back-from-analysis">←</button>
             <div>
@@ -206,15 +230,14 @@
 
         <h2 class="analysis-section-title">Participation & Adoption Characteristics</h2>
         <div class="adoption-row">
-            
             <div class="sentiments-box">
+                <div class="sentiment-item">The transparency of the org, especially on how they presented everything that the org did during the first semester that just simply shows how it affected the learning experience of students in a good way.</div>
                 <div class="sentiment-item">The host and presentation. The time it was alloted to be done. The spacing and seating arrangements not being followed</div>
                 <div class="sentiment-item">The overview and rundown of the program</div>
                 <div class="sentiment-item">The policies that were discussed when representing the school and the intramurals Maybe just the crowd management It was quite insightful</div>
                 <div class="sentiment-item">The detailed explanations It was actually alright</div>
                 <div class="sentiment-item">they gave us valuable info on future events nothin really the get to the point really fast Not a fan of the time placement. But I get why they did that time placement</div>
                 <div class="sentiment-item">This is very important as all events for this semester have been officially revealed. More attention</div>
-                <div class="sentiment-item">The transparency of the org, especially on how they presented everything that the org did during the first semester that just simply shows how it affected the learning experience of students in a good way.</div>
                 <div class="sentiment-item">I found the presentation helpful. The lack of participation from the student body</div>
                 <div class="sentiment-item">The clarification of upcoming events and plans of the department.</div>
                 <div class="sentiment-item">It is very helpful for us to engage and be updated on the events. Overview of the events. It is fun to see other people in our department.</div>
@@ -250,24 +273,31 @@
 
         <h2 class="analysis-section-title">Participation Dynamics</h2>
         <div class="dynamics-row">
-            
             <div class="dynamic-col-wrapper">
               <div class="dynamic-footer">
                     <div class="footer-text"><b>IN RISK</b><span>High-Impact components in need of attention.</span></div>
                     <div class="footer-dot bg-red"></div>
                 </div> <br>
                 <div class="dynamic-bg bg-red">
+                    <div class="dyn-card">
+                        <div class="dyn-val">66.54</div>
+                        <div class="dyn-title">SPI-A (Silent Non-Adoption)</div>
+                        <div class="dyn-desc">66.54% of the target population were not reached or excluded.</div>
+                    </div>
                 </div>
             </div>
 
-            
-            
             <div class="dynamic-col-wrapper">
               <div class="dynamic-footer">
                     <div class="footer-text"><b>FAIR</b><span>Medium-impact components.</span></div>
                     <div class="footer-dot bg-yellow"></div>
                 </div> <br>
                 <div class="dynamic-bg bg-yellow">
+                    <div class="dyn-card">
+                        <div class="dyn-val">33.46</div>
+                        <div class="dyn-title">PCR (Coverage Ratio)</div>
+                        <div class="dyn-desc">33.46% of the target population have participated.</div>
+                    </div>
                     <div class="dyn-card">
                         <div class="dyn-val">57.65</div>
                         <div class="dyn-title">SPI-B (Silent Adoption)</div>
@@ -276,37 +306,23 @@
                     <div class="dyn-card">
                         <div class="dyn-val">42.35</div>
                         <div class="dyn-title">PEG</div>
-                        <div class="dyn-desc">42.35% gap between participation and expressed feedback.</div>
+                        <div class="dyn-desc">There is a 42.35% gap between participation and expressed feedback.</div>
                     </div>
                 </div>
-            
             </div>
 
-            
             <div class="dynamic-col-wrapper">
               <div class="dynamic-footer">
                     <div class="footer-text"><b>GREAT</b><span>Low-impact components that are safe or normal.</span></div>
                     <div class="footer-dot bg-green"></div>
                 </div> <br>
                 <div class="dynamic-bg bg-green">
-                    <div class="dyn-card">
-                        <div class="dyn-val">85.0</div>
-                        <div class="dyn-title">PCR (Coverage Ratio)</div>
-                        <div class="dyn-desc">85.0% of the target population have participated.</div>
-                    </div>
-                    <div class="dyn-card">
-                        <div class="dyn-val">15.0</div>
-                        <div class="dyn-title">SPI-A (Silent Non-Adoption)</div>
-                        <div class="dyn-desc">15.0% of the target population were not reached or excluded.</div>
-                    </div>
                 </div>
             </div>
-
         </div>
 
         <h2 class="analysis-section-title">Reach & Equity</h2>
         <div class="dynamics-row">
-            
             <div class="dynamic-col-wrapper">
               <div class="dynamic-footer">
                     <div class="footer-text"><b>CONCENTRATION</b><span>Participation spread metrics.</span></div>
@@ -316,10 +332,9 @@
                     <div class="dyn-card">
                         <div class="dyn-val">0.35</div>
                         <div class="dyn-title">PCI (Concentration Index)</div>
-                        <div class="dyn-desc">Low participation concentration, with participation spread across groups.</div>
+                        <div class="dyn-desc">A PCI of 0.35 suggests low participation concentration, with participation spread across groups.</div>
                     </div>
                 </div>
-                
             </div>
 
             <div class="dynamic-col-wrapper">
@@ -331,15 +346,14 @@
                     <div class="dyn-card">
                         <div class="dyn-val">2</div>
                         <div class="dyn-title">Min Participating Groups</div>
-                        <div class="dyn-desc">At least 2 groups meaningfully participated.</div>
+                        <div class="dyn-desc">At least 2 groups made major contributions.</div>
                     </div>
                     <div class="dyn-card">
                         <div class="dyn-val">3</div>
                         <div class="dyn-title">Effective Groups</div>
-                        <div class="dyn-desc">Participation is roughly equivalent to 3 equally sized groups.</div>
+                        <div class="dyn-desc">Overall participation feels roughly equivalent to 3 equally sized groups.</div>
                     </div>
                 </div>
-                
             </div>
 
             <div class="dynamic-col-wrapper">
@@ -354,21 +368,52 @@
                         <div class="dyn-desc">SPA > 0 indicates that positive sentiment dominates.</div>
                     </div>
                 </div>
-                
             </div>
-
         </div>
-
     </div>
 
     <script type="module">
         import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
-        import { db, firebaseConfig } from './firebase-config.js';
+        
+        /**
+         * FIREBASE INITIALIZATION & CONFIGURATION
+         * Attempts to import environment variables and initialize the Firestore instance.
+         * Gracefully degrades to a mock state if configuration files are unavailable.
+         */
+        let db = null;
+        let firebaseConfig = { projectId: "YOUR_PROJECT_ID" };
+        try {
+            const fb = await import('./firebase-config.js');
+            db = fb.db;
+            firebaseConfig = fb.firebaseConfig;
+        } catch(e) {
+            console.warn("Local Firebase config not found. Running in UI preview mode.");
+        }
 
+        /**
+         * DOM ELEMENTS
+         * Caches references to frequently accessed UI components.
+         */
         const viewDashboard = document.getElementById('view-dashboard');
         const viewAddEvent = document.getElementById('view-add-event');
         const viewAnalysis = document.getElementById('view-analysis');
+        const searchInput = document.getElementById('event-search-input');
         
+        /**
+         * APPLICATION STATE
+         * @type {Array<Object>} allEventsList - Master array of all loaded events.
+         * @type {number} currentPage - Tracks the active page index for pagination.
+         * @type {number} ITEMS_PER_PAGE - Constant defining the maximum events displayed per page.
+         */
+        let allEventsList = [];
+        let currentPage = 1;
+        const ITEMS_PER_PAGE = 6;
+        
+        /**
+         * VIEW CONTROLLERS
+         * Functions handling Single Page Application (SPA) navigation and UI toggling.
+         * @param {HTMLElement} viewToShow - The DOM element of the view to activate.
+         */
         function switchView(viewToShow) {
             document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
             viewToShow.classList.add('active');
@@ -379,18 +424,29 @@
         document.getElementById('back-to-dashboard').addEventListener('click', () => switchView(viewDashboard));
         document.getElementById('back-from-analysis').addEventListener('click', () => switchView(viewDashboard));
 
-        function attachCardListener(card) {
-            card.addEventListener('click', () => {
-                const title = card.querySelector('.event-title').textContent;
-                const loc = card.querySelector('.event-location').textContent.replace('📍 ', '');
-                
-                document.getElementById('analysis-event-title').textContent = title;
-                document.getElementById('analysis-event-loc').textContent = loc;
-                
-                switchView(viewAnalysis);
-            });
+        /**
+         * Displays a temporary status message using the toast notification system.
+         * @param {string} message - The textual content to display.
+         * @param {string} [type='success'] - Defines styling ('success' or 'error').
+         */
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const icon = document.getElementById('toast-icon');
+            
+            toast.className = `toast show ${type}`;
+            document.getElementById('toast-message').textContent = message;
+            icon.textContent = type === 'error' ? '⚠️' : '✅';
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
         }
 
+        /**
+         * Converts standard date strings into a formatted block format for the UI.
+         * @param {string} dateString - Standard ISO date string (YYYY-MM-DD).
+         * @returns {string} HTML string representing the formatted date.
+         */
         function formatCardDate(dateString) {
             if (!dateString) return `TBD<br><span>--</span>`;
             const [year, month, day] = dateString.split('-');
@@ -399,75 +455,53 @@
             return `${months[date.getMonth()]}<br><span>${date.getDate()}</span>`;
         }
 
-        // --- NEW/FIXED SAVE FUNCTION ---
-        document.getElementById('save-event-btn').addEventListener('click', async () => {
-            if (!firebaseConfig.projectId || firebaseConfig.projectId === "YOUR_PROJECT_ID") {
-                alert("⚠️ Cannot save event: Edit your firebase-config.js file to include your actual keys.");
-                return;
-            }
+        /**
+         * Binds click events to generated event cards to navigate to the analysis view.
+         * @param {HTMLElement} card - The DOM element representing the event.
+         * @param {Object} eventData - The data object associated with the event.
+         */
+        function attachCardListener(card, eventData) {
+            card.addEventListener('click', () => {
+                document.getElementById('analysis-event-title').textContent = eventData.event_name || 'Unnamed Event';
+                document.getElementById('analysis-event-loc').textContent = eventData.location || 'TBA';
+                switchView(viewAnalysis);
+            });
+        }
 
-            const titleInput = document.getElementById('event-title-input');
-            const dateInput = document.getElementById('event-date-input');
-            const locInput = document.getElementById('event-location-input');
-            const descInput = document.getElementById('event-desc-input');
-
-            if (!titleInput.value.trim() || !dateInput.value) {
-                alert('Please provide at least a Title and a Date.'); 
-                return;
-            }
-
-            const saveBtn = document.getElementById('save-event-btn');
-            saveBtn.disabled = true;
-            saveBtn.innerText = "Saving...";
-
-            try {
-                // Push to Firebase Database
-                await addDoc(collection(db, "events"), {
-                    event_name: titleInput.value,
-                    location: locInput.value || 'TBA',
-                    date: dateInput.value,
-                    description: descInput.value || 'No description provided.',
-                    created_at: new Date()
-                });
-
-                // Clear input fields after successful save
-                titleInput.value = ''; 
-                locInput.value = ''; 
-                dateInput.value = ''; 
-                descInput.value = ''; 
-                
-                // Reload the events grid and return to dashboard
-                await loadEvents();
-                switchView(viewDashboard);
-                
-            } catch (e) {
-                console.error("Error adding document to Firebase: ", e);
-                alert("Database Error: Could not save the event.");
-            } finally {
-                saveBtn.disabled = false;
-                saveBtn.innerText = "Save Event";
-            }
-        });
-
-        async function loadEvents() {
+        /**
+         * Renders the event grid based on current search queries and pagination state.
+         * Filters the master event list and generates DOM elements for the active page.
+         */
+        function renderGrid() {
             const grid = document.getElementById('admin-events-grid');
-            if (!firebaseConfig.projectId || firebaseConfig.projectId === "YOUR_PROJECT_ID") {
-                grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red;">⚠️ Firebase config missing!</p>';
-                return;
-            }
-            grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #888;">Loading events...</p>';
-            try {
-                const querySnapshot = await getDocs(collection(db, "events"));
-                grid.innerHTML = '';
-                const eventsList = [];
-                querySnapshot.forEach((doc) => eventsList.push({ id: doc.id, ...doc.data() }));
-                eventsList.sort((a, b) => (b.created_at ? b.created_at.toMillis() : 0) - (a.created_at ? a.created_at.toMillis() : 0));
-                
-                eventsList.forEach(event => {
+            const query = searchInput.value.toLowerCase().trim();
+
+            const filteredEvents = allEventsList.filter(e => {
+                const titleMatch = (e.event_name || '').toLowerCase().includes(query);
+                const locMatch = (e.location || '').toLowerCase().includes(query);
+                const descMatch = (e.description || '').toLowerCase().includes(query);
+                return titleMatch || locMatch || descMatch;
+            });
+
+            const totalPages = Math.ceil(filteredEvents.length / ITEMS_PER_PAGE) || 1;
+            if (currentPage > totalPages) currentPage = totalPages;
+            
+            const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+            const endIndex = startIndex + ITEMS_PER_PAGE;
+            const eventsToRender = filteredEvents.slice(startIndex, endIndex);
+
+            grid.innerHTML = '';
+            
+            if (eventsToRender.length === 0) {
+                grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; color: #888; padding: 40px; background: white; border-radius: 8px; border: 1px solid #eee;">
+                    No events found matching "${query}"
+                </div>`;
+            } else {
+                eventsToRender.forEach(event => {
                     const card = document.createElement('div');
                     card.className = 'event-card';
                     card.innerHTML = `
-                        <img src="https://placehold.co/400x200/1a1a1a/ffffff?text=${encodeURIComponent(event.event_name || 'Event')}" class="event-image">
+                        <img src="https://placehold.co/400x200/1a1a1a/ffffff?text=${encodeURIComponent(event.event_name || 'Event')}" class="event-image" alt="Event cover">
                         <div class="event-details">
                             <div class="event-date">${formatCardDate(event.date)}</div>
                             <div class="event-text-content">
@@ -476,11 +510,158 @@
                                 <p class="event-desc">${event.description || 'No description provided.'}</p>
                             </div>
                         </div>`;
-                    attachCardListener(card);
+                    attachCardListener(card, event);
                     grid.appendChild(card);
                 });
+            }
+
+            renderPaginationControls(totalPages);
+        }
+
+        /**
+         * Generates and renders the pagination buttons based on the total required pages.
+         * @param {number} totalPages - The calculated number of pages needed.
+         */
+        function renderPaginationControls(totalPages) {
+            const container = document.getElementById('pagination-controls');
+            container.innerHTML = '';
+
+            if (totalPages <= 1) return;
+
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement('button');
+                btn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+                btn.textContent = i;
+                btn.onclick = () => {
+                    currentPage = i;
+                    renderGrid();
+                    document.querySelector('.header').scrollIntoView({ behavior: 'smooth' });
+                };
+                container.appendChild(btn);
+            }
+        }
+
+        /**
+         * Event listener for the search bar input.
+         * Resets pagination and triggers a re-render on user input.
+         */
+        searchInput.addEventListener('input', () => {
+            currentPage = 1;
+            renderGrid();
+        });
+
+        /**
+         * FORM SUBMISSION CONTROLLER
+         * Validates input, saves new event data to Firestore, and updates the UI.
+         * Provides localized fallback data generation if Firestore is unavailable.
+         */
+        document.getElementById('save-event-btn').addEventListener('click', async () => {
+            const titleInput = document.getElementById('event-title-input');
+            const dateInput = document.getElementById('event-date-input');
+            const locInput = document.getElementById('event-location-input');
+            const descInput = document.getElementById('event-desc-input');
+
+            titleInput.classList.remove('input-error');
+            dateInput.classList.remove('input-error');
+
+            let isValid = true;
+            if (!titleInput.value.trim()) {
+                titleInput.classList.add('input-error');
+                isValid = false;
+            }
+            if (!dateInput.value) {
+                dateInput.classList.add('input-error');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                showToast('Please provide a Title and Date.', 'error');
+                return;
+            }
+
+            const saveBtn = document.getElementById('save-event-btn');
+            saveBtn.disabled = true;
+            saveBtn.innerText = "Saving...";
+
+            try {
+                if (!db) throw new Error("Firebase DB not initialized.");
+                
+                await addDoc(collection(db, "events"), {
+                    event_name: titleInput.value,
+                    location: locInput.value || 'TBA',
+                    date: dateInput.value,
+                    description: descInput.value || 'No description provided.',
+                    created_at: new Date()
+                });
+
+                showToast('Event saved successfully!', 'success');
+
+                titleInput.value = ''; 
+                locInput.value = ''; 
+                dateInput.value = ''; 
+                descInput.value = ''; 
+                
+                await loadEvents();
+                switchView(viewDashboard);
+                
+            } catch (e) {
+                console.error("Firebase save blocked/failed: ", e);
+                const newEvent = {
+                    id: Date.now().toString(),
+                    event_name: titleInput.value,
+                    location: locInput.value || 'TBA',
+                    date: dateInput.value,
+                    description: descInput.value || 'No description provided.'
+                };
+                
+                allEventsList.unshift(newEvent);
+                showToast('Local Event Created (Firebase DB Offline)', 'success');
+                
+                titleInput.value = ''; locInput.value = ''; dateInput.value = ''; descInput.value = '';
+                
+                currentPage = 1;
+                renderGrid();
+                switchView(viewDashboard);
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.innerText = "Save Event";
+            }
+        });
+
+        /**
+         * DATA FETCHING & INITIALIZATION
+         * Connects to Firestore to retrieve all events and populates the application state.
+         * Falls back to a hardcoded mock UI if the database connection fails.
+         */
+        async function loadEvents() {
+            const grid = document.getElementById('admin-events-grid');
+            grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #888;">Loading events...</p>';
+            
+            try {
+                if (!db) throw new Error("Firebase DB not connected.");
+                
+                const querySnapshot = await getDocs(collection(db, "events"));
+                const fetched = [];
+                querySnapshot.forEach((doc) => fetched.push({ id: doc.id, ...doc.data() }));
+                
+                fetched.sort((a, b) => (b.created_at ? b.created_at.toMillis() : 0) - (a.created_at ? a.created_at.toMillis() : 0));
+                
+                allEventsList = fetched;
+                renderGrid();
+
             } catch (error) {
-                grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red;">Failed to load events.</p>';
+                console.warn("Generating Mock Data because Firebase is offline.");
+                allEventsList = [
+                    { id: 1, event_name: 'C(ART)FUL SATURDAYS', location: 'Barlin St, Naga City', date: '2026-02-21', description: 'Art presentation and community gathering for local artists.' },
+                    { id: 2, event_name: 'Tech Meetup 2026', location: 'Innovation Hub', date: '2026-03-15', description: 'Discussing the future of AI and municipal tech infrastructure.' },
+                    { id: 3, event_name: 'Community Clean-up', location: 'Central Park', date: '2026-04-10', description: 'Annual park cleaning initiative. Bring your own gloves!' },
+                    { id: 4, event_name: 'Local Food Festival', location: 'Town Square', date: '2026-05-05', description: 'Tasting local delicacies and supporting local food businesses.' },
+                    { id: 5, event_name: 'Marathon for Charity', location: 'City Stadium', date: '2026-06-12', description: '5k and 10k runs to raise funds for the local hospital.' },
+                    { id: 6, event_name: 'Summer Code Camp', location: 'Public Library', date: '2026-07-20', description: 'Programming basics for kids aged 10-15.' },
+                    { id: 7, event_name: 'Jazz Night', location: 'Downtown Theater', date: '2026-08-15', description: 'Live jazz performances by the regional high school band.' },
+                    { id: 8, event_name: 'Town Hall Meeting', location: 'City Hall', date: '2026-09-01', description: 'Monthly address and Q&A with the Mayor.' }
+                ];
+                renderGrid();
             }
         }
 

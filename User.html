@@ -5,77 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Citizen Portal - Peopulse</title>
     <style>
-        /* Base styles */
+        /**
+         * GLOBAL STYLES & RESET
+         * Establishes the baseline typography, color palette, and layout constraints.
+         */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #fcfcfc; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; padding: 40px; color: #111; }
-        
-        /* Main Container */
         .container { width: 100%; max-width: 1000px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid #f9f9f9; }
 
-        /* Top Nav Icon */
+        /**
+         * NAVIGATION & HEADER COMPONENTS
+         * Defines the top-level UI elements including the navigation icon and search bar.
+         */
         .nav-icon { color: #888; font-size: 18px; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; font-weight: 600; }
-
-        /* Header */
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; gap: 20px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; gap: 20px; flex-wrap: wrap; }
         .header h1 { font-size: 28px; font-weight: 800; }
         
-        .search-container { flex: 1; max-width: 300px; position: relative; margin-right: auto; margin-left: 20px; }
-        .search-container input { width: 100%; padding: 10px 35px 10px 15px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 14px; outline: none; }
+        .search-container { flex: 1; min-width: 250px; max-width: 300px; position: relative; margin-right: auto; }
+        .search-container input { width: 100%; padding: 10px 35px 10px 15px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 14px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+        .search-container input:focus { border-color: #5c5cff; box-shadow: 0 0 0 3px rgba(92, 92, 255, 0.1); }
         .search-container .search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 14px; }
 
-        /* Grid Layout */
-        .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-bottom: 50px; }
+        /**
+         * EVENT GRID & CARDS
+         * Responsive grid system and individual event card styling, including the 
+         * visual states for available vs. already evaluated events.
+         */
+        .events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px; }
 
-        /* Event Card */
         .event-card {
             background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.08);
             cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #f0f0f0;
-            position: relative;
+            position: relative; display: flex; flex-direction: column;
         }
         .event-card:hover { transform: translateY(-3px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: #e4e4e4; }
         
-        .event-image { width: 100%; height: 160px; background-color: #111; object-fit: cover; display: block; }
-        .event-details { padding: 20px; display: flex; gap: 15px; }
+        .event-card.evaluated { opacity: 0.6; cursor: not-allowed; }
+        .event-card.evaluated:hover { transform: none; box-shadow: 0 15px 35px rgba(0,0,0,0.08); border-color: #f0f0f0; }
+        .event-card.evaluated .event-image { filter: grayscale(100%); }
         
-        .event-date { color: #5c5cff; font-weight: bold; font-size: 11px; text-transform: uppercase; text-align: center; }
+        .evaluated-badge {
+            position: absolute; top: 12px; right: 12px; background: #22c55e; color: white;
+            padding: 6px 12px; border-radius: 20px; font-size: 11px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);
+            z-index: 2; display: flex; align-items: center; gap: 5px;
+        }
+
+        .event-image { width: 100%; height: 160px; background-color: #111; object-fit: cover; display: block; transition: filter 0.3s; }
+        .event-details { padding: 20px; display: flex; gap: 15px; flex: 1; }
+        .event-date { color: #5c5cff; font-weight: bold; font-size: 11px; text-transform: uppercase; text-align: center; min-width: 45px; }
         .event-date span { font-size: 26px; color: #111; display: block; margin-top: -2px; font-weight: 800; letter-spacing: -1px; }
         
         .event-text-content { flex: 1; text-align: left; }
-        .event-title { font-size: 15px; margin-bottom: 6px; font-weight: 700; }
+        .event-title { font-size: 15px; margin-bottom: 6px; font-weight: 700; line-height: 1.2; }
         .event-location { font-size: 11px; color: #777; margin-bottom: 12px; }
-        .event-desc { font-size: 12px; color: #555; line-height: 1.5; }
+        .event-desc { font-size: 12px; color: #555; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
-        /* Pagination */
-        .pagination { display: flex; justify-content: center; gap: 4px; }
-        .page-btn { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: none; background: #f5f5f5; color: #666; border-radius: 4px; font-size: 12px; cursor: pointer; font-weight: 600; }
-        .page-btn.active { background: #5c5cff; color: white; }
-        .page-btn:hover:not(.active) { background: #e0e0e0; }
+        /**
+         * PAGINATION & VIEW MANAGEMENT
+         * Controls for page navigation and visibility toggling for the SPA architecture.
+         */
+        .pagination { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; }
+        .page-btn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: 1px solid #e0e0e0; background: white; color: #555; border-radius: 6px; font-size: 13px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+        .page-btn.active { background: #5c5cff; color: white; border-color: #5c5cff; }
+        .page-btn:hover:not(.active) { background: #f4f4f4; }
 
-        /* Shared View Styles */
         .view { display: none; width: 100%; animation: fadeIn 0.2s ease-out; }
         .view.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* --- SUBMIT VIEW STYLES --- */
-        .back-header { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 700; margin-bottom: 30px; cursor: pointer; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px;}
-        .back-icon { color: #888; font-weight: normal; font-size: 18px; }
-        .back-header:hover .back-icon { color: #111; }
+        /**
+         * SUBMISSION FORM UI
+         * Styles for the evaluation interface, form fields, and status indicators.
+         */
+        .back-header { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 700; margin-bottom: 30px; cursor: pointer; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px; transition: color 0.2s; }
+        .back-icon { color: #888; font-weight: normal; font-size: 18px; transition: transform 0.2s; }
+        .back-header:hover .back-icon { color: #111; transform: translateX(-4px); }
         
         .section-title { font-size: 18px; font-weight: 800; margin-bottom: 5px; letter-spacing: -0.5px; }
         .event-subtitle { font-size: 14px; color: #5c5cff; font-weight: 600; margin-bottom: 30px; display: block; }
         
         .form-group { margin-bottom: 25px; }
         .form-label { display: block; font-size: 11px; text-transform: uppercase; color: #888; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px; }
-        .form-input, .form-textarea { width: 100%; padding: 12px 15px; border: 1px solid #e5e5e5; border-radius: 6px; font-size: 14px; outline: none; transition: border-color 0.2s; background: white; }
-        .form-input:focus, .form-textarea:focus { border-color: #5c5cff; }
+        .form-input, .form-textarea { width: 100%; padding: 12px 15px; border: 1px solid #e5e5e5; border-radius: 6px; font-size: 14px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; background: white; }
+        .form-input:focus, .form-textarea:focus { border-color: #5c5cff; box-shadow: 0 0 0 3px rgba(92, 92, 255, 0.1); }
         .form-textarea { resize: vertical; min-height: 120px; }
         
-        .submit-row { display: flex; justify-content: flex-end; margin-top: 30px; border-top: 1px solid #f0f0f0; padding-top: 20px; align-items: center; gap: 20px;}
+        .submit-row { display: flex; justify-content: flex-end; margin-top: 30px; border-top: 1px solid #f0f0f0; padding-top: 20px; align-items: center; gap: 20px; }
         
         .submit-btn {
-            background: linear-gradient(90deg, #5c5cff, #9013fe);
-            color: white; border: none; padding: 12px 30px; border-radius: 24px; cursor: pointer; font-weight: 600; font-size: 14px;
-            transition: opacity 0.2s, transform 0.1s;
+            background: linear-gradient(90deg, #5c5cff, #9013fe); color: white; border: none; padding: 12px 30px; 
+            border-radius: 24px; cursor: pointer; font-weight: 600; font-size: 14px;
+            transition: opacity 0.2s, transform 0.1s; white-space: nowrap;
         }
         .submit-btn:hover { opacity: 0.9; }
         .submit-btn:active { transform: scale(0.98); }
@@ -85,44 +106,51 @@
         .status-msg.success { color: #22c55e; display: block; }
         .status-msg.error { color: #ef4444; display: block; }
 
-        /* --- MOBILE RESPONSIVE QUERIES --- */
+        /**
+         * MEDIA QUERIES
+         * Fluid adaptations for tablet and mobile viewports.
+         */
         @media (max-width: 768px) {
             body { padding: 15px; }
-            .container { padding: 20px; }
-            
+            .container { padding: 24px; }
             .header { flex-direction: column; align-items: flex-start; gap: 15px; }
             .header h1 { font-size: 24px; }
-            .search-container { width: 100%; max-width: none; margin-left: 0; }
-            
-            /* SCROLLABLE 1 COLUMN ON MOBILE */
-            .events-grid { grid-template-columns: 1fr; gap: 20px; }
+            .search-container { width: 100%; max-width: 100%; margin-left: 0; }
+            .events-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; margin-bottom: 30px; }
             .event-image { height: 180px; }
-            
-            .submit-row { flex-direction: column-reverse; align-items: stretch; gap: 10px; }
+            .submit-row { flex-direction: column-reverse; align-items: stretch; gap: 15px; }
             .status-msg { text-align: center; }
-            .submit-btn { width: 100%; padding: 15px; }
+            .submit-btn { width: 100%; padding: 14px; }
         }
 
+        @media (max-width: 480px) {
+            body { padding: 0; background-color: white; }
+            .container { border-radius: 0; box-shadow: none; border: none; min-height: 100vh; padding: 20px 15px; }
+            .header h1 { font-size: 22px; }
+            .event-details { flex-direction: column; gap: 8px; padding: 15px; }
+            .event-date { text-align: left; display: flex; align-items: baseline; gap: 6px; min-width: auto; }
+            .event-date span { display: inline; font-size: 16px; margin-top: 0; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- VIEW: DASHBOARD -->
+    <!--
+      ~ MAIN DASHBOARD VIEW
+      ~ Handles the display of available municipal events and search filtering.
+    -->
     <div class="container view active" id="view-dashboard">
         <div class="nav-icon">≡ Citizen Portal</div>
         
         <div class="header">
             <h1>Select Event to Evaluate</h1>
             <div class="search-container">
-                <input type="text" placeholder="Search events">
+                <input type="text" placeholder="Search events...">
                 <span class="search-icon">🔍</span>
             </div>
-            <!-- NO ADD EVENT BUTTON HERE -->
         </div>
 
-        <div class="events-grid" id="user-events-grid">
-            <!-- Dynamic events from Firebase will be loaded here. -->
-        </div>
+        <div class="events-grid" id="user-events-grid"></div>
 
         <div class="pagination">
             <button class="page-btn">&lt;</button>
@@ -133,7 +161,10 @@
         </div>
     </div>
 
-    <!-- VIEW: SUBMIT EVALUATION FORM -->
+    <!--
+      ~ EVALUATION SUBMISSION VIEW
+      ~ Provides the interface for a citizen to submit feedback regarding a specific event.
+    -->
     <div class="container view" id="view-submit">
         <div class="back-header" id="back-to-dashboard">
             <span class="back-icon">←</span> Back to Events
@@ -143,7 +174,6 @@
         <span class="event-subtitle" id="submit-event-title">Selected Event Name</span>
         
         <form id="feedback-form">
-            <!-- THE USER ID IS NOW HIDDEN. The system uses this fixed value to enforce the 1-per-user rule without showing it to the UI -->
             <input type="hidden" id="citizen-id" value="MY_NAGA_USER_001">
 
             <div class="form-group">
@@ -158,17 +188,38 @@
         </form>
     </div>
 
-    <!-- NEW FIREBASE ENABLED SCRIPT WITH EXTERNAL IMPORT -->
     <script type="module">
-        import { collection, getDocs, doc, getDoc, setDoc, addDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+        import { collection, getDocs, doc, getDoc, setDoc, addDoc, query, where } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
         
-        // 1. IMPORT YOUR CONFIG AND INITIALIZED INSTANCES FROM SHARED FILE
-        import { db, firebaseConfig } from './firebase-config.js';
+        /**
+         * FIREBASE INITIALIZATION & CONFIGURATION
+         * Attempts to import environment variables and initialize the Firestore instance.
+         * Gracefully degrades to a mock state if configuration files are unavailable.
+         */
+        let db = null;
+        let firebaseConfig = { projectId: "YOUR_PROJECT_ID" };
+        try {
+            const fb = await import('./firebase-config.js');
+            db = fb.db;
+            firebaseConfig = fb.firebaseConfig;
+        } catch(e) {
+            console.warn("Local Firebase config not found. Running in UI preview mode.");
+        }
 
-        // --- View Switching Logic ---
+        /**
+         * APPLICATION STATE
+         * @type {Set<string>} evaluatedEvents - Collection of event IDs the user has already submitted feedback for.
+         * @type {string} currentEventId - Tracks the active event ID being evaluated in the submission view.
+         */
+        let evaluatedEvents = new Set();
+        let currentEventId = ""; 
+
+        /**
+         * VIEW CONTROLLERS
+         * Functions handling Single Page Application (SPA) navigation and UI toggling.
+         */
         const viewDashboard = document.getElementById('view-dashboard');
         const viewSubmit = document.getElementById('view-submit');
-        let currentEventId = ""; // Stores the ID of the event the user clicked
         
         function switchView(viewToShow) {
             document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
@@ -178,22 +229,31 @@
 
         document.getElementById('back-to-dashboard').addEventListener('click', () => switchView(viewDashboard));
 
+        /**
+         * Displays a temporary status message adjacent to the form submission button.
+         * @param {string} message - The textual content to display.
+         * @param {string} type - Defines styling ('success' or 'error').
+         */
         function showStatus(message, type) {
             const statusContainer = document.getElementById('status-container');
             statusContainer.textContent = message;
             statusContainer.className = `status-msg ${type}`;
         }
 
-        // --- Card Click Logic ---
+        /**
+         * EVENT LISTENERS & UI BINDINGS
+         * Binds click events to generated event cards to handle evaluation navigation.
+         * @param {HTMLElement} card - The DOM element representing the event.
+         */
         function attachCardListener(card) {
             card.addEventListener('click', () => {
+                if (card.classList.contains('evaluated')) return;
+
                 const title = card.querySelector('.event-title').textContent;
                 
-                // Set the targeted event for submission
                 currentEventId = card.dataset.eventId; 
                 document.getElementById('submit-event-title').textContent = "Evaluating: " + title;
                 
-                // Reset form state
                 document.getElementById('feedback-form').reset();
                 document.getElementById('status-container').style.display = 'none';
                 document.getElementById('submit-btn').disabled = false;
@@ -202,6 +262,11 @@
             });
         }
 
+        /**
+         * Converts standard date strings into a formatted block format for the UI.
+         * @param {string} dateString - Standard ISO date string (YYYY-MM-DD).
+         * @returns {string} HTML string representing the formatted date.
+         */
         function formatCardDate(dateString) {
             if (!dateString) return `TBD<br><span>--</span>`;
             const [year, month, day] = dateString.split('-');
@@ -210,12 +275,53 @@
             return `${months[date.getMonth()]}<br><span>${date.getDate()}</span>`;
         }
 
-        // --- FETCH EVENTS FROM FIREBASE (Purely Database Driven) ---
+        /**
+         * DATA FETCHING & RENDERING
+         * Connects to Firestore to retrieve user evaluation history and available events.
+         * Falls back to a hardcoded mock UI if the database connection fails.
+         */
         async function loadEvents() {
             const grid = document.getElementById('user-events-grid');
+            const citizenId = document.getElementById('citizen-id').value.trim();
+            
+            if (db) {
+                try {
+                    const q = query(collection(db, "feedback"), where("user_id", "==", citizenId));
+                    const feedbackSnapshot = await getDocs(q);
+                    feedbackSnapshot.forEach((doc) => evaluatedEvents.add(doc.data().event_id));
+                } catch (e) {
+                    console.warn("Could not load user's feedback history.", e);
+                }
+            }
             
             if (!firebaseConfig.projectId || firebaseConfig.projectId === "YOUR_PROJECT_ID") {
-                grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red; font-weight: bold; background: #fee2e2; padding: 15px; border-radius: 8px;">⚠️ Firebase configuration is missing! Please update your firebase-config.js file.</p>';
+                grid.innerHTML = `
+                    <div class="event-card ${evaluatedEvents.has('mock-1') ? 'evaluated' : ''}" data-event-id="mock-1">
+                        ${evaluatedEvents.has('mock-1') ? '<div class="evaluated-badge">✅ Evaluated</div>' : ''}
+                        <img src="https://placehold.co/400x200/1a1a1a/ffffff?text=C(ART)FUL+SATURDAYS" class="event-image" alt="Event Image">
+                        <div class="event-details">
+                            <div class="event-date">Feb<br><span>21</span></div>
+                            <div class="event-text-content">
+                                <h3 class="event-title">C(ART)FUL SATURDAYS</h3>
+                                <div class="event-location">📍 Barlin St. and Jacob St</div>
+                                <p class="event-desc">Art presentation and community gathering for local artists.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card ${evaluatedEvents.has('mock-2') ? 'evaluated' : ''}" data-event-id="mock-2">
+                        ${evaluatedEvents.has('mock-2') ? '<div class="evaluated-badge">✅ Evaluated</div>' : ''}
+                        <img src="https://placehold.co/400x200/1a1a1a/ffffff?text=Tech+Meetup+2026" class="event-image" alt="Event Image">
+                        <div class="event-details">
+                            <div class="event-date">Mar<br><span>15</span></div>
+                            <div class="event-text-content">
+                                <h3 class="event-title">Tech Meetup 2026</h3>
+                                <div class="event-location">📍 Innovation Hub</div>
+                                <p class="event-desc">Discussing the future of AI and municipal tech infrastructure.</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.querySelectorAll('.event-card').forEach(card => attachCardListener(card));
                 return;
             }
 
@@ -223,7 +329,7 @@
 
             try {
                 const querySnapshot = await getDocs(collection(db, "events"));
-                grid.innerHTML = ''; // Clear loading text
+                grid.innerHTML = ''; 
                 
                 if (querySnapshot.empty) {
                     grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #888;">No events available at this time.</p>';
@@ -235,7 +341,6 @@
                     eventsList.push({ id: doc.id, ...doc.data() });
                 });
 
-                // Sort newest first
                 eventsList.sort((a, b) => {
                     const timeA = a.created_at ? a.created_at.toMillis() : 0;
                     const timeB = b.created_at ? b.created_at.toMillis() : 0;
@@ -243,14 +348,16 @@
                 });
 
                 eventsList.forEach(event => {
+                    const isEvaluated = evaluatedEvents.has(event.id);
                     const card = document.createElement('div');
-                    card.className = 'event-card';
-                    card.dataset.eventId = event.id; // Crucial for database submission
+                    card.className = `event-card ${isEvaluated ? 'evaluated' : ''}`;
+                    card.dataset.eventId = event.id;
                     
                     const eventTitle = event.event_name || 'Unnamed Event';
                     const imgText = encodeURIComponent(eventTitle);
 
                     card.innerHTML = `
+                        ${isEvaluated ? '<div class="evaluated-badge">✅ Evaluated</div>' : ''}
                         <img src="https://placehold.co/400x200/1a1a1a/ffffff?text=${imgText}" class="event-image" alt="Event Image">
                         <div class="event-details">
                             <div class="event-date">${formatCardDate(event.date)}</div>
@@ -271,19 +378,16 @@
             }
         }
 
-        // Load database events immediately
         loadEvents();
 
-        // --- SUBMIT FEEDBACK LOGIC (Multiple evaluations allowed for now per your previous request) ---
+        /**
+         * FORM SUBMISSION CONTROLLER
+         * Captures user feedback, posts it to Firestore, updates application state, 
+         * and manages transition animations and button lockouts.
+         */
         document.getElementById('feedback-form').addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            if (!firebaseConfig.projectId || firebaseConfig.projectId === "YOUR_PROJECT_ID") {
-                showStatus("System offline: Edit firebase-config.js", "error");
-                return;
-            }
-
-            // Grabs the hidden dummy ID
             const citizenId = document.getElementById('citizen-id').value.trim();
             const comment = document.getElementById('feedback-text').value.trim();
             const submitBtn = document.getElementById('submit-btn');
@@ -293,13 +397,29 @@
                 return;
             }
 
+            if (!firebaseConfig.projectId || firebaseConfig.projectId === "YOUR_PROJECT_ID") {
+                showStatus("System offline (Running locally).", "error");
+                
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Submitting...";
+                setTimeout(() => {
+                    showStatus("Evaluation submitted (Mocked)! Redirecting...", "success");
+                    
+                    evaluatedEvents.add(currentEventId);
+                    updateCardUI(currentEventId);
+
+                    document.getElementById('feedback-form').reset();
+                    setTimeout(() => switchView(viewDashboard), 1500);
+                }, 1000);
+
+                return;
+            }
+
             submitBtn.disabled = true;
             submitBtn.innerText = "Submitting...";
             document.getElementById('status-container').style.display = 'none';
 
             try {
-                // By using addDoc, we generate a random ID for every submission.
-                // This allows you to test multiple comments quickly. 
                 await addDoc(collection(db, "feedback"), {
                     event_id: currentEventId,
                     user_id: citizenId,
@@ -307,11 +427,13 @@
                     timestamp: new Date()
                 });
 
-                // Success message and auto-redirect!
                 showStatus("Evaluation submitted! Redirecting...", "success");
+                
+                evaluatedEvents.add(currentEventId);
+                updateCardUI(currentEventId);
+
                 document.getElementById('feedback-form').reset();
                 
-                // Go back to the dashboard after 1.5 seconds
                 setTimeout(() => {
                     switchView(viewDashboard);
                 }, 1500);
@@ -323,6 +445,19 @@
                 submitBtn.innerText = "Submit Evaluation";
             }
         });
+
+        /**
+         * Modifies the UI of a specific event card to reflect an evaluated state
+         * without necessitating a full re-render of the grid.
+         * @param {string} eventId - The unique identifier of the event to target.
+         */
+        function updateCardUI(eventId) {
+            const card = document.querySelector(`.event-card[data-event-id="${eventId}"]`);
+            if (card && !card.classList.contains('evaluated')) {
+                card.classList.add('evaluated');
+                card.insertAdjacentHTML('afterbegin', '<div class="evaluated-badge">✅ Evaluated</div>');
+            }
+        }
     </script>
 </body>
 </html>
