@@ -2,7 +2,7 @@
 
 ---
 ## ❗Update
-Currently in the process of refining Peopulse and realigning our team's schedule to better serve the needs of LGUs, organizations, and the community.
+Currently in the process of refining Peopulse and realigning our team's schedule to better serve the needs of the LGU, organizations, and the community.
 
 ---
 ## 📌Overview
